@@ -13,9 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let str = "20000000000000000000";
-        let newStr = myAtoi(str);
-        print("newStr = \(newStr)");
+        let result = Match.init().maxArea([1,8,6,2,5,4,8,3,7]);
+        print("newStr = \(result)");
     }
 
     override var representedObject: Any? {

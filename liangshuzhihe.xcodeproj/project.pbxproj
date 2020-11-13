@@ -13,6 +13,8 @@
 		983CB9E7254BB37D007B5639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E5254BB37D007B5639 /* Main.storyboard */; };
 		983CB9F3254BB37E007B5639 /* liangshuzhiheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9F2254BB37E007B5639 /* liangshuzhiheTests.swift */; };
 		983CB9FE254BB37E007B5639 /* liangshuzhiheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9FD254BB37E007B5639 /* liangshuzhiheUITests.swift */; };
+		989B51CA255E79EF00E2BAFB /* Palind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B51C9255E79EF00E2BAFB /* Palind.swift */; };
+		989B51CF255E7CD400E2BAFB /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B51CE255E7CD400E2BAFB /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		983CB9F9254BB37E007B5639 /* liangshuzhiheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liangshuzhiheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9FD254BB37E007B5639 /* liangshuzhiheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liangshuzhiheUITests.swift; sourceTree = "<group>"; };
 		983CB9FF254BB37E007B5639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989B51C9255E79EF00E2BAFB /* Palind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palind.swift; sourceTree = "<group>"; };
+		989B51CE255E7CD400E2BAFB /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				983CB9DF254BB37A007B5639 /* AppDelegate.swift */,
 				983CB9E1254BB37A007B5639 /* ViewController.swift */,
+				989B51C9255E79EF00E2BAFB /* Palind.swift */,
+				989B51CE255E7CD400E2BAFB /* Match.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
 				983CB9E8254BB37D007B5639 /* Info.plist */,
@@ -254,7 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */,
+				989B51CA255E79EF00E2BAFB /* Palind.swift in Sources */,
 				983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */,
+				989B51CF255E7CD400E2BAFB /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
