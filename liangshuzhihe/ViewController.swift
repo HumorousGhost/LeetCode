@@ -13,7 +13,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let result = Match.init().maxArea([1,8,6,2,5,4,8,3,7]);
+        let result = Match.init().threeSum([-1, 0, 1, 2, -1, -4]);
         print("newStr = \(result)");
     }
 
