@@ -13,7 +13,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let result = Match.init().threeSum([-1, 0, 1, 2, -1, -4]);
+        let result = Match.init().isValid("(){}[]");
         print("newStr = \(result)");
     }
 
