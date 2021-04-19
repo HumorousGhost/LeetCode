@@ -13,15 +13,12 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        let result = Match.init().isValid("(){}[]");
-//        print("newStr = \(result)");
+
         let list = ListNode.init(1, ListNode.init(2, ListNode.init(3, ListNode.init(4, ListNode.init(5)))));
-        let result = List.init().reverseKGroup(list, 5);
-        var a = result;
-        while a != nil {
-            print("result = \(a?.val)");
-            a = a?.next;
-        }
+        let haystack = "aaaaa"
+        let needle = "bba"
+        let result = Str().divide(10, 3)
+        print(result)
     }
 
     override var representedObject: Any? {
