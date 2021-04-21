@@ -153,4 +153,35 @@ class Str: NSObject {
         
         return list
     }
+    
+    // 下一个排列
+    func nextPermutation(_ nums: inout [Int]) {
+        func swap(nums: inout [Int], i: Int, j: Int) {
+            let temp = nums[i]
+            nums[i] = nums[j]
+            nums[j] = temp
+        }
+        
+        func reverse(nums: inout [Int], start: Int) {
+            var left = start, right = nums.count - 1
+            while left < right {
+                swap(nums: &nums, i: left, j: right)
+                left += 1
+                right -= 1
+            }
+        }
+        
+        var i = nums.count - 2
+        while i >= 0 && nums[i] >= nums[i + 1] {
+            i -= 1
+        }
+        if i >= 0 {
+            var j = nums.count - 1
+            while j >= 0 && nums[i] >= nums[j] {
+                j -= 1
+            }
+            swap(nums: &nums, i: i, j: j)
+        }
+        reverse(nums: &nums, start: i + 1)
+    }
 }
