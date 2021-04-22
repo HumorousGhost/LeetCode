@@ -13,7 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let result = Four().longestValidParentheses(")()())")
+        let arr = [4, 5, 6, 7, 0, 1, 2]
+        let result = Four().search(arr, 0)
         print(result)
     }
 
