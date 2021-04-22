@@ -13,13 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-        let list = ListNode.init(1, ListNode.init(2, ListNode.init(3, ListNode.init(4, ListNode.init(5)))));
-        
-        var needle = [1, 2, 3]
-        Str().nextPermutation(&needle)
-        print(needle)
-//        print(result)
+        let result = Three().longestValidParentheses(")()())")
+        print(result)
     }
 
     override var representedObject: Any? {
