@@ -1,51 +1,14 @@
 //
-//  Match.swift
+//  Two.swift
 //  liangshuzhihe
 //
-//  Created by UED on 2020/11/13.
+//  Created by UED on 2021/4/22.
 //
 
-import Foundation
+import Cocoa
 
-class Match: NSObject {
-    // 正则表达式匹配
-    func isMatch(_ s: String, _ p: String) -> Bool {
-        if s.count > 20 || p.count > 30 {
-            return false;
-        }
-        
-        func matches(_ s1: String, _ p1: String) -> Bool {
-            if p1 == "." {
-                return true;
-            }
-            return s1 == p1;
-        }
-        
-        let m = s.count;
-        let n = p.count;
-        
-        var f = [[Bool]](repeating: [Bool](repeating: false, count: n + 1), count: m + 1);
-        f[0][0] = true;
-        let sChars = s.map{String($0)};
-        let pChars = p.map{String($0)};
-        for i in 0..<sChars.count + 1 {
-            for j in 1..<pChars.count + 1 {
-                if pChars[j - 1] == "*" {
-                    f[i][j] = f[i][j - 2];
-                    if i != 0 && matches(sChars[i - 1], pChars[j - 2]) {
-                        f[i][j] = f[i][j] || f[i - 1][j];
-                    }
-                } else {
-                    if i != 0 && matches(sChars[i - 1], pChars[j - 1]) {
-                        f[i][j] = f[i - 1][j - 1];
-                    }
-                }
-            }
-        }
-        return f[m][n];
-    }
-    
-    // 盛最多水的容器
+class Two: NSObject {
+    // 11. 盛最多水的容器
     func maxArea(_ height: [Int]) -> Int {
         var l = 0;
         var r = height.count - 1;
@@ -62,7 +25,7 @@ class Match: NSObject {
         return ans;
     }
     
-    // 整数转罗马数字
+    // 12. 整数转罗马数字
     func intToRoman(_ num: Int) -> String {
         let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
         let symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
@@ -80,7 +43,7 @@ class Match: NSObject {
         return value;
     }
     
-    // 罗马数字转整数
+    // 13. 罗马数字转整数
     func romanToInt(_ s: String) -> Int {
         func getValue(_ str: String) -> Int {
             switch str {
@@ -119,7 +82,7 @@ class Match: NSObject {
         return sum;
     }
     
-    // 最长公共前缀
+    // 14. 最长公共前缀
     func longestCommonPrefix(_ strs: [String]) -> String {
         func longestCommonPrefix(_ str1: String, _ str2: String) -> String {
             let length = min(str1.count, str2.count);
@@ -129,8 +92,8 @@ class Match: NSObject {
             while index < length && strArr1[index] == strArr2[index] {
                 index += 1;
             }
-            let ind = str1.index(str1.startIndex, offsetBy: index);
-            return str1.substring(to: ind);
+//            let ind = str1.index(str1.startIndex, offsetBy: index);
+            return (str1 as NSString).substring(to: index);
         }
         
         if strs.count == 0 {
@@ -146,7 +109,7 @@ class Match: NSObject {
         return prefix;
     }
     
-    // 三数之和
+    // 15. 三数之和
     func threeSum(_ nums: [Int]) -> [[Int]] {
         let numsSort = nums.sorted();
         var ans = [[Int]]();
@@ -185,7 +148,7 @@ class Match: NSObject {
         return ans;
     }
     
-    // 最接近的三数之和
+    // 16. 最接近的三数之和
     func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
         let numsSort = nums.sorted();
         let n = numsSort.count;
@@ -230,7 +193,7 @@ class Match: NSObject {
         return best;
     }
     
-    // 电话号码的字母组合
+    // 17. 电话号码的字母组合
     func letterCombinations(_ digits: String) -> [String] {
         if digits.count == 0 {
             return [];
@@ -265,7 +228,7 @@ class Match: NSObject {
         return list;
     }
     
-    // 四数之和
+    // 18. 四数之和
     func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
         if nums.count < 4 {
             return [];
@@ -320,7 +283,7 @@ class Match: NSObject {
         return array;
     }
     
-    // 删除链表的倒数第n个节点
+    // 19. 删除链表的倒数第n个节点
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
         let dummy = ListNode.init(0, head);
         var first = head;
@@ -336,7 +299,7 @@ class Match: NSObject {
         return dummy.next;
     }
     
-    // 有效的括号
+    // 20. 有效的括号
     func isValid(_ s: String) -> Bool {
         
         func isCorrespond(_ s1: String, _ s2: String) -> Bool {
@@ -358,21 +321,5 @@ class Match: NSObject {
             }
         }
         return stack.count == 0;
-    }
-    
-    // 凉凉交换链表中的节点
-    func swapPairs(_ head: ListNode?) -> ListNode? {
-        let dummyHead = ListNode.init(0);
-        dummyHead.next = head;
-        var temp = dummyHead;
-        while temp.next != nil && temp.next?.next != nil {
-            let node1 = temp.next;
-            let node2 = temp.next?.next;
-            temp.next = node2;
-            node1?.next = node2?.next;
-            node2?.next = node1;
-            temp = node1!;
-        }
-        return dummyHead.next;
     }
 }
