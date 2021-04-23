@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  liangshuzhihe
+//  LeetCode
 //
 //  Created by UED on 2020/10/30.
 //

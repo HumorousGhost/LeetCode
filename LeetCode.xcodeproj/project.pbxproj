@@ -11,8 +11,8 @@
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
 		983CB9E4254BB37D007B5639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E3254BB37D007B5639 /* Assets.xcassets */; };
 		983CB9E7254BB37D007B5639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E5254BB37D007B5639 /* Main.storyboard */; };
-		983CB9F3254BB37E007B5639 /* liangshuzhiheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9F2254BB37E007B5639 /* liangshuzhiheTests.swift */; };
-		983CB9FE254BB37E007B5639 /* liangshuzhiheUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9FD254BB37E007B5639 /* liangshuzhiheUITests.swift */; };
+		983CB9F3254BB37E007B5639 /* LeetCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9F2254BB37E007B5639 /* LeetCodeTests.swift */; };
+		983CB9FE254BB37E007B5639 /* LeetCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9FD254BB37E007B5639 /* LeetCodeUITests.swift */; };
 		98D0F0322631257D00D51735 /* Three.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F0312631257D00D51735 /* Three.swift */; };
 		98D0F037263157E900D51735 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F036263157E900D51735 /* One.swift */; };
 		98D0F03C2631589100D51735 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F03B2631589100D51735 /* ListNode.swift */; };
@@ -26,31 +26,31 @@
 			containerPortal = 983CB9D4254BB37A007B5639 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 983CB9DB254BB37A007B5639;
-			remoteInfo = liangshuzhihe;
+			remoteInfo = LeetCode;
 		};
 		983CB9FA254BB37E007B5639 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 983CB9D4254BB37A007B5639 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 983CB9DB254BB37A007B5639;
-			remoteInfo = liangshuzhihe;
+			remoteInfo = LeetCode;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		983CB9DC254BB37A007B5639 /* liangshuzhihe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liangshuzhihe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983CB9DC254BB37A007B5639 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9DF254BB37A007B5639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983CB9E1254BB37A007B5639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		983CB9E3254BB37D007B5639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983CB9E6254BB37D007B5639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983CB9E8254BB37D007B5639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		983CB9E9254BB37D007B5639 /* liangshuzhihe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = liangshuzhihe.entitlements; sourceTree = "<group>"; };
-		983CB9EE254BB37E007B5639 /* liangshuzhiheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liangshuzhiheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		983CB9F2254BB37E007B5639 /* liangshuzhiheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liangshuzhiheTests.swift; sourceTree = "<group>"; };
+		983CB9EE254BB37E007B5639 /* LeetCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		983CB9F2254BB37E007B5639 /* LeetCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCodeTests.swift; sourceTree = "<group>"; };
 		983CB9F4254BB37E007B5639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		983CB9F9254BB37E007B5639 /* liangshuzhiheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liangshuzhiheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		983CB9FD254BB37E007B5639 /* liangshuzhiheUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liangshuzhiheUITests.swift; sourceTree = "<group>"; };
+		983CB9F9254BB37E007B5639 /* LeetCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		983CB9FD254BB37E007B5639 /* LeetCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCodeUITests.swift; sourceTree = "<group>"; };
 		983CB9FF254BB37E007B5639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9865566426325DB300F6841F /* LeetCode.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = LeetCode.entitlements; sourceTree = "<group>"; };
 		98D0F0312631257D00D51735 /* Three.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Three.swift; sourceTree = "<group>"; };
 		98D0F036263157E900D51735 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
 		98D0F03B2631589100D51735 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
@@ -86,9 +86,9 @@
 		983CB9D3254BB37A007B5639 = {
 			isa = PBXGroup;
 			children = (
-				983CB9DE254BB37A007B5639 /* liangshuzhihe */,
-				983CB9F1254BB37E007B5639 /* liangshuzhiheTests */,
-				983CB9FC254BB37E007B5639 /* liangshuzhiheUITests */,
+				983CB9DE254BB37A007B5639 /* LeetCode */,
+				983CB9F1254BB37E007B5639 /* LeetCodeTests */,
+				983CB9FC254BB37E007B5639 /* LeetCodeUITests */,
 				983CB9DD254BB37A007B5639 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,16 +96,17 @@
 		983CB9DD254BB37A007B5639 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				983CB9DC254BB37A007B5639 /* liangshuzhihe.app */,
-				983CB9EE254BB37E007B5639 /* liangshuzhiheTests.xctest */,
-				983CB9F9254BB37E007B5639 /* liangshuzhiheUITests.xctest */,
+				983CB9DC254BB37A007B5639 /* LeetCode.app */,
+				983CB9EE254BB37E007B5639 /* LeetCodeTests.xctest */,
+				983CB9F9254BB37E007B5639 /* LeetCodeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		983CB9DE254BB37A007B5639 /* liangshuzhihe */ = {
+		983CB9DE254BB37A007B5639 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				9865566426325DB300F6841F /* LeetCode.entitlements */,
 				983CB9DF254BB37A007B5639 /* AppDelegate.swift */,
 				983CB9E1254BB37A007B5639 /* ViewController.swift */,
 				98D0F03B2631589100D51735 /* ListNode.swift */,
@@ -116,35 +117,34 @@
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
 				983CB9E8254BB37D007B5639 /* Info.plist */,
-				983CB9E9254BB37D007B5639 /* liangshuzhihe.entitlements */,
 			);
-			path = liangshuzhihe;
+			path = LeetCode;
 			sourceTree = "<group>";
 		};
-		983CB9F1254BB37E007B5639 /* liangshuzhiheTests */ = {
+		983CB9F1254BB37E007B5639 /* LeetCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				983CB9F2254BB37E007B5639 /* liangshuzhiheTests.swift */,
+				983CB9F2254BB37E007B5639 /* LeetCodeTests.swift */,
 				983CB9F4254BB37E007B5639 /* Info.plist */,
 			);
-			path = liangshuzhiheTests;
+			path = LeetCodeTests;
 			sourceTree = "<group>";
 		};
-		983CB9FC254BB37E007B5639 /* liangshuzhiheUITests */ = {
+		983CB9FC254BB37E007B5639 /* LeetCodeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				983CB9FD254BB37E007B5639 /* liangshuzhiheUITests.swift */,
+				983CB9FD254BB37E007B5639 /* LeetCodeUITests.swift */,
 				983CB9FF254BB37E007B5639 /* Info.plist */,
 			);
-			path = liangshuzhiheUITests;
+			path = LeetCodeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		983CB9DB254BB37A007B5639 /* liangshuzhihe */ = {
+		983CB9DB254BB37A007B5639 /* LeetCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 983CBA02254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhihe" */;
+			buildConfigurationList = 983CBA02254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCode" */;
 			buildPhases = (
 				983CB9D8254BB37A007B5639 /* Sources */,
 				983CB9D9254BB37A007B5639 /* Frameworks */,
@@ -154,14 +154,14 @@
 			);
 			dependencies = (
 			);
-			name = liangshuzhihe;
-			productName = liangshuzhihe;
-			productReference = 983CB9DC254BB37A007B5639 /* liangshuzhihe.app */;
+			name = LeetCode;
+			productName = LeetCode;
+			productReference = 983CB9DC254BB37A007B5639 /* LeetCode.app */;
 			productType = "com.apple.product-type.application";
 		};
-		983CB9ED254BB37E007B5639 /* liangshuzhiheTests */ = {
+		983CB9ED254BB37E007B5639 /* LeetCodeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 983CBA05254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhiheTests" */;
+			buildConfigurationList = 983CBA05254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCodeTests" */;
 			buildPhases = (
 				983CB9EA254BB37E007B5639 /* Sources */,
 				983CB9EB254BB37E007B5639 /* Frameworks */,
@@ -172,14 +172,14 @@
 			dependencies = (
 				983CB9F0254BB37E007B5639 /* PBXTargetDependency */,
 			);
-			name = liangshuzhiheTests;
-			productName = liangshuzhiheTests;
-			productReference = 983CB9EE254BB37E007B5639 /* liangshuzhiheTests.xctest */;
+			name = LeetCodeTests;
+			productName = LeetCodeTests;
+			productReference = 983CB9EE254BB37E007B5639 /* LeetCodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		983CB9F8254BB37E007B5639 /* liangshuzhiheUITests */ = {
+		983CB9F8254BB37E007B5639 /* LeetCodeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 983CBA08254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhiheUITests" */;
+			buildConfigurationList = 983CBA08254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCodeUITests" */;
 			buildPhases = (
 				983CB9F5254BB37E007B5639 /* Sources */,
 				983CB9F6254BB37E007B5639 /* Frameworks */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				983CB9FB254BB37E007B5639 /* PBXTargetDependency */,
 			);
-			name = liangshuzhiheUITests;
-			productName = liangshuzhiheUITests;
-			productReference = 983CB9F9254BB37E007B5639 /* liangshuzhiheUITests.xctest */;
+			name = LeetCodeUITests;
+			productName = LeetCodeUITests;
+			productReference = 983CB9F9254BB37E007B5639 /* LeetCodeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 983CB9D7254BB37A007B5639 /* Build configuration list for PBXProject "liangshuzhihe" */;
+			buildConfigurationList = 983CB9D7254BB37A007B5639 /* Build configuration list for PBXProject "LeetCode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -230,9 +230,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				983CB9DB254BB37A007B5639 /* liangshuzhihe */,
-				983CB9ED254BB37E007B5639 /* liangshuzhiheTests */,
-				983CB9F8254BB37E007B5639 /* liangshuzhiheUITests */,
+				983CB9DB254BB37A007B5639 /* LeetCode */,
+				983CB9ED254BB37E007B5639 /* LeetCodeTests */,
+				983CB9F8254BB37E007B5639 /* LeetCodeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983CB9F3254BB37E007B5639 /* liangshuzhiheTests.swift in Sources */,
+				983CB9F3254BB37E007B5639 /* LeetCodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983CB9FE254BB37E007B5639 /* liangshuzhiheUITests.swift in Sources */,
+				983CB9FE254BB37E007B5639 /* LeetCodeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,12 +299,12 @@
 /* Begin PBXTargetDependency section */
 		983CB9F0254BB37E007B5639 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 983CB9DB254BB37A007B5639 /* liangshuzhihe */;
+			target = 983CB9DB254BB37A007B5639 /* LeetCode */;
 			targetProxy = 983CB9EF254BB37E007B5639 /* PBXContainerItemProxy */;
 		};
 		983CB9FB254BB37E007B5639 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 983CB9DB254BB37A007B5639 /* liangshuzhihe */;
+			target = 983CB9DB254BB37A007B5639 /* LeetCode */;
 			targetProxy = 983CB9FA254BB37E007B5639 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,18 +441,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = liangshuzhihe/liangshuzhihe.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LeetCode/LeetCode.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = liangshuzhihe/Info.plist;
+				INFOPLIST_FILE = LeetCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhihe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -462,18 +464,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = liangshuzhihe/liangshuzhihe.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LeetCode/LeetCode.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = liangshuzhihe/Info.plist;
+				INFOPLIST_FILE = LeetCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhihe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -486,17 +490,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
-				INFOPLIST_FILE = liangshuzhiheTests/Info.plist;
+				INFOPLIST_FILE = LeetCodeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhiheTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liangshuzhihe.app/Contents/MacOS/liangshuzhihe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetCode.app/Contents/MacOS/LeetCode";
 			};
 			name = Debug;
 		};
@@ -508,17 +512,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
-				INFOPLIST_FILE = liangshuzhiheTests/Info.plist;
+				INFOPLIST_FILE = LeetCodeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhiheTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liangshuzhihe.app/Contents/MacOS/liangshuzhihe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetCode.app/Contents/MacOS/LeetCode";
 			};
 			name = Release;
 		};
@@ -529,16 +533,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
-				INFOPLIST_FILE = liangshuzhiheUITests/Info.plist;
+				INFOPLIST_FILE = LeetCodeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhiheUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = liangshuzhihe;
+				TEST_TARGET_NAME = LeetCode;
 			};
 			name = Debug;
 		};
@@ -549,23 +553,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
-				INFOPLIST_FILE = liangshuzhiheUITests/Info.plist;
+				INFOPLIST_FILE = LeetCodeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.liangshuzhiheUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiangshang.LeetCodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = liangshuzhihe;
+				TEST_TARGET_NAME = LeetCode;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		983CB9D7254BB37A007B5639 /* Build configuration list for PBXProject "liangshuzhihe" */ = {
+		983CB9D7254BB37A007B5639 /* Build configuration list for PBXProject "LeetCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983CBA00254BB37E007B5639 /* Debug */,
@@ -574,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		983CBA02254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhihe" */ = {
+		983CBA02254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983CBA03254BB37E007B5639 /* Debug */,
@@ -583,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		983CBA05254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhiheTests" */ = {
+		983CBA05254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCodeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983CBA06254BB37E007B5639 /* Debug */,
@@ -592,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		983CBA08254BB37E007B5639 /* Build configuration list for PBXNativeTarget "liangshuzhiheUITests" */ = {
+		983CBA08254BB37E007B5639 /* Build configuration list for PBXNativeTarget "LeetCodeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983CBA09254BB37E007B5639 /* Debug */,

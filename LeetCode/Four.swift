@@ -1,6 +1,6 @@
 //
 //  Four.swift
-//  liangshuzhihe
+//  LeetCode
 //
 //  Created by UED on 2021/4/22.
 //
@@ -90,6 +90,12 @@ class Four: NSObject {
             }
         }
         return -1
+    }
+    
+    // 34. 在排序数组中查找元素的第一个和最后一个位置
+    func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+        
+        return []
     }
     
 }
