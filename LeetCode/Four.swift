@@ -133,4 +133,37 @@ class Four: NSObject {
         return ans
     }
     
+    // 36. 有效的数独
+    func isValidSudoku(_ board: [[Character]]) -> Bool {
+        var rows = [Int : NSMutableDictionary]()
+        var columns = [Int : NSMutableDictionary]()
+        var boxes = [Int : NSMutableDictionary]()
+        for i in 0..<9 {
+            rows[i] = NSMutableDictionary()
+            columns[i] = NSMutableDictionary()
+            boxes[i] = NSMutableDictionary()
+        }
+        
+        // validate a board
+        for i in 0..<9 {
+            for j in 0..<9 {
+                let num = board[i][j]
+                if num != "." {
+                    let n = (String.init(num) as NSString).integerValue
+                    let box_index = (i / 3) * 3 + j / 3
+                    
+                    // keep the current cell value
+                    rows[i]?.addEntries(from: [n : rows[i]![n] != nil ? rows[i]![n]! as! Int + 1 : 1])
+                    columns[j]?.addEntries(from: [n : columns[j]![n] != nil ? columns[j]![n]! as! Int + 1 : 1])
+                    boxes[box_index]?.addEntries(from: [n : boxes[box_index]![n] != nil ? boxes[box_index]![n]! as! Int + 1 : 1])
+                    
+                    // check if this value has been already seen before
+                    if rows[i]![n]! as! Int > 1 || columns[j]![n]! as! Int > 1 || boxes[box_index]![n]! as! Int > 1 {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
 }
