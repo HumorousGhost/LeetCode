@@ -44,8 +44,9 @@ class Four: NSObject {
         var maxans = 0
         var stack = [Int]()
         stack.append(-1)
+        let stringArray = s.map{ $0 }
         for i in 0..<s.count {
-            if (s as NSString).substring(with: NSRange.init(location: i, length: 1)) == "(" {
+            if stringArray[i] == "(" {
                 stack.append(i)
             } else {
                 stack.removeLast()
@@ -94,8 +95,26 @@ class Four: NSObject {
     
     // 34. 在排序数组中查找元素的第一个和最后一个位置
     func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+        func binarySearch(_ nums: [Int], _ target: Int, _ lower: Bool) -> Int {
+            var left = 0, right = nums.count - 1, ans = nums.count
+            while left <= right {
+                let mid = (left + right) / 2
+                if nums[mid] > target || (lower && nums[mid] >= target) {
+                    right = mid - 1
+                    ans = mid
+                } else {
+                    left = mid + 1
+                }
+            }
+            return ans
+        }
         
-        return []
+        let leftIdx = binarySearch(nums, target, true)
+        let rightIdx = binarySearch(nums, target, false) - 1
+        if leftIdx <= rightIdx && rightIdx < nums.count && nums[leftIdx] == target && nums[rightIdx] == target {
+            return [leftIdx, rightIdx]
+        }
+        return [-1, -1]
     }
     
 }
