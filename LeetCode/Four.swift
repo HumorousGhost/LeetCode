@@ -167,7 +167,7 @@ class Four: NSObject {
         return true
     }
     
-    // 37. 解数独 未做出
+    // 37. 解数独
     func solveSudoku(_ board: inout [[Character]]) {
         var line = [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 9)
         var column = [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 9)
