@@ -166,4 +166,55 @@ class Four: NSObject {
         }
         return true
     }
+    
+    // 37. 解数独 未做出
+    func solveSudoku(_ board: inout [[Character]]) {
+        var line = [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 9)
+        var column = [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 9)
+        var block = [[[Bool]]](repeating: [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 3), count: 3)
+        var valid = false
+        var spaces: NSMutableArray = NSMutableArray.init()
+        
+        func dfs(_ board: inout [[Character]], _ pos: Int) {
+            if pos == spaces.count {
+                valid = true
+                return;
+            }
+            let space = spaces[pos] as! [Int]
+            
+            var digit = 0
+            let i = space[0]
+            let j = space[1]
+            while digit < 9 && !valid {
+                if !line[i][digit] && !column[j][digit] && !block[i / 3][j / 3][digit] {
+                    line[i][digit] = true
+                    column[j][digit] = true
+                    block[i / 3][j / 3][digit] = true
+                    board[i][j] = Character.init("\(digit + 1)")
+                    dfs(&board, pos + 1)
+                    line[i][digit] = false
+                    column[j][digit] = false
+                    block[i / 3][j / 3][digit] = false
+                }
+                digit += 1
+            }
+        }
+        
+        for i in 0..<9 {
+            for j in 0..<9 {
+                if board[i][j] == "." {
+                    spaces.add([i, j])
+                } else {
+                    let digit = (String(board[i][j]) as NSString).integerValue - 1
+                    line[i][digit] = true
+                    column[j][digit] = true
+                    block[i / 3][j / 3][digit] = true
+                }
+            }
+        }
+        
+        dfs(&board, 0)
+    }
+    
+    
 }
