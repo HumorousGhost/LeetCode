@@ -275,4 +275,31 @@ class Four: NSObject {
         ]
         return map[n]!
     }
+    
+    // 39. 组合总和
+    func combinationSum(_ candidates: [Int], target: Int) -> [[Int]] {
+        
+        func dfs(candidates: [Int], target: Int, ans: inout [[Int]], combine: inout [Int], idx: Int) {
+            if idx == candidates.count {
+                return
+            }
+            if target == 0 {
+                ans.append(combine)
+                return
+            }
+            // 直接跳过
+            dfs(candidates: candidates, target: target, ans: &ans, combine: &combine, idx: idx + 1)
+            // 选择当前数
+            if target - candidates[idx] >= 0 {
+                combine.append(candidates[idx])
+                dfs(candidates: candidates, target: target - candidates[idx], ans: &ans, combine: &combine, idx: idx)
+                combine.removeLast()
+            }
+        }
+        
+        var ans = [[Int]].init(repeating: [Int].init(repeating: 0, count: 0), count: 0)
+        var combine = [Int](repeating: 0, count: 0)
+        dfs(candidates: candidates, target: target, ans: &ans, combine: &combine, idx: 0)
+        return ans
+    }
 }
