@@ -302,4 +302,44 @@ class Four: NSObject {
         dfs(candidates: candidates, target: target, ans: &ans, combine: &combine, idx: 0)
         return ans
     }
+    
+    // 40. 组合总和II
+    func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
+        var freq = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var sequence = [Int](repeating: 0, count: 0)
+        
+        func dfs(pos: Int, rest: Int) {
+            if rest == 0 {
+                ans.append(sequence)
+                return
+            }
+            if pos == freq.count || rest < freq[pos][0] {
+                return
+            }
+            
+            dfs(pos: pos + 1, rest: rest)
+            
+            let most = min(rest / freq[pos][0], freq[pos][1])
+            for i in 1...most {
+                sequence.append(freq[pos][0])
+                dfs(pos: pos + 1, rest: rest - i * freq[pos][0])
+            }
+            for _ in 1...most {
+                sequence.removeLast()
+            }
+        }
+        
+        let candidateSorted = candidates.sorted()
+        for num in candidateSorted {
+            let size = freq.count
+            if num != freq.last?.first {
+                freq.append([num, 1])
+            } else {
+                freq[size - 1][1] += 1
+            }
+        }
+        dfs(pos: 0, rest: target)
+        return ans
+    }
 }
