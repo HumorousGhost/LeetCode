@@ -8,318 +8,326 @@
 import Cocoa
 
 class Two: NSObject {
-    // 11. 盛最多水的容器
-    func maxArea(_ height: [Int]) -> Int {
-        var l = 0;
-        var r = height.count - 1;
-        var ans = 0;
-        while l < r {
-            let area = min(height[l], height[r]) * (r - l);
-            ans = max(ans, area);
-            if height[l] <= height[r] {
-                l += 1;
+    // 21. 合并两个有序链表
+    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        let dummyHead = ListNode.init(0);
+        var cur = dummyHead;
+        var newL1 = l1;
+        var newL2 = l2;
+        while newL1 != nil && newL2 != nil {
+            if newL1!.val < newL2!.val {
+                cur.next = newL1;
+                newL1 = newL1!.next;
             } else {
-                r -= 1;
+                cur.next = newL2!;
+                newL2 = newL2?.next;
+            }
+            cur = cur.next!;
+        }
+        // 任一为空，直接连接另一条链表
+        cur.next = newL1 == nil ? newL2 : newL1;
+        return dummyHead.next;
+    }
+    
+    // 22. 括号生成
+    func generateParenthesis(_ n: Int) -> [String] {
+        func backtrack(ans: inout [String], cur: String, open: Int, close: Int, max: Int) -> Void {
+            var curStr = cur;
+            if curStr.count == max * 2 {
+                ans.append(curStr);
+                return;
+            }
+            if open < max {
+                curStr.append("(");
+                backtrack(ans: &ans, cur: curStr, open: open + 1, close: close, max: max);
+                curStr.removeLast();
+            }
+            if close < open {
+                curStr.append(")");
+                backtrack(ans: &ans, cur: curStr, open: open, close: close + 1, max: max);
+                curStr.removeLast();
             }
         }
+        var ans = [String]();
+        backtrack(ans: &ans, cur: "", open: 0, close: 0, max: n);
         return ans;
     }
     
-    // 12. 整数转罗马数字
-    func intToRoman(_ num: Int) -> String {
-        let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-        let symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-        var value = "";
-        var number = num;
-        for i in 0..<values.count {
-            if num < 0 {
-                break;
-            }
-            while values[i] <= number {
-                number -= values[i];
-                value.append(symbols[i]);
-            }
-        }
-        return value;
-    }
-    
-    // 13. 罗马数字转整数
-    func romanToInt(_ s: String) -> Int {
-        func getValue(_ str: String) -> Int {
-            switch str {
-            case "I":
-                return 1;
-            case "V":
-                return 5;
-            case "X":
-                return 10;
-            case "L":
-                return 50;
-            case "C":
-                return 100;
-            case "D":
-                return 500;
-            case "M":
-                return 1000;
-            default:
-                return 0;
-            }
-        }
+    // 23. 合并k个升序链表
+    func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
         
-        var sum = 0;
-        let sArray = s.map{String($0)};
-        var perNum = getValue(sArray[0]);
-        for i in 1..<s.count {
-            let num = getValue(sArray[i]);
-            if perNum < num {
-                sum -= perNum;
-            } else {
-                sum += perNum;
+        // 合并两个链表
+        func mergeTwoLists(_ a: ListNode?, _ b: ListNode? ) -> ListNode? {
+            if a == nil || b == nil {
+                return a != nil ? a : b;
             }
-            perNum = num;
-        }
-        sum += perNum;
-        return sum;
-    }
-    
-    // 14. 最长公共前缀
-    func longestCommonPrefix(_ strs: [String]) -> String {
-        func longestCommonPrefix(_ str1: String, _ str2: String) -> String {
-            let length = min(str1.count, str2.count);
-            var index = 0;
-            let strArr1 = str1.map{String($0)};
-            let strArr2 = str2.map{String($0)};
-            while index < length && strArr1[index] == strArr2[index] {
-                index += 1;
-            }
-//            let ind = str1.index(str1.startIndex, offsetBy: index);
-            return (str1 as NSString).substring(to: index);
-        }
-        
-        if strs.count == 0 {
-            return "";
-        }
-        var prefix = strs[0];
-        for i in 1..<strs.count {
-            prefix = longestCommonPrefix(prefix, strs[i]);
-            if prefix.count == 0 {
-                break;
-            }
-        }
-        return prefix;
-    }
-    
-    // 15. 三数之和
-    func threeSum(_ nums: [Int]) -> [[Int]] {
-        let numsSort = nums.sorted();
-        var ans = [[Int]]();
-        let n = numsSort.count;
-        for i in 0..<n {
-            // 需要和上一次枚举的数不同
-            if i > 0 && numsSort[i] == numsSort[i - 1] {
-                continue;
-            }
-            // c 对应的指针初始指向数组的最右端
-            var k = n - 1;
-            let target = -numsSort[i];
-            // 枚举b
-            for j in i + 1..<n {
-                // 需要和上一次枚举的数不同
-                if j > i + 1 && numsSort[j] == numsSort[j - 1] {
-                    continue;
-                }
-                // 需要保证 b 的指针在 c 的指针的左侧
-                while j < k && numsSort[j] + numsSort[k] > target  {
-                    k -= 1;
-                }
-                // 如果指针重合，随着 b 后续的增加，就不会有满足 a+b+c=0，并且 b<c 的 c 了，可以退出循环
-                if j == k {
-                    break;
-                }
-                if numsSort[j] + numsSort[k] == target {
-                    var list = [Int]();
-                    list.append(numsSort[i]);
-                    list.append(numsSort[j]);
-                    list.append(numsSort[k]);
-                    ans.append(list);
-                }
-            }
-        }
-        return ans;
-    }
-    
-    // 16. 最接近的三数之和
-    func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
-        let numsSort = nums.sorted();
-        let n = numsSort.count;
-        var best = 100000000;
-        // 枚举 a
-        for i in 0..<n {
-            // 保证和上一次枚举的元素不相等
-            if i > 0 && numsSort[i] == numsSort[i - 1] {
-                continue;
-            }
-            var j = i + 1;
-            var k = n - 1;
-            while j < k {
-                let sum = numsSort[i] + numsSort[j] + numsSort[k];
-                // 如果和为target直接返回答案
-                if sum == target {
-                    return target;
-                }
-                // 根据差值的绝对值来更新答案
-                if abs(sum - target) < abs(best - target) {
-                    best = sum;
-                }
-                if sum > target {
-                    // 如果和大于target，移动k值，即右侧指针
-                    var tempK = k - 1;
-                    // 移动到下一个不相等的元素
-                    while j < tempK && numsSort[tempK] == numsSort[k] {
-                        tempK -= 1;
-                    }
-                    k = tempK;
+            // 用于保存链表
+            let head = ListNode.init(0);
+            // 记录下一个插入位置的前一个位置
+            var tail = head;
+            // a链表未合并的第一位
+            var aPtr = a;
+            // b链表未合并的第一位
+            var bPtr = b;
+            while aPtr != nil && bPtr != nil {
+                if aPtr!.val < bPtr!.val {
+                    tail.next = aPtr;
+                    aPtr = aPtr?.next;
                 } else {
-                    // 如果小于 target，移动j值，对应左侧指针。
-                    var tempJ = j + 1;
-                    // 移动到下一个不相等的元素
-                    while tempJ < k && numsSort[tempJ] == numsSort[j] {
-                        tempJ += 1;
-                    }
-                    j = tempJ;
+                    tail.next = bPtr;
+                    bPtr = bPtr?.next;
                 }
+                tail = tail.next!;
             }
+            tail.next = (aPtr != nil ? aPtr : bPtr);
+            return head.next;
         }
-        return best;
+        
+        /// 二路归并
+        func merge(_ lists: [ListNode?], _ l: Int, _ r: Int) -> ListNode? {
+            if l == r {
+                return lists[l];
+            }
+            if l > r {
+                return nil;
+            }
+            let mid = (l + r) >> 1;
+            return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+        }
+        
+        return merge(lists, 0, lists.count - 1);
     }
     
-    // 17. 电话号码的字母组合
-    func letterCombinations(_ digits: String) -> [String] {
-        if digits.count == 0 {
-            return [];
+    // 24. 两两交换链表中的节点
+    func swapPairs(_ head: ListNode?) -> ListNode? {
+        let dummyHead = ListNode.init(0);
+        dummyHead.next = head;
+        var temp = dummyHead;
+        while temp.next != nil && temp.next?.next != nil {
+            let node1 = temp.next;
+            let node2 = temp.next?.next;
+            temp.next = node2;
+            node1?.next = node2?.next;
+            node2?.next = node1;
+            temp = node1!;
         }
-        // 递归循环
-        func getStringArray(_ s: [[String]], _ i: Int, _ list: [String], _ stemp: String) -> [String] {
-            var newList = list;
-            var newI = i;
-            let newS = s;
-            if newI < s.count - 1 {
-                for j in 0..<s[newI].count {
-                    newList = getStringArray(newS, newI + 1, newList, stemp.appending(s[newI][j]));
+        return dummyHead.next;
+    }
+    
+    /// 25. k个一组翻转链表
+    func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
+        func myReverse(_ head: ListNode?, _ tail: ListNode?) -> [ListNode?] {
+            var prev = tail?.next;
+            var p = head;
+            while prev !== tail {
+                let nex = p?.next;
+                p?.next = prev;
+                prev = p;
+                p = nex;
+            }
+            return [tail, head];
+        }
+        
+        var newHead = head;
+        let hair = ListNode.init(0);
+        hair.next = newHead;
+        var pre = hair;
+        while newHead != nil {
+            var tail = pre;
+            for _ in 0..<k {
+//                tail = tail.next;
+                if tail.next == nil {
+                    return hair.next;
                 }
-                newI += 1;
+                tail = tail.next!;
+            }
+            let nex = tail.next;
+            let reverse = myReverse(newHead, tail);
+            newHead = reverse[0];
+            tail = reverse[1]!;
+            // 把子链表重新接回原链表
+            pre.next = newHead;
+            tail.next = nex;
+            pre = tail;
+            newHead = tail.next;
+        }
+        return hair.next;
+    }
+    
+    /// 26. 删除排序数组中的重复项
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        if nums.count == 0 {
+            return 0;
+        }
+        var i = 0;
+        for j in 1..<nums.count {
+            if nums[j] != nums[i] {
+                i += 1;
+                nums[i] = nums[j];
+            }
+        }
+        return i + 1;
+    }
+    
+    /// 27. 移除元素
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+        var i = 0;
+        var n = nums.count;
+        while i < n {
+            if nums[i] == val {
+                nums[i] = nums[n - 1];
+                n -= 1;
             } else {
-                for j in 0..<newS[newI].count {
-                    newList.append(stemp.appending(newS[newI][j]));
-                }
+                i += 1;
             }
-            return newList;
         }
-        
-        let numToComMap:[String: [String]] = ["1": [], "2": ["a", "b", "c"], "3": ["d", "e", "f"], "4": ["g", "h", "i"], "5": ["j", "k", "l"], "6": ["m", "n", "o"], "7": ["p", "q", "r", "s"], "8": ["t", "u", "v"], "9": ["w", "x", "y", "z"]];
-        let digitsArray = digits.map{String($0)};
-        var combinArr = [[String]]();
-        for (_, value) in digitsArray.enumerated() {
-            let tempCom = numToComMap[value];
-            combinArr.append(tempCom ?? []);
-        }
-        var list = [String]();
-        list = getStringArray(combinArr, 0, list, "");
-        return list;
+        return n;
     }
     
-    // 18. 四数之和
-    func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
-        if nums.count < 4 {
-            return [];
-        }
-        let numsSort = nums.sorted();
-        let n = numsSort.count;
-        var array = [[Int]]();
-        for i in 0..<n - 3 {
-            if i > 0 && numsSort[i] == numsSort[i - 1] {
-                continue;
-            }
-            // 如果4个数相加大于target时，跳出循环
-            if numsSort[i] + numsSort[i + 1] + numsSort[i + 2] + numsSort[i + 3] > target {
-                break;
-            }
-            // 如果4个数相加小于target时，结束当前某次循环
-            if numsSort[i] + numsSort[n - 3] + numsSort[n - 2] + numsSort[n - 1] < target {
-                continue;
-            }
-            for j in i + 1..<n - 2 {
-                if j > i + 1 && numsSort[j] == numsSort[j - 1] {
-                    continue;
-                }
-                if numsSort[i] + numsSort[j] + numsSort[j + 1] + numsSort[j + 2] > target {
-                    break;
-                }
-                if numsSort[i] + numsSort[j] + numsSort[n - 2] + numsSort[n - 1] < target {
-                    continue;
-                }
-                var left = j + 1;
-                var right = n - 1;
-                while left < right {
-                    let sum = numsSort[i] + numsSort[j] + numsSort[left] + numsSort[right];
-                    if sum == target {
-                        array.append([numsSort[i], numsSort[j], numsSort[left], numsSort[right]]);
-                        while left < right && numsSort[left] == numsSort[left + 1] {
-                            left += 1;
-                        }
-                        left += 1;
-                        while left < right && numsSort[right] == numsSort[right - 1] {
-                            right -= 1;
-                        }
-                        right -= 1;
-                    } else if sum < target {
-                        left += 1;
-                    } else {
-                        right -= 1;
-                    }
-                }
-            }
-        }
-        return array;
-    }
-    
-    // 19. 删除链表的倒数第n个节点
-    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        let dummy = ListNode.init(0, head);
-        var first = head;
-        var second = dummy;
-        for _ in 0..<n {
-            first = first?.next;
-        }
-        while first != nil {
-            first = first?.next;
-            second = second.next!;
-        }
-        second.next = second.next?.next;
-        return dummy.next;
-    }
-    
-    // 20. 有效的括号
-    func isValid(_ s: String) -> Bool {
+    // 28. 实现 strStr() 函数 方法1
+    func strStr(_ haystack: String, _ needle: String) -> Int {
         
-        func isCorrespond(_ s1: String, _ s2: String) -> Bool {
-            if s1 == "(" && s2 == ")" || s1 == "[" && s2 == "]" || s1 == "{" && s2 == "}" {
-                return true;
-            }
-            return false;
+        func charToInt(_ idx: Int, _ s: String) -> Int {
+            let str = (s as NSString).substring(with: NSRange.init(location: idx, length: 1))
+            let ascii = str.unicodeScalars[str.unicodeScalars.startIndex].value
+            return Int(ascii - "a".unicodeScalars["a".unicodeScalars.startIndex].value)
         }
         
-        var stack = [String]();
-        let sArray = s.map{String($0)};
-        for (_, value) in sArray.enumerated() {
-            if stack.count == 0 {
-                stack.append(value);
-            } else if (isCorrespond(stack.last ?? "", value)) {
-                stack.removeLast();
-            } else {
-                stack.append(value);
+        let L = needle.count, n = haystack.count
+        if L > n {
+            return -1
+        }
+        
+        // base value for the rolling hash function
+        let a = 26
+        // modulus value for the rolling hash function to avoid overflow
+        let modulus = pow(2.0, 31.0)
+        
+        // compute the hash of strings haystack[L], needle[L]
+        var h = 0, ref_h = 0
+        for i in 0..<L {
+            h = (h * a + charToInt(i, haystack)) % Int(modulus)
+            ref_h = (ref_h * a + charToInt(i, needle)) % Int(modulus)
+        }
+        if h == ref_h {
+            return 0
+        }
+        
+        // count value to be used often : a**L % modulus
+        var aL = 1
+        for _ in 1...L {
+            aL = (aL * a) % Int(modulus)
+        }
+        
+        for start in 1..<n - L + 1 {
+            // compute rolling hash in O(1) time
+            h = (h * a - charToInt(start - 1, haystack) * aL + charToInt(start + L - 1, haystack)) % Int(modulus)
+            if h == ref_h {
+                return start
             }
         }
-        return stack.count == 0;
+        return -1
     }
+    
+    // 28. 实现 strStr() 函数 方法2
+    func strStr2(_ haystack: String, _ needle: String) -> Int {
+        let m = haystack.count, n = needle.count
+        if n > m {
+            return -1
+        }
+        if n == 0 {
+            return 0
+        }
+        for i in 0...m - n {
+            for j in 0..<n {
+                if (haystack as NSString).substring(with: NSRange.init(location: i + j, length: 1)) != (needle as NSString).substring(with: NSRange.init(location: j, length: 1)) {
+                    break
+                }
+                if j == n - 1 {
+                    return i
+                }
+            }
+        }
+        return -1
+    }
+    
+    // 29. 两数相除
+    func divide(_ dividend: Int, _ divisor: Int) -> Int {
+        if dividend == 0 {
+            return 0
+        }
+        if dividend == Int.min && divisor == -1 {
+            return Int.max
+        }
+        
+        var negative: Bool
+        negative = (dividend ^ divisor) < 0 // 用 异或来计算是否符号相同
+        var t = abs(dividend)
+        let d = abs(divisor)
+        var result = 0
+        let start = negative ? 0 : 1
+        for i in start...31 {
+            let a = 31 - i
+            if (t >> a) >= d { // 找出足够大的数 2^n*divisor
+                result += (1 << a) // 将结果加上2^n
+                t -= (d << a) // 将被除数减去 2^n*divisor
+            }
+        }
+        return negative ? -result : result // 符号相异取反
+    }
+    
+    // 30. 串联所有单词的子串
+    func findSubstring(_ s: String, _ words: [String]) -> [Int] {
+        // 哈希表+滑动窗口
+        // - 哈希表统计words中每个单词的出现频率
+        // - 滑动窗口为words所有单词组成的子串大小
+        // - 统计滑动窗口中单词个数与哈希表中是否相同
+        var list = [Int]()
+        if s.count == 0 || words.count == 0 {
+            return list
+        }
+        let len = s.count
+        let everyWordLen = words[0].count
+        let wordLenCnt = words.count * everyWordLen;
+        
+        if len < wordLenCnt {
+            return list
+        }
+        
+        var wordFreqCnt = [String : Int]()
+        for word in words {
+            wordFreqCnt[word] = wordFreqCnt[word] != nil ? wordFreqCnt[word]! + 1 : 1
+        }
+        
+        var i = 0
+        while i + wordLenCnt <= len {
+            // 统计窗口为wordLenCnt内的单词频率，与wordFreqCnt相比较，相等的话 下标i为要求的结果
+            var tmpFreqCnt = [String : Int]()
+            
+            var j = i
+            while j < i + wordLenCnt {
+                let tmpString = (s as NSString).substring(with: NSRange.init(location: j, length: everyWordLen))
+                tmpFreqCnt[tmpString] = tmpFreqCnt[tmpString] != nil ? tmpFreqCnt[tmpString]! + 1 : 1
+                j += everyWordLen
+            }
+            
+            // 比较tmpFreqCnt 和wordFreqCnt
+            var bEqual = true
+            for key in tmpFreqCnt.keys {
+                if wordFreqCnt[key] != tmpFreqCnt[key] {
+                    bEqual = false
+                    break
+                }
+            }
+            if bEqual {
+                print(i)
+                list.append(i)
+            }
+            i += 1
+        }
+        
+        return list
+    }
+    
+    
 }
