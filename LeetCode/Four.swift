@@ -49,4 +49,42 @@ class Four: NSObject {
         }
         return ans
     }
+    
+    // 43. 字符串相乘
+    func mutiply(_ num1: String, _ num2: String) -> String {
+        if num1 == "0" || num2 == "0" {
+            return "0"
+        }
+        if num1 == "1" {
+            return num2
+        }
+        if num2 == "1" {
+            return num1
+        }
+        
+        let m = num1.count, n = num2.count
+        var ansArr = [Int](repeating: 0, count: m + n)
+        for valuei in 0...m - 1 {
+            let i = m - 1 - valuei
+            let x = ((num1 as NSString).substring(with: NSRange.init(location: i, length: 1)) as NSString).integerValue
+            for valuej in 0...n - 1 {
+                let j = n - 1 - valuej
+                let y = ((num2 as NSString).substring(with: NSRange.init(location: j, length: 1)) as NSString).integerValue
+                ansArr[i + j + 1] += x * y
+            }
+        }
+        var i = m + n - 1
+        while i > 0 {
+            ansArr[i - 1] += ansArr[i] / 10
+            ansArr[i] %= 10
+            i -= 1
+        }
+        var index = ansArr[0] == 0 ? 1 : 0
+        var ans = ""
+        while index < m + n {
+            ans.append(String(ansArr[index]))
+            index += 1
+        }
+        return ans
+    }
 }

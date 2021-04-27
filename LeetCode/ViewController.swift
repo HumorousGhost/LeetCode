@@ -13,9 +13,10 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let array = [10,1,2,7,6,1,5]
-        let result = Four().combinationSum2(array, 8)
-        print(result);
+        let m = "2"
+        let n = "3"
+        let result = Four().mutiply(m, n)
+        print(result)
     }
 
     override var representedObject: Any? {
