@@ -13,9 +13,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let m = "2"
-        let n = "3"
-        let result = Four().mutiply(m, n)
+        let m = ""
+        let n = "*****a"
+        let result = Four().isMatch(m, n)
         print(result)
     }
 

@@ -87,4 +87,104 @@ class Four: NSObject {
         }
         return ans
     }
+    
+    // 44. 通配符匹配 1
+    func isMatch(_ s: String, _ p: String) -> Bool {
+        let m = s.count
+        let n = p.count
+        if n == 0 {
+            return m == 0
+        }
+        
+        let array = p.components(separatedBy: "*")
+        var special = true
+        for i in 0..<array.count {
+            if array[i].count > 0 {
+                special = false
+            }
+        }
+        if m == 0 || special {
+            return special
+        }
+        
+        
+        var dp = [[Bool]](repeating: [Bool](repeating: false, count: n + 1), count: m + 1)
+        dp[0][0] = true
+        for i in 1...n {
+            if (p as NSString).substring(with: NSRange.init(location: i - 1, length: 1)) == "*" {
+                dp[0][i] = true
+            } else {
+                break
+            }
+        }
+        
+        for i in 1...m {
+            for j in 1...n {
+                let pChar = (p as NSString).substring(with: _NSRange.init(location: j - 1, length: 1))
+                let sChar = (s as NSString).substring(with: _NSRange.init(location: i - 1, length: 1))
+                if pChar == "*" {
+                    dp[i][j] = dp[i][j - 1] || dp[i - 1][j]
+                } else if pChar == "?" || sChar == pChar {
+                    dp[i][j] = dp[i - 1][j - 1]
+                }
+            }
+        }
+        return dp[m][n]
+    }
+    
+    // 44. 通配符匹配 2 有问题
+    func isMatch2(_ s: String, _ p: String) -> Bool {
+        
+        func allStars(str: String, left: Int, right: Int) -> Bool {
+            for i in left..<right {
+                if (str as NSString).substring(with: NSRange.init(location: i, length: 1)) != "*" {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        func charMatch(u: String, v: String) -> Bool {
+            return u == v || v == "?"
+        }
+        
+        if p == "*" {
+            return true
+        }
+        
+        var sRight = s.count, pRight = p.count
+        while sRight > 0 && pRight > 0 && (p as NSString).substring(with: NSRange.init(location: pRight - 1, length: 1)) != "*" {
+            if charMatch(u: (s as NSString).substring(with: NSRange.init(location: sRight - 1, length: 1)), v: (p as NSString).substring(with: NSRange.init(location: pRight - 1, length: 1))) {
+                sRight -= 1
+                pRight -= 1
+            } else {
+                return false
+            }
+        }
+        
+        if pRight == 0 {
+            return sRight == 0
+        }
+        
+        var sIndex = 0, pIndex = 0
+        var sRecord = -1, pRecord = -1
+        
+        while sIndex < sRight && pIndex < sRight {
+            if (p as NSString).substring(with: NSRange(location: pIndex, length: 1)) == "*" {
+                pIndex += 1
+                sRecord = sIndex
+                pRecord = pIndex
+            } else if charMatch(u: (s as NSString).substring(with: NSRange(location: sIndex, length: 1)), v: (p as NSString).substring(with: NSRange(location: pIndex, length: 1))) {
+                sIndex += 1
+                pIndex += 1
+            } else if sRecord != -1 && sRecord + 1 < sRight {
+                sRecord += 1
+                sIndex = sRecord
+                pIndex = pRecord
+            } else {
+                return false
+            }
+        }
+        return allStars(str: p, left: pIndex, right: pRight)
+    }
 }
