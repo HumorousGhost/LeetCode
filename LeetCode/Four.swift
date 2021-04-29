@@ -187,4 +187,20 @@ class Four: NSObject {
         }
         return allStars(str: p, left: pIndex, right: pRight)
     }
+    
+    // 45. 跳跃游戏 II
+    func jump(_ nums: [Int]) -> Int {
+        let length = nums.count
+        var end = 0
+        var maxPosition = 0
+        var steps = 0
+        for i in 0..<length - 1 {
+            maxPosition = max(maxPosition, i + nums[i])
+            if i == end {
+                end = maxPosition
+                steps += 1
+            }
+        }
+        return steps
+    }
 }

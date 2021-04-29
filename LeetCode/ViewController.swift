@@ -13,9 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let m = ""
-        let n = "*****a"
-        let result = Four().isMatch(m, n)
+        let arr = [2, 3, 1, 1, 4]
+        let result = Four().jump(arr)
         print(result)
     }
 
