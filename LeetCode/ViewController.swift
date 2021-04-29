@@ -13,8 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let arr = [2, 3, 1, 1, 4]
-        let result = Four().jump(arr)
+        let arr = [1, 2, 3]
+        let result = Four().permute(arr)
         print(result)
     }
 

@@ -203,4 +203,33 @@ class Four: NSObject {
         }
         return steps
     }
+    
+    // 46. 全排列
+    func permute(_ nums: [Int]) -> [[Int]] {
+        
+        func backtrack(_ n: Int, _ output: inout [Int], _ res: inout [[Int]], _ first: Int) {
+            // 所有数都填完了
+            if first == n {
+                res.append(output)
+            }
+            for i in first..<n {
+                // 动态维护数组
+                output.swapAt(first, i)
+                // 继续递归填下一个数
+                backtrack(n, &output, &res, first + 1)
+                // 撤销操作
+                output.swapAt(first, i)
+            }
+        }
+        
+        var res = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var output = [Int]()
+        for num in nums {
+            output.append(num)
+        }
+        
+        let n = nums.count
+        backtrack(n, &output, &res, 0)
+        return res
+    }
 }
