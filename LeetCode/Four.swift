@@ -232,4 +232,32 @@ class Four: NSObject {
         backtrack(n, &output, &res, 0)
         return res
     }
+    
+    // 47. 全排列 II
+    func permuteUnique(_ nums: [Int]) -> [[Int]] {
+        var vis = [Bool](repeating: false, count: nums.count)
+        
+        func backtrack(_ nums: [Int], _ ans: inout [[Int]], _ idx: Int, _ perm: inout [Int]) {
+            if idx == nums.count {
+                ans.append(perm)
+                return
+            }
+            for i in 0..<nums.count {
+                if vis[i] || (i > 0 && nums[i] == nums[i - 1] && !vis[i - 1]) {
+                    continue
+                }
+                perm.append(nums[i])
+                vis[i] = true
+                backtrack(nums, &ans, idx + 1, &perm)
+                vis[i] = false
+                perm.remove(at: idx)
+            }
+        }
+        
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var perm = [Int](repeating: 0, count: 0)
+        let numsSort = nums.sorted()
+        backtrack(numsSort, &ans, 0, &perm)
+        return ans
+    }
 }
