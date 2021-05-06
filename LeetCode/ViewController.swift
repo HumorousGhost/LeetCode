@@ -13,11 +13,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var arr = [[1,2,3],[4,5,6],[7,8,9]]
-//        let result = Four().permuteUnique(arr)
-        Four().rotate(&arr)
-        print(arr)
-//        print(result)
+        var arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
+        let result = Four().groupAnagrams(arr)
+        print(result)
     }
 
     override var representedObject: Any? {

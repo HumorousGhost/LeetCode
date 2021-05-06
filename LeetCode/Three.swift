@@ -8,6 +8,59 @@
 import Cocoa
 
 class Three: NSObject {
+    // 30. 串联所有单词的子串
+    func findSubstring(_ s: String, _ words: [String]) -> [Int] {
+        // 哈希表+滑动窗口
+        // - 哈希表统计words中每个单词的出现频率
+        // - 滑动窗口为words所有单词组成的子串大小
+        // - 统计滑动窗口中单词个数与哈希表中是否相同
+        var list = [Int]()
+        if s.count == 0 || words.count == 0 {
+            return list
+        }
+        let len = s.count
+        let everyWordLen = words[0].count
+        let wordLenCnt = words.count * everyWordLen;
+        
+        if len < wordLenCnt {
+            return list
+        }
+        
+        var wordFreqCnt = [String : Int]()
+        for word in words {
+            wordFreqCnt[word] = wordFreqCnt[word] != nil ? wordFreqCnt[word]! + 1 : 1
+        }
+        
+        var i = 0
+        while i + wordLenCnt <= len {
+            // 统计窗口为wordLenCnt内的单词频率，与wordFreqCnt相比较，相等的话 下标i为要求的结果
+            var tmpFreqCnt = [String : Int]()
+            
+            var j = i
+            while j < i + wordLenCnt {
+                let tmpString = (s as NSString).substring(with: NSRange.init(location: j, length: everyWordLen))
+                tmpFreqCnt[tmpString] = tmpFreqCnt[tmpString] != nil ? tmpFreqCnt[tmpString]! + 1 : 1
+                j += everyWordLen
+            }
+            
+            // 比较tmpFreqCnt 和wordFreqCnt
+            var bEqual = true
+            for key in tmpFreqCnt.keys {
+                if wordFreqCnt[key] != tmpFreqCnt[key] {
+                    bEqual = false
+                    break
+                }
+            }
+            if bEqual {
+                print(i)
+                list.append(i)
+            }
+            i += 1
+        }
+        
+        return list
+    }
+    
     // 31. 下一个排列
     func nextPermutation(_ nums: inout [Int]) {
         func swap(nums: inout [Int], i: Int, j: Int) {
@@ -300,46 +353,6 @@ class Three: NSObject {
         var ans = [[Int]].init(repeating: [Int].init(repeating: 0, count: 0), count: 0)
         var combine = [Int](repeating: 0, count: 0)
         dfs(candidates: candidates, target: target, ans: &ans, combine: &combine, idx: 0)
-        return ans
-    }
-    
-    // 40. 组合总和II
-    func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
-        var freq = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
-        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
-        var sequence = [Int](repeating: 0, count: 0)
-        
-        func dfs(pos: Int, rest: Int) {
-            if rest == 0 {
-                ans.append(sequence)
-                return
-            }
-            if pos == freq.count || rest < freq[pos][0] {
-                return
-            }
-            
-            dfs(pos: pos + 1, rest: rest)
-            
-            let most = min(rest / freq[pos][0], freq[pos][1])
-            for i in 1...most {
-                sequence.append(freq[pos][0])
-                dfs(pos: pos + 1, rest: rest - i * freq[pos][0])
-            }
-            for _ in 1...most {
-                sequence.removeLast()
-            }
-        }
-        
-        let candidateSorted = candidates.sorted()
-        for num in candidateSorted {
-            let size = freq.count
-            if num != freq.last?.first {
-                freq.append([num, 1])
-            } else {
-                freq[size - 1][1] += 1
-            }
-        }
-        dfs(pos: 0, rest: target)
         return ans
     }
 }

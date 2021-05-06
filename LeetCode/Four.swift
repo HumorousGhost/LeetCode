@@ -8,6 +8,46 @@
 import Cocoa
 
 class Four: NSObject {
+    // 40. 组合总和II
+    func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
+        var freq = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var sequence = [Int](repeating: 0, count: 0)
+        
+        func dfs(pos: Int, rest: Int) {
+            if rest == 0 {
+                ans.append(sequence)
+                return
+            }
+            if pos == freq.count || rest < freq[pos][0] {
+                return
+            }
+            
+            dfs(pos: pos + 1, rest: rest)
+            
+            let most = min(rest / freq[pos][0], freq[pos][1])
+            for i in 1...most {
+                sequence.append(freq[pos][0])
+                dfs(pos: pos + 1, rest: rest - i * freq[pos][0])
+            }
+            for _ in 1...most {
+                sequence.removeLast()
+            }
+        }
+        
+        let candidateSorted = candidates.sorted()
+        for num in candidateSorted {
+            let size = freq.count
+            if num != freq.last?.first {
+                freq.append([num, 1])
+            } else {
+                freq[size - 1][1] += 1
+            }
+        }
+        dfs(pos: 0, rest: target)
+        return ans
+    }
+    
     // 41. 缺失的第一个正数
     func firstMissingPositive(_ nums: [Int]) -> Int {
         var numsArray = nums
@@ -273,5 +313,23 @@ class Four: NSObject {
                 matrix[j][n - i - 1] = temp;
             }
         }
+    }
+    
+    // 49. 字母异位词分组
+    func groupAnagrams(_ strs: [String]) -> [[String]] {
+        var map = [String: [String]]()
+        for str in strs {
+            var array = str.map{ $0 }
+            array.sort()
+            let key = String(array)
+            var list = map[key] != nil ? map[key] : [String]()
+            list?.append(str)
+            map[key] = list
+        }
+        var array = [[String]]()
+        for value in map.values {
+            array.append(value)
+        }
+        return array
     }
 }

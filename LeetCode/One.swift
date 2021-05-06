@@ -8,6 +8,43 @@
 import Cocoa
 
 class One: NSObject {
+    // 10. 正则表达式匹配
+    func isMatch(_ s: String, _ p: String) -> Bool {
+        if s.count > 20 || p.count > 30 {
+            return false;
+        }
+        
+        func matches(_ s1: String, _ p1: String) -> Bool {
+            if p1 == "." {
+                return true;
+            }
+            return s1 == p1;
+        }
+        
+        let m = s.count;
+        let n = p.count;
+        
+        var f = [[Bool]](repeating: [Bool](repeating: false, count: n + 1), count: m + 1);
+        f[0][0] = true;
+        let sChars = s.map{String($0)};
+        let pChars = p.map{String($0)};
+        for i in 0..<sChars.count + 1 {
+            for j in 1..<pChars.count + 1 {
+                if pChars[j - 1] == "*" {
+                    f[i][j] = f[i][j - 2];
+                    if i != 0 && matches(sChars[i - 1], pChars[j - 2]) {
+                        f[i][j] = f[i][j] || f[i - 1][j];
+                    }
+                } else {
+                    if i != 0 && matches(sChars[i - 1], pChars[j - 1]) {
+                        f[i][j] = f[i - 1][j - 1];
+                    }
+                }
+            }
+        }
+        return f[m][n];
+    }
+    
     // 11. 盛最多水的容器
     func maxArea(_ height: [Int]) -> Int {
         var l = 0;
@@ -297,29 +334,5 @@ class One: NSObject {
         }
         second.next = second.next?.next;
         return dummy.next;
-    }
-    
-    // 20. 有效的括号
-    func isValid(_ s: String) -> Bool {
-        
-        func isCorrespond(_ s1: String, _ s2: String) -> Bool {
-            if s1 == "(" && s2 == ")" || s1 == "[" && s2 == "]" || s1 == "{" && s2 == "}" {
-                return true;
-            }
-            return false;
-        }
-        
-        var stack = [String]();
-        let sArray = s.map{String($0)};
-        for (_, value) in sArray.enumerated() {
-            if stack.count == 0 {
-                stack.append(value);
-            } else if (isCorrespond(stack.last ?? "", value)) {
-                stack.removeLast();
-            } else {
-                stack.append(value);
-            }
-        }
-        return stack.count == 0;
     }
 }
