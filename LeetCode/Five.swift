@@ -35,4 +35,56 @@ class Five: NSObject {
         var N = n
         return N >= 0 ? quickMul(x, &N) : 1.0 / quickMul(x, &N)
     }
+    
+    // 51. N 皇后
+    func solveNQueens(_ n: Int) -> [[String]] {
+        
+        func generateBoard(_ queens: [Int], _ n: Int) -> [String] {
+            var board = [String].init(repeating: "", count: 0)
+            for i in 0..<n {
+                var row = [String](repeating: ".", count: n)
+                row[queens[i]] = "Q"
+                board.append(row.joined())
+            }
+            return board
+        }
+        
+        func backtrack(_ solutions: inout [[String]], _ queens: inout [Int], _ n: Int, _ row: Int, _ columns: inout [Int], _ diagonals1: inout [Int], _ diagonals2: inout [Int]) {
+            if row == n {
+                let board = generateBoard(queens, n)
+                solutions.append(board)
+            } else {
+                for i in 0..<n {
+                    if columns.contains(i) {
+                        continue
+                    }
+                    let diagonal1 = row - i
+                    if diagonals1.contains(diagonal1) {
+                        continue
+                    }
+                    let diagonal2 = row + i
+                    if diagonals2.contains(diagonal2) {
+                        continue
+                    }
+                    queens[row] = i
+                    columns.append(i)
+                    diagonals1.append(diagonal1)
+                    diagonals2.append(diagonal2)
+                    backtrack(&solutions, &queens, n, row + 1, &columns, &diagonals1, &diagonals2)
+                    queens[row] = -1
+                    columns.removeLast()
+                    diagonals1.removeLast()
+                    diagonals2.removeLast()
+                }
+            }
+        }
+        
+        var solutions = [[String]].init(repeating: [String].init(repeating: "", count: 0), count: 0)
+        var queens = [Int].init(repeating: -1, count: n)
+        var columns = [Int].init(repeating: 0, count: 0)
+        var diagonals1 = [Int].init(repeating: -1, count: 0)
+        var diagonals2 = [Int].init(repeating: -1, count: 0)
+        backtrack(&solutions, &queens, n, 0, &columns, &diagonals1, &diagonals2)
+        return solutions
+    }
 }
