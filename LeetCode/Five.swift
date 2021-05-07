@@ -125,4 +125,14 @@ class Five: NSObject {
         var diagonals2 = [Int].init(repeating: -1, count: 0)
         return backtrack(n, 0, &columns, &diagonals1, &diagonals2)
     }
+    
+    // 53. 最大子序和
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var pre = 0, maxValue = nums.first!
+        for x in nums {
+            pre = max(pre + x, x)
+            maxValue = max(maxValue, pre)
+        }
+        return maxValue
+    }
 }

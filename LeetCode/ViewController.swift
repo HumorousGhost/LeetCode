@@ -13,8 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
-        let result = Five().totalNQueens(4)
+        var arr = [-2, -1]
+        let result = Five().maxSubArray(arr)
         print(result)
     }
 
