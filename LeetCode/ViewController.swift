@@ -14,7 +14,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
-        let result = Five().solveNQueens(4)
+        let result = Five().totalNQueens(4)
         print(result)
     }
 

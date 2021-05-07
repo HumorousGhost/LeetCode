@@ -87,4 +87,42 @@ class Five: NSObject {
         backtrack(&solutions, &queens, n, 0, &columns, &diagonals1, &diagonals2)
         return solutions
     }
+    
+    // 52. N 皇后 II
+    func totalNQueens(_ n: Int) -> Int {
+        
+        func backtrack(_ n: Int, _ row: Int, _ columns: inout [Int], _ diagonals1: inout [Int], _ diagonals2: inout [Int]) -> Int {
+            if row == n {
+                return 1
+            } else {
+                var count = 0
+                for i in 0..<n {
+                    if columns.contains(i) {
+                        continue
+                    }
+                    let diagonal1 = row - i
+                    if diagonals1.contains(diagonal1) {
+                        continue
+                    }
+                    let diagonal2 = row + i
+                    if diagonals2.contains(diagonal2) {
+                        continue
+                    }
+                    columns.append(i)
+                    diagonals1.append(diagonal1)
+                    diagonals2.append(diagonal2)
+                    count += backtrack(n, row + 1, &columns, &diagonals1, &diagonals2)
+                    columns.removeLast()
+                    diagonals1.removeLast()
+                    diagonals2.removeLast()
+                }
+                return count
+            }
+        }
+        
+        var columns = [Int].init(repeating: 0, count: 0)
+        var diagonals1 = [Int].init(repeating: -1, count: 0)
+        var diagonals2 = [Int].init(repeating: -1, count: 0)
+        return backtrack(n, 0, &columns, &diagonals1, &diagonals2)
+    }
 }
