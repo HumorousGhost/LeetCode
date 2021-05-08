@@ -160,4 +160,19 @@ class Five: NSObject {
         }
         return order
     }
+    
+    // 55. 跳跃游戏
+    func canJump(_ nums: [Int]) -> Bool {
+        let n = nums.count
+        var rightmost = 0
+        for i in 0..<n {
+            if i <= rightmost {
+                rightmost = max(rightmost, i + nums[i])
+                if rightmost >= n - 1 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }
