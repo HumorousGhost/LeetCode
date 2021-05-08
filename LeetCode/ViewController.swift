@@ -13,8 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        let result = Five().spiralOrder(arr)
+        var arr = [[1,3],[2,6],[8,10],[15,18]]
+        let result = Five().merge(arr)
         print(result)
     }
 
