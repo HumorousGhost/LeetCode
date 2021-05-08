@@ -13,8 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var arr = [[1,3],[2,6],[8,10],[15,18]]
-        let result = Five().merge(arr)
+        var arr = [[1,3],[6,9]]
+        let result = Five().insert(arr, [2, 5])
         print(result)
     }
 

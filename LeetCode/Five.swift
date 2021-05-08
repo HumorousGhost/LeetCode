@@ -196,4 +196,27 @@ class Five: NSObject {
         }
         return merged
     }
+    
+    // 57. 插入区间
+    func insert(_ intervals: [[Int]], _ newInterval: [Int]) -> [[Int]] {
+        if intervals.count == 0 {
+            return [newInterval]
+        }
+        var intervalArray = intervals
+        intervalArray.append(newInterval)
+        intervalArray.sort { interval1, interval2 in
+            return interval1[0] < interval2[0]
+        }
+        var merged = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        for i in 0..<intervalArray.count {
+            let L = intervalArray[i][0]
+            let R = intervalArray[i][1]
+            if merged.count == 0 || merged.last![1] < L {
+                merged.append([L, R])
+            } else {
+                merged[merged.count - 1][1] = max(merged.last![1], R)
+            }
+        }
+        return merged
+    }
 }
