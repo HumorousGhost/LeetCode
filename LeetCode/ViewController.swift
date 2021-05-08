@@ -13,8 +13,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var arr = [-2, -1]
-        let result = Five().maxSubArray(arr)
+        var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        let result = Five().spiralOrder(arr)
         print(result)
     }
 

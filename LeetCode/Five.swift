@@ -135,4 +135,29 @@ class Five: NSObject {
         }
         return maxValue
     }
+    
+    // 54. 螺旋矩阵
+    func spiralOrder(_ matrix: [[Int]]) -> [Int] {
+        var order = [Int](repeating: 0, count: 0)
+        if matrix.count == 0 || matrix.first?.count == 0 {
+            return order
+        }
+        let rows = matrix.count, columns = matrix.first?.count ?? 0
+        var visited = [[Bool]](repeating: [Bool](repeating: false, count: columns), count: rows)
+        let total = rows * columns
+        var row = 0, column = 0
+        let directions = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+        var directionIndex = 0
+        for _ in 0..<total {
+            order.append(matrix[row][column])
+            visited[row][column] = true
+            let nextRow = row + directions[directionIndex][0], nextColumn = column + directions[directionIndex][1]
+            if nextRow < 0 || nextRow >= rows || nextColumn < 0 || nextColumn >= columns || visited[nextRow][nextColumn] {
+                directionIndex = (directionIndex + 1) % 4
+            }
+            row += directions[directionIndex][0]
+            column += directions[directionIndex][1]
+        }
+        return order
+    }
 }
