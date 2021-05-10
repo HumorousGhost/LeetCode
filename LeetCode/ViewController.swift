@@ -14,7 +14,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Five().generateMatrix(3)
+        let result = Six().getPermutation(4, 9)
         print(result)
     }
 

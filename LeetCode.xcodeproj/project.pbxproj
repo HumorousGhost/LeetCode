@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98118DBE26491BB3001F12FF /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9DF254BB37A007B5639 /* AppDelegate.swift */; };
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
 		983CB9E4254BB37D007B5639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E3254BB37D007B5639 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98118DBD26491BB3001F12FF /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		983CB9DC254BB37A007B5639 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9DF254BB37A007B5639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983CB9E1254BB37A007B5639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				98D0F04826315B7300D51735 /* Three.swift */,
 				987E03C32636B0F000962029 /* Four.swift */,
 				98B7FA0C2643C5A00025D633 /* Five.swift */,
+				98118DBD26491BB3001F12FF /* Six.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
 				983CB9E8254BB37D007B5639 /* Info.plist */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98118DBE26491BB3001F12FF /* Six.swift in Sources */,
 				983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */,
 				98D0F0322631257D00D51735 /* Two.swift in Sources */,
 				98D0F03C2631589100D51735 /* ListNode.swift in Sources */,
