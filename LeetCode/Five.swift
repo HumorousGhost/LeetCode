@@ -238,4 +238,26 @@ class Five: NSObject {
         }
         return string.count
     }
+    
+    // 59. 螺旋矩阵 II
+    func generateMatrix(_ n: Int) -> [[Int]] {
+        let maxNum = n * n
+        var curNum = 1
+        var matrix = [[Int]](repeating: [Int](repeating: 0, count: n), count: n)
+        var row = 0, column = 0
+        let directions = [[0, 1], [1, 0], [0, -1], [-1, 0]] // 右下左上
+        var directionIndex = 0
+        while curNum <= maxNum {
+            matrix[row][column] = curNum
+            curNum += 1
+            let nextRow = row + directions[directionIndex][0]
+            let nextColumn = column + directions[directionIndex][1]
+            if nextRow < 0 || nextRow >= n || nextColumn < 0 || nextColumn >= n || matrix[nextRow][nextColumn] != 0 {
+                directionIndex = (directionIndex + 1) % 4 // 顺时针旋转至下一个方向
+            }
+            row += directions[directionIndex][0]
+            column += directions[directionIndex][1]
+        }
+        return matrix
+    }
 }
