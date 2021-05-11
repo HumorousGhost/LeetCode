@@ -12,6 +12,7 @@ class Six: NSObject {
     func getPermutation(_ n: Int, _ k: Int) -> String {
         var factorial = [Int](repeating: 0, count: n)
         factorial[0] = 1
+        // n!
         for i in 1..<n {
             factorial[i] = factorial[i - 1] * i
         }
@@ -31,5 +32,35 @@ class Six: NSObject {
             kValue %= factorial[n - i]
         }
         return ans
+    }
+    
+    // 61. 旋转链表
+    func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
+        if k == 0 || head == nil || head?.next == nil {
+            return head
+        }
+        var n = 1
+        var iter = head
+        // 获取链表长度
+        while iter?.next != nil {
+            iter = iter?.next
+            n += 1
+        }
+        var add = n - k % n
+        // 判断旋转个数与链表长度是否相同
+        if add == n {
+            return head
+        }
+        // 形成闭环
+        iter?.next = head
+        // 获取到应为旋转后的首个节点
+        while add > 0 {
+            add -= 1
+            iter = iter?.next
+        }
+        // 解除闭环
+        let ret = iter?.next
+        iter?.next = nil
+        return ret
     }
 }
