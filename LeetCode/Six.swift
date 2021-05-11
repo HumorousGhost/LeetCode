@@ -63,4 +63,16 @@ class Six: NSObject {
         iter?.next = nil
         return ret
     }
+    
+    // 62. 不同路径
+    func uniquePaths(_ m: Int, _ n: Int) -> Int {
+        var ans = 1
+        var x = n, y = 1
+        while y < m {
+            ans = ans * x / y
+            x += 1
+            y += 1
+        }
+        return ans
+    }
 }

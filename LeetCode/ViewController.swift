@@ -14,7 +14,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().getPermutation(4, 9)
+        let result = Six().uniquePaths(3, 7)
         print(result)
     }
 
