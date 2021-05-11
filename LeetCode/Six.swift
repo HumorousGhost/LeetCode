@@ -75,4 +75,45 @@ class Six: NSObject {
         }
         return ans
     }
+    
+    // 63. 不同路径 II
+    func uniquePathsWithObstacles(_ obstacleGrid: [[Int]]) -> Int {
+//        var steps = [[Int]](repeating: [Int](repeating: 0, count: obstacleGrid[0].count), count: obstacleGrid.count)
+//        // 初始化第一列，只要碰到一个 1 ，那么后边都无法走到
+//        for i in 0..<obstacleGrid.count {
+//            if obstacleGrid[i][0] == 1 {
+//                break
+//            }
+//            steps[i][0] = 1
+//        }
+//        // 初始化第一行，只要碰到一个 1 ，那么后边都无法走到
+//        for j in 0..<obstacleGrid[0].count {
+//            if obstacleGrid[0][j] == 1 {
+//                break
+//            }
+//            steps[0][j] = 1
+//        }
+//        // 在没有障碍物的情况下，到达某一个点只能从左边或者上边
+//        for i in 1..<obstacleGrid.count {
+//            for j in 1..<obstacleGrid[0].count {
+//                steps[i][j] = obstacleGrid[i][j] == 1 ? 0 : steps[i - 1][j] + steps[i][j - 1]
+//            }
+//        }
+//        return steps[obstacleGrid.count - 1][obstacleGrid[0].count - 1]
+        let n = obstacleGrid.count, m = obstacleGrid[0].count
+        var f = [Int](repeating: 0, count: m)
+        f[0] = obstacleGrid[0][0] == 0 ? 1 : 0
+        for i in 0..<n {
+            for j in 0..<m {
+                if obstacleGrid[i][j] == 1 {
+                    f[j] = 0
+                    continue
+                }
+                if j - 1 >= 0 && obstacleGrid[i][j - 1] == 0 {
+                    f[j] += f[j - 1]
+                }
+            }
+        }
+        return f[m - 1]
+    }
 }
