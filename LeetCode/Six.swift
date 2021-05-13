@@ -220,4 +220,20 @@ class Six: NSObject {
         }
         return state == .Integer || state == .Point || state == .Fraction || state == .ExpNumber || state == .End
     }
+    
+    // 66. 加一
+    func plusOne(_ digits: [Int]) -> [Int] {
+        var value = digits
+        let count = value.count
+        for i in 0..<count {
+            let index = count - 1 - i
+            value[index] += 1
+            value[index] %= 10
+            if value[index] != 0 {
+                return value
+            }
+        }
+        value.insert(1, at: 0)
+        return value
+    }
 }

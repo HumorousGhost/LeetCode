@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().isNumber(".1")
+        let result = Six().plusOne([0])
         print(result)
     }
 
