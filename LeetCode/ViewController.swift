@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().plusOne([0])
+        let result = Six().addBinary("11", "1")
         print(result)
     }
 

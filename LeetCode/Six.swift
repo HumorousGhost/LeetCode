@@ -236,4 +236,28 @@ class Six: NSObject {
         value.insert(1, at: 0)
         return value
     }
+    
+    // 67. 二进制求和
+    func addBinary(_ a: String, _ b: String) -> String {
+        var ans = ""
+        
+        let length = max(a.count, b.count)
+        let aArray = a.map { String($0) }
+        let bArray = b.map { String($0) }
+        var carry = 0
+        
+        for i in 0..<length {
+            carry += i < aArray.count ? Int(aArray[aArray.count - 1 - i])! : 0
+            carry += i < bArray.count ? Int(bArray[bArray.count - 1 - i])! : 0
+            ans.append(String(carry % 2))
+            carry /= 2
+        }
+        
+        if carry > 0 {
+            ans.append("1")
+        }
+        // 翻转字符串
+        let str = ans.reversed()
+        return String(str)
+    }
 }
