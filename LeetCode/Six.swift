@@ -260,4 +260,71 @@ class Six: NSObject {
         let str = ans.reversed()
         return String(str)
     }
+    
+    // 68. 文本左右对齐
+    func fullJustify(_ words: [String], _ maxWidth: Int) -> [String] {
+        var index = [Int](repeating: 0, count: 0)
+        var ans = [String](repeating: "", count: 0)
+        var str = ""
+        
+        func subString(_ str: inout String, _ words: [String], _ i: Int) {
+            if str.count + words[i].count < maxWidth {
+                // 如果当前单词加入到当前的行中时，没有超过要求，直接放进来好了
+                str.append(words[i]) // 拼接当前行内容
+                index.append(str.count) // 然后记下来当前空格位置
+                str.append(" ")
+            } else if str.count + words[i].count == maxWidth {
+                // 如果正好碰到了边界，那么就加进来当前单词后，放到最终的返回值中
+                str.append(words[i])
+                ans.append(str)
+                // 然后清空当前的缓冲内容
+                str.removeAll()
+                index.removeAll()
+            } else {
+                // 如果添加了当前单词后，超出了容量限制，就进行空格调整
+                // 首先记录剩余多少空格
+                var space = maxWidth - str.count
+                // 然后把最后一个空格去掉，把所有的空格放到中间去
+                if index.count > 1 {
+                    str.removeLast()
+                    index.removeLast()
+                    space += 1
+                }
+                // 计算每一个单词中间的空格基本个数（every），以及额外的空格（remain）
+                var every = 0, remain = 0
+                if !index.isEmpty {
+                    every = space / index.count
+                    remain = space % index.count
+                }
+                // 从后往前进行空格插入，这样方便计算下标在哪里
+                for j in 0...index.count - 1 {
+                    let jIndex = index.count - 1 - j
+                    let cs = [String](repeating: " ", count: every + (jIndex < remain ? 1 : 0))
+                    let mutableString = NSMutableString.init(string: str)
+                    mutableString.insert(cs.joined(), at: index[jIndex])
+                    str = mutableString as String
+                }
+                // 然后放到返回值中
+                ans.append(str)
+                str.removeAll()
+                index.removeAll()
+                subString(&str, words, i)
+            }
+        }
+        
+        // 把单词挨个放到结果中去
+        for i in 0..<words.count {
+            subString(&str, words, i)
+        }
+        
+        // 对剩余的单词进行空格拼接
+        if str.count > 0 {
+            if str.count < maxWidth {
+                let cs = [String](repeating: " ", count: maxWidth - str.count)
+                str += cs.joined()
+            }
+            ans.append(str)
+        }
+        return ans
+    }
 }

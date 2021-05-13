@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().addBinary("11", "1")
+        let result = Six().fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16)
         print(result)
     }
 
