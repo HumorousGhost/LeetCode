@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]])
+        let result = Six().isNumber(".1")
         print(result)
     }
 

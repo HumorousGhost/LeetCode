@@ -139,4 +139,85 @@ class Six: NSObject {
         return dp[rows - 1][columns - 1]
     }
     
+    // 65. 有效数字
+    func isNumber(_ s: String) -> Bool {
+        
+        enum State {
+            case Initial
+            case IntSign
+            case Integer
+            case Point
+            case PointWithoutInt
+            case Fraction
+            case Exp
+            case ExpSign
+            case ExpNumber
+            case End
+        }
+        
+        enum CharType {
+            case Number
+            case Exp
+            case Point
+            case Sign
+            case Illegal
+        }
+        
+        func toCharType(_ ch: String) -> CharType {
+            if ch >= "0" && ch <= "9" {
+                return .Number
+            } else if ch == "e" || ch == "E" {
+                return .Exp
+            } else if ch == "." {
+                return .Point
+            } else if ch == "+" || ch == "-" {
+                return .Sign
+            } else {
+                return .Illegal
+            }
+        }
+        
+        var transfer = [State: [CharType : State]]()
+        
+        let intialMap = [CharType.Number: State.Integer, .Point: .PointWithoutInt, .Sign: .IntSign]
+        transfer[.Initial] = intialMap
+        
+        let intSignMap = [CharType.Number: State.Integer, .Point: .PointWithoutInt]
+        transfer[.IntSign] = intSignMap
+        
+        let integerMap = [CharType.Number: State.Integer, .Exp: .Exp, .Point: .Point]
+        transfer[.Integer] = integerMap
+        
+        let pointMap = [CharType.Number : State.Fraction, .Exp: .Exp]
+        transfer[.Point] = pointMap
+        
+        let pointWithoutIntMap = [CharType.Number: State.Fraction]
+        transfer[.PointWithoutInt] = pointWithoutIntMap
+        
+        let fractionMap = [CharType.Number: State.Fraction, .Exp: .Exp]
+        transfer[.Fraction] = fractionMap
+        
+        let expMap = [CharType.Number: State.ExpNumber, .Sign: .ExpSign]
+        transfer[.Exp] = expMap
+        
+        let expSignMap = [CharType.Number: State.ExpNumber]
+        transfer[.ExpSign] = expSignMap
+        
+        let expNumberMap = [CharType.Number: State.ExpNumber]
+        transfer[.ExpNumber] = expNumberMap
+        
+        let sArray = s.map { $0 }
+        
+        var state = State.Initial
+        
+        for char in sArray {
+            let type = toCharType(String(char))
+            if transfer[state]?[type] == nil {
+                return false
+            } else {
+                state = transfer[state]![type]!
+            }
+        }
+        return state == .Integer || state == .Point || state == .Fraction || state == .ExpNumber || state == .End
+    }
 }
