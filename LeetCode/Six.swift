@@ -327,4 +327,19 @@ class Six: NSObject {
         }
         return ans
     }
+    
+    // 69. x 的平方根
+    func mySqrt(_ x: Int) -> Int {
+        var l = 0, r = x / 2 + 1, ans = -1
+        while l <= r {
+            let mid = (l + r) / 2
+            if mid * mid <= x {
+                ans = mid
+                l = mid + 1
+            } else {
+                r = mid - 1
+            }
+        }
+        return ans
+    }
 }
