@@ -111,4 +111,39 @@ class Seven: NSObject {
             }
         }
     }
+    
+    // 74. 搜索二维矩阵
+    func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+        let length = matrix.count
+        var index = -1
+        for i in 0..<length {
+            let value = matrix[i][0]
+            if value == target {
+                return true
+            } else if value < target {
+                index = i
+            } else {
+                break
+            }
+        }
+        var columns = [Int]()
+        if index > -1 {
+            columns = matrix[index]
+        }
+        if columns.count == 0 {
+            return false
+        }
+        var left = 0, right = columns.count - 1
+        while left <= right {
+            let mid = (left + right) / 2
+            if columns[mid] == target {
+                return true
+            } else if columns[mid] < target {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+        return false
+    }
 }

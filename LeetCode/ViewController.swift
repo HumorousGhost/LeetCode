@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Seven().minDistance("horse", "ros")
+        let result = Seven().searchMatrix([[1, 2]], 2)
         print(result)
     }
 
