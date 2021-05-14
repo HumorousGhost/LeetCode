@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Six().mySqrt(8)
+        let result = Seven().climbStairs(2)
         print(result)
     }
 
