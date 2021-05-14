@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Seven().climbStairs(2)
+        let result = Seven().simplifyPath("/a/./b/../../c/")
         print(result)
     }
 
