@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = "a  "
-        let result = Seven().simplifyPath("/a/./b/../../c/")
+        let result = Seven().minDistance("horse", "ros")
         print(result)
     }
 
