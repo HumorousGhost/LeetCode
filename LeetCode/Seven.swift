@@ -88,4 +88,27 @@ class Seven: NSObject {
         }
         return D[n][m]
     }
+    
+    // 73. 矩阵置零
+    func setZeroes(_ matrix: inout [[Int]]) {
+        let m = matrix.count
+        let n = matrix[0].count
+        var row = [Bool](repeating: false, count: m)
+        var column = [Bool](repeating: false, count: n)
+        for i in 0..<m {
+            for j in 0..<n {
+                if matrix[i][j] == 0 {
+                    row[i] = true
+                    column[j] = true
+                }
+            }
+        }
+        for i in 0..<m {
+            for j in 0..<n {
+                if row[i] || column[j] {
+                    matrix[i][j] = 0
+                }
+            }
+        }
+    }
 }
