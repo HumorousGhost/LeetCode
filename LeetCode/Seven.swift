@@ -169,4 +169,53 @@ class Seven: NSObject {
             }
         }
     }
+    
+    // 76. 最小覆盖子串
+    func minWindow(_ s: String, _ t: String) -> String {
+        
+        var ori = [String : Int]()
+        var cnt = [String : Int]()
+        
+        func check() -> Bool {
+            for key in ori.keys {
+                let val = ori[key]!
+                if cnt[key] ?? 0 < val {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        for char in (t.map { String($0) }) {
+            ori[char] = ori[char] != nil ? ori[char]! + 1 : 1
+        }
+        
+        var l = 0, r = -1
+        var len = Int.max
+        var ansL = -1, ansR = -1
+        
+        let sArray = s.map { String($0) }
+        let sLen = sArray.count
+        while r < sLen {
+            r += 1
+            
+            if r < sLen && ori[sArray[r]] ?? 0 > 0 {
+                cnt[sArray[r]] = cnt[sArray[r]] != nil ? cnt[sArray[r]]! + 1 : 1
+            }
+            
+            while check() && l <= r {
+                if r - l + 1 < len {
+                    len = r - l + 1
+                    ansL = l
+                    ansR = l + len
+                }
+                if ori[sArray[l]] ?? 0 > 0 {
+                    cnt[sArray[l]] = cnt[sArray[l]]! - 1
+                }
+                l += 1
+            }
+        }
+        
+        return ansL == -1 ? "" : (s as NSString).substring(with: _NSRange.init(location: ansL, length: ansR - ansL))
+    }
 }

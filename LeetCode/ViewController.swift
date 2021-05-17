@@ -15,9 +15,9 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = [2,0,2,1,1,0]
-        let result = Seven().sortColors(&arr)
+        let result = Seven().minWindow("ADOBECODEBANC", "ABC")
         print(result)
-        print(arr)
+//        print(arr)
     }
 
     override var representedObject: Any? {
