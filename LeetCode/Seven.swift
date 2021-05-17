@@ -146,4 +146,27 @@ class Seven: NSObject {
         }
         return false
     }
+    
+    // 75. 颜色分类
+    func sortColors(_ nums: inout [Int]) {
+        let length = nums.count
+        var left = 0, right = length - 1
+        for i in 0...right {
+            while i <= right && nums[i] == 2 {
+                let temp = nums[i]
+                nums[i] = nums[right]
+                nums[right] = temp
+                right -= 1
+            }
+            if nums[i] == 0 {
+                let temp = nums[i]
+                nums[i] = nums[left]
+                nums[left] = temp
+                left += 1
+            }
+            if i == right {
+                break
+            }
+        }
+    }
 }
