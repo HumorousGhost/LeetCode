@@ -218,4 +218,31 @@ class Seven: NSObject {
         
         return ansL == -1 ? "" : (s as NSString).substring(with: _NSRange.init(location: ansL, length: ansR - ansL))
     }
+    
+    // 77. 组合
+    func combine(_ n: Int, _ k: Int) -> [[Int]] {
+        
+        var temp = [Int](repeating: 0, count: 0)
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+    
+        func dfs(cur: Int, n: Int, k: Int) {
+            // 剪枝：temp 长度加上区间 [cur, n] 的长度小于 k，不可能构造出长度为 k 的 temp
+            if (temp.count + (n - cur + 1)) < k {
+                return
+            }
+            // 记录合法的答案
+            if temp.count == k {
+                ans.append(temp)
+                return
+            }
+            // 考虑选择当前位置
+            temp.append(cur)
+            dfs(cur: cur + 1, n: n, k: k)
+            temp.removeLast()
+            // 考虑不选择当前位置
+            dfs(cur: cur + 1, n: n, k: k)
+        }
+        dfs(cur: 1, n: n, k: k)
+        return ans
+    }
 }

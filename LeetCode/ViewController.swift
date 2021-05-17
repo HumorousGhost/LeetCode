@@ -15,7 +15,7 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = [2,0,2,1,1,0]
-        let result = Seven().minWindow("ADOBECODEBANC", "ABC")
+        let result = Seven().combine(4, 2)
         print(result)
 //        print(arr)
     }
