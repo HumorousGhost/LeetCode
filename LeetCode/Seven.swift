@@ -264,4 +264,48 @@ class Seven: NSObject {
         }
         return ans
     }
+    
+    // 79. 单词搜索
+    func exist(_ board: [[Character]], _ word: String) -> Bool {
+        
+        let h = board.count, w = board[0].count
+        var visited = [[Bool]](repeating: [Bool](repeating: false, count: w), count: h)
+        let wordArray = word.map { Character(String($0)) }
+        let directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        
+        func check(_ i: Int, _ j: Int, _ k: Int) -> Bool {
+            if board[i][j] != wordArray[k] {
+                return false
+            } else if k == wordArray.count - 1 {
+                return true
+            }
+            
+            visited[i][j] = true
+            var result = false
+            for dir in directions {
+                let newi = i + dir[0], newj = j + dir[1]
+                if newi >= 0 && newi < h && newj >= 0 && newj < w {
+                    if !visited[newi][newj] {
+                        let flag = check(newi, newj, k + 1)
+                        if flag {
+                            result = true
+                            break
+                        }
+                    }
+                }
+            }
+            visited[i][j] = false
+            return result
+        }
+        
+        for i in 0..<h {
+            for j in 0..<w {
+                let flag = check(i, j, 0)
+                if flag {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }
