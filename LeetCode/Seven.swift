@@ -245,4 +245,23 @@ class Seven: NSObject {
         dfs(cur: 1, n: n, k: k)
         return ans
     }
+    
+    // 78. 子集
+    func subsets(_ nums: [Int]) -> [[Int]] {
+        
+        var t = [Int](repeating: 0, count: 0)
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        
+        let n = nums.count
+        for mask in 0..<(1 << n) {
+            t.removeAll()
+            for i in 0..<n {
+                if (mask & (1 << i)) != 0 {
+                    t.append(nums[i])
+                }
+            }
+            ans.append(t)
+        }
+        return ans
+    }
 }
