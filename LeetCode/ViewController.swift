@@ -15,7 +15,8 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         var arr = [1,1,1,2,2,3]
-        let result = Eight().search([2,5,6,0,0,1,2], 1)
+        let list = ListNode.init(1, ListNode.init(2, ListNode.init(3, ListNode.init(3, ListNode.init(4, ListNode.init(4, ListNode.init(5, nil)))))))
+        let result = Eight().deleteDuplicates(list)
         print(result)
 //        print(arr)
     }
