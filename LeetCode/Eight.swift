@@ -136,4 +136,55 @@ class Eight: NSObject {
         }
         return ans
     }
+    
+    // 85. 最大矩形
+    func maximalRectangle(_ matrix: [[Character]]) -> Int {
+        let m = matrix.count
+        if m == 0 {
+            return 0
+        }
+        let n = matrix[0].count
+        
+        var left = [[Int]](repeating: [Int](repeating: 0, count: n), count: m)
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if matrix[i][j] == "1" {
+                    left[i][j] = (j == 0 ? 0 : left[i][j - 1]) + 1
+                }
+            }
+        }
+        
+        var ret = 0
+        for j in 0..<n { // 对于每一列，使用基于柱状图的方法
+            var up = [Int](repeating: 0, count: m)
+            var down = [Int](repeating: 0, count: m)
+            
+            var stack = [Int](repeating: 0, count: 0)
+            for i in 0..<m {
+                while !stack.isEmpty && left[stack.last!][j] >= left[i][j] {
+                    stack.removeLast()
+                }
+                up[i] = stack.isEmpty ? -1 : stack.last!
+                stack.append(i)
+            }
+            
+            stack.removeAll()
+            for i in 0..<m {
+                let index = m - 1 - i
+                while !stack.isEmpty && left[stack.last!][j] >= left[index][j] {
+                    stack.removeLast()
+                }
+                down[index] = stack.isEmpty ? m : stack.last!
+                stack.append(index)
+            }
+            
+            for i in 0..<m {
+                let height = down[i] - up[i] - 1
+                let area = height * left[i][j]
+                ret = max(ret, area)
+            }
+        }
+        return ret
+    }
 }
