@@ -103,4 +103,37 @@ class Eight: NSObject {
         
         return dummy.next
     }
+    
+    // 84 柱状图中最大的矩形
+    func largestRectangleArea(_ heights: [Int]) -> Int {
+        let n = heights.count
+        var left = [Int](repeating: 0, count: n)
+        var right = [Int](repeating: 0, count: n)
+        
+        var stack = [Int](repeating: 0, count: 0)
+        
+        for i in 0..<n {
+            while !stack.isEmpty && heights[stack.last!] >= heights[i] {
+                stack.removeLast()
+            }
+            left[i] = stack.isEmpty ? -1 : stack.last!
+            stack.append(i)
+        }
+        
+        stack.removeAll()
+        for i in 0..<n {
+            let index = n - 1 - i
+            while !stack.isEmpty && heights[stack.last!] >= heights[index] {
+                stack.removeLast()
+            }
+            right[index] = stack.isEmpty ? n : stack.last!
+            stack.append(index)
+        }
+        
+        var ans = 0
+        for i in 0..<n {
+            ans = max(ans, (right[i] - left[i] - 1) * heights[i])
+        }
+        return ans
+    }
 }
