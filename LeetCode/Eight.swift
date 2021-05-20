@@ -187,4 +187,29 @@ class Eight: NSObject {
         }
         return ret
     }
+    
+    // 86. 分隔链表
+    func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        
+        let dummy = ListNode.init(0, head)
+        let maxNode = ListNode.init(0)
+        var cur: ListNode? = dummy
+        var curNode: ListNode? = maxNode
+        
+        while cur?.next != nil {
+            if cur!.next!.val >= x {
+                curNode?.next = cur?.next
+                curNode = curNode?.next
+                cur?.next = cur?.next?.next
+            } else {
+                cur = cur?.next
+            }
+        }
+        curNode?.next = nil
+        cur?.next = maxNode.next
+        return dummy.next
+    }
 }
