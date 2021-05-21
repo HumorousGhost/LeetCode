@@ -286,11 +286,43 @@ class Eight: NSObject {
         return dfs(0, 0, length)
     }
     
-    //88. 合并两个有序数组
+    // 88. 合并两个有序数组
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         for i in 0..<n {
             nums1[m + i] = nums2[i]
         }
         nums1.sort()
+    }
+    
+    // 89. 格雷编码
+    func grayCode(_ n: Int) -> [Int] {
+        var ans = [Int](repeating: 0, count: 0)
+        ans.append(0)
+        // 判断边界情况
+        if n < 1 {
+            return ans
+        }
+        // 将 1 添加进去，此时对应 n 为 1
+        ans.append(1)
+        if n == 1 {
+            return ans
+        }
+        // 结果数组的当前大小
+        var size = ans.count
+        // 临时变量用于镜像计算
+        var temp = 0
+        // 从 n = 2 的情况开始遍历
+        for _ in 2...n {
+            size = ans.count
+            for j in 0..<size {
+                let index = size - 1 - j
+                temp = ans[index] * 2
+                // 对应下半部分，这里还没有初始值，需添加新的进去
+                ans.append(temp + 1)
+                // 对应上半部分，这里已经有初始值，需要修改
+                ans[index] = temp
+            }
+        }
+        return ans
     }
 }
