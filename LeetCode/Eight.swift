@@ -212,4 +212,77 @@ class Eight: NSObject {
         cur?.next = maxNode.next
         return dummy.next
     }
+    
+    // 87. 扰乱字符串
+    func  isScramble(_ s1: String, _ s2: String) -> Bool {
+        
+        let length = s1.count
+        
+        let s1Arr = s1.map { String($0) }
+        let s2Arr = s2.map { String($0) }
+        
+        // 记忆化搜索存储状态的数组
+        // -1 表示 false，1 表示 true，0 表示未计算
+        var memo = [[[Int]]](repeating: [[Int]](repeating: [Int](repeating: 0, count: length + 1), count: length), count: length)
+        
+        
+        func checkIfSimilar(_ i1: Int, _ i2: Int, _ length: Int) -> Bool {
+            var freq = [String: Int]()
+            for i in i1..<i1 + length {
+                let c = s1Arr[i]
+                freq[c] = freq[c] != nil ? freq[c]! + 1 : 1
+            }
+            for i in i2..<i2 + length {
+                let c = s2Arr[i]
+                freq[c] = freq[c] != nil ? freq[c]! - 1 : -1
+            }
+            
+            for (_, value) in freq {
+                if value != 0 {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        
+        // 第一个字符串从 i1 开始，第二个字符串从 i2 开始，子串的长度为 length，是否和谐
+        func dfs(_ i1: Int, _ i2: Int, _ length: Int) -> Bool {
+            if memo[i1][i2][length] != 0 {
+                return memo[i1][i2][length] == 1
+            }
+            
+            // 判断两个子串是否相等
+            if (s1 as NSString).substring(with: _NSRange.init(location: i1, length: length)) == (s2 as NSString).substring(with: _NSRange.init(location: i2, length: length)) {
+                memo[i1][i2][length] = 1
+                return true
+            }
+            
+            // 判断是否存在字符 c 在两个子串中出现的次数不同
+            if !checkIfSimilar(i1, i2, length) {
+                memo[i1][i2][length] = -1
+                return false
+            }
+            
+            // 枚举分割位置
+            for i in 1..<length {
+                // 不交换的情况
+                if dfs(i1, i2, i) && dfs(i1 + i, i2 + i, length - i) {
+                    memo[i1][i2][length] = 1
+                    return true
+                }
+                
+                // 交换的情况
+                if dfs(i1, i2 + length - i, i) && dfs(i1 + i, i2, length - i) {
+                    memo[i1][i2][length] = 1
+                    return true
+                }
+            }
+            
+            memo[i1][i2][length] = -1
+            return false
+        }
+        
+        return dfs(0, 0, length)
+    }
 }
