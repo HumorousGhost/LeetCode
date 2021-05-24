@@ -49,4 +49,26 @@ class Nine: NSObject {
         }
         return f[n]
     }
+    
+    // 92. 反转链表 II
+    func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
+        // 设置 dummyNode
+        let dummyNode = ListNode.init(-1, head)
+        // 找到 left 前一个节点
+        var pre: ListNode? = dummyNode
+        for _ in 0..<left - 1 {
+            pre = pre?.next
+        }
+        // 待翻转节点
+        let cur = pre?.next
+        var next: ListNode?
+        for _ in 0..<right - left {
+            next = cur?.next
+            cur?.next = next?.next
+            next?.next = pre?.next
+            pre?.next = next
+        }
+        
+        return dummyNode.next
+    }
 }
