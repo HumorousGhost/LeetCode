@@ -31,4 +31,22 @@ class Nine: NSObject {
         dfs(false, 0, sortNums)
         return ans
     }
+    
+    // 91. 解码方法
+    func numDecodings(_ s: String) -> Int {
+        let n = s.count
+        let sArr = s.map { String($0) }
+        var f = [Int](repeating: 0, count: n + 1)
+        f[0] = 1
+        for i in 1...n {
+            if sArr[i - 1] != "0" {
+                f[i] += f[i - 1]
+            }
+            
+            if i > 1 && sArr[i - 2] != "0" && (sArr[i - 2] as NSString).integerValue * 10 + (sArr[i - 1] as NSString).integerValue <= 26 {
+                f[i] += f[i - 2]
+            }
+        }
+        return f[n]
+    }
 }
