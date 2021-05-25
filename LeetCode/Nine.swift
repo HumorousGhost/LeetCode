@@ -123,4 +123,22 @@ class Nine: NSObject {
         
         return ans
     }
+    
+    // 94. 二叉树的中序遍历
+    func inorderTraversal(_ root: TreeNode?) -> [Int] {
+        var res = [Int](repeating: 0, count: 0)
+        
+        func inorder(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            inorder(root?.left)
+            res.append(root!.val)
+            inorder(root?.right)
+        }
+        
+        inorder(root)
+        
+        return res
+    }
 }
