@@ -141,4 +141,41 @@ class Nine: NSObject {
         
         return res
     }
+    
+    // 95. 不同的二叉搜索树 II
+    func generateTrees(_ n: Int) -> [TreeNode?] {
+        if n == 0 {
+            return []
+        }
+        
+        func generateTrees(_ start: Int, _ end: Int) -> [TreeNode?] {
+            var allTrees = [TreeNode?]()
+            if start > end {
+                allTrees.append(nil)
+                return allTrees
+            }
+            
+            // 枚举可行根节点
+            for i in start...end {
+                // 获得所有可行的左子树集合
+                let leftTrees = generateTrees(start, i - 1)
+                
+                // 获取所有可行的右子树集合
+                let rightTrees = generateTrees(i + 1, end)
+                
+                // 从左子树集合中选出一颗左子树，从右子树集合中选出一颗右子树，拼接到根节点上
+                for left in leftTrees {
+                    for right in rightTrees {
+                        let currTree = TreeNode.init(i)
+                        currTree.left = left
+                        currTree.right = right
+                        allTrees.append(currTree)
+                    }
+                }
+            }
+            return allTrees
+        }
+        
+        return generateTrees(1, n)
+    }
 }
