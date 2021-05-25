@@ -16,7 +16,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         var arr = [1,1,1,2,2,3]
         let list = ListNode.init(1, ListNode.init(4, ListNode.init(3, ListNode.init(2, ListNode.init(5, ListNode.init(2, ListNode.init(5, nil)))))))
-        let result = Nine().numDecodings("12")
+        let result = Nine().restoreIpAddresses("25525511135")
         print(result)
 //        print(arr)
     }

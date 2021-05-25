@@ -71,4 +71,56 @@ class Nine: NSObject {
         
         return dummyNode.next
     }
+    
+    // 93. 复原 IP 地址
+    func restoreIpAddresses(_ s: String) -> [String] {
+        let COUNT = 4
+        var ans = [String](repeating: "", count: 0)
+        var segments = [Int](repeating: 0, count: COUNT)
+        let sArr = s.map { String($0) }
+        
+        func dfs(_ segId: Int, _ segStart: Int) {
+            // 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
+            if segId == COUNT {
+                if segStart == sArr.count {
+                    var ipAddr = ""
+                    for i in 0..<COUNT {
+                        ipAddr.append(String(segments[i]))
+                        if i != COUNT - 1 {
+                            ipAddr.append(".")
+                        }
+                    }
+                    ans.append(ipAddr)
+                }
+                return
+            }
+            
+            // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
+            if segStart == sArr.count {
+                return
+            }
+            
+            // 由于不能前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
+            if sArr[segStart] == "0" {
+                segments[segId] = 0
+                dfs(segId + 1, segStart + 1)
+            }
+            
+            // 一般情况，枚举每一种可能性并递归
+            var addr = 0
+            for segEnd in segStart..<sArr.count {
+                addr = addr * 10 + (sArr[segEnd] as NSString).integerValue
+                if addr > 0 && addr <= 0xFF {
+                    segments[segId] = addr
+                    dfs(segId + 1, segEnd + 1)
+                } else {
+                    break
+                }
+            }
+        }
+        
+        dfs(0, 0)
+        
+        return ans
+    }
 }
