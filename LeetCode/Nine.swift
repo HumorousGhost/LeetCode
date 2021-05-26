@@ -187,4 +187,34 @@ class Nine: NSObject {
         }
         return C
     }
+    
+    // 97. 交错字符串
+    func isInterleave(_ s1: String, _ s2: String, _ s3: String) -> Bool {
+        let n = s1.count, m = s2.count, t = s3.count
+        
+        if n + m != t {
+            return false
+        }
+        
+        let s1Arr = s1.map { String($0) }
+        let s2Arr = s2.map { String($0) }
+        let s3Arr = s3.map { String($0) }
+        
+        var f = [Bool](repeating: false, count: m + 1)
+        
+        f[0] = true
+        for i in 0...n {
+            for j in 0...m {
+                let p = i + j - 1
+                if i > 0 {
+                    f[j] = f[j] && s1Arr[i - 1] == s3Arr[p]
+                }
+                if j > 0 {
+                    f[j] = f[j] || (f[j - 1] && s2Arr[j - 1] == s3Arr[p])
+                }
+            }
+        }
+        
+        return f[m]
+    }
 }
