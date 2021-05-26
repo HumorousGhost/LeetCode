@@ -178,4 +178,13 @@ class Nine: NSObject {
         
         return generateTrees(1, n)
     }
+    
+    // 96. 不同的二叉搜索树
+    func numTrees(_ n: Int) -> Int {
+        var C = 1
+        for i in 0..<n {
+            C = C * 2 * (2 * i + 1) / (i + 2)
+        }
+        return C
+    }
 }
