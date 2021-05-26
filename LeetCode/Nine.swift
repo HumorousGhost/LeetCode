@@ -217,4 +217,27 @@ class Nine: NSObject {
         
         return f[m]
     }
+    
+    // 98. 验证二叉搜索树
+    func isValidBST(_ root: TreeNode?) -> Bool {
+        
+        var root = root
+        var stack = [TreeNode?](repeating: nil, count: 0)
+        var inorder = -Int.max
+        
+        while !stack.isEmpty || root != nil {
+            while root != nil {
+                stack.append(root)
+                root = root?.left
+            }
+            root = stack.removeLast()
+            // 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
+            if root!.val <= inorder {
+                return false
+            }
+            inorder = root!.val
+            root = root?.right
+        }
+        return true
+    }
 }
