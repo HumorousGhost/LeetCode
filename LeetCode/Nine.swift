@@ -240,4 +240,36 @@ class Nine: NSObject {
         }
         return true
     }
+    
+    // 99. 恢复二叉搜索树
+    func recoverTree(_ root: TreeNode?) {
+        // 第一个最大值节点
+        var firstMax: TreeNode?
+        // 最后一个最小值节点
+        var lastMin: TreeNode?
+        // 前一个节点
+        var prev: TreeNode? = TreeNode.init(Int.min)
+        
+        func helper(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            helper(root?.left)
+            if root!.val < prev!.val {
+                lastMin = root
+                if firstMax == nil {
+                    firstMax = prev
+                }
+            }
+            prev = root
+            helper(root?.right)
+        }
+        
+        helper(root)
+        if firstMax != nil && lastMin != nil {
+            let temp = firstMax!.val
+            firstMax!.val = lastMin!.val
+            lastMin?.val = temp
+        }
+    }
 }
