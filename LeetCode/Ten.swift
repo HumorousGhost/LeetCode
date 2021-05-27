@@ -36,4 +36,31 @@ class Ten: NSObject {
         
         return check(root, root)
     }
+    
+    // 102. 二叉树的层序遍历
+    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+        var ret = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        if root == nil {
+            return ret
+        }
+        
+        var queue = [TreeNode?](repeating: nil, count: 0)
+        queue.append(root)
+        while !queue.isEmpty {
+            var level = [Int](repeating: 0, count: 0)
+            let count = queue.count
+            for _ in 0..<count {
+                let node = queue.removeFirst()
+                level.append(node!.val)
+                if node?.left != nil {
+                    queue.append(node?.left)
+                }
+                if node?.right != nil {
+                    queue.append(node?.right)
+                }
+            }
+            ret.append(level)
+        }
+        return ret
+    }
 }
