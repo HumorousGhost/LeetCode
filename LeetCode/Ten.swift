@@ -63,4 +63,37 @@ class Ten: NSObject {
         }
         return ret
     }
+    
+    // 103. 二叉树的锯齿形层序遍历
+    func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
+        var ret = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        if root == nil {
+            return ret
+        }
+        
+        var queue = [TreeNode?](repeating: nil, count: 0)
+        queue.append(root)
+        var order = 0
+        while !queue.isEmpty {
+            var level = [Int](repeating: 0, count: 0)
+            let count = queue.count
+            for _ in 0..<count {
+                let node = queue.removeFirst()
+                if order % 2 == 0 {
+                    level.append(node!.val)
+                } else {
+                    level.insert(node!.val, at: 0)
+                }
+                if node?.left != nil {
+                    queue.append(node?.left)
+                }
+                if node?.right != nil {
+                    queue.append(node?.right)
+                }
+            }
+            ret.append(level)
+            order += 1
+        }
+        return ret
+    }
 }
