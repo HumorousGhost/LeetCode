@@ -123,4 +123,44 @@ class Ten: NSObject {
         
         return ret
     }
+    
+    // 105. 从前序与中序遍历序列构造二叉树
+    func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
+        
+        var indexMap = [Int : Int]()
+        
+        // 构造哈希映射，帮助我们快速定位根节点
+        for (index, value) in inorder.enumerated() {
+            indexMap[value] = index
+        }
+        
+        func myBuildTree(_ preorder: [Int], _ inorder: [Int], _ preorderLeft: Int, _ preorderRight: Int, _ inorderLeft: Int, _ inorderRight: Int) -> TreeNode? {
+            if preorderLeft > preorderRight {
+                return nil
+            }
+            
+            // 前序遍历中的第一个节点就是根节点
+            let preorderRoot = preorderLeft
+            // 在中序遍历中定位根节点
+            let inorderRoot = indexMap[preorder[preorderRoot]]!
+            
+            // 先把根节点建立出来
+            let root = TreeNode.init(preorder[preorderRoot])
+            // 得到左子树中的节点数目
+            let sizeLeftSubtree = inorderRoot - inorderLeft
+            
+            // 递归的构造左子树，并连接到根节点
+            // 先序遍历中 [从 左边界 + 1 开始的 sizeLeftSubtree] 个元素就对应了中序遍历中 [从 左边界 开始到 根节点定位 - 1] 的元素
+            root.left = myBuildTree(preorder, inorder, preorderLeft + 1, preorderLeft + sizeLeftSubtree, inorderLeft, inorderRoot - 1)
+            
+            // 递归的构造右子树，并连接到根节点
+            // 先序遍历中 [从 左边界 + 1 + 左子树节点数目 开始到 右边界] 的元素就对应了中序遍历中 [从 根节点定位 + 1 到 右边界] 的元素
+            root.right = myBuildTree(preorder, inorder, preorderLeft + sizeLeftSubtree + 1, preorderRight, inorderRoot + 1, inorderRight)
+            return root
+        }
+        
+        let n = preorder.count
+        
+        return myBuildTree(preorder, inorder, 0, n - 1, 0, n - 1)
+    }
 }
