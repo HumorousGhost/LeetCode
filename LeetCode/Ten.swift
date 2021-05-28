@@ -96,4 +96,31 @@ class Ten: NSObject {
         }
         return ret
     }
+    
+    // 104. 二叉树的最大深度
+    func maxDepth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        }
+        
+        var ret = 1
+        func maxTree(_ root: TreeNode?, _ order: Int) {
+            if root == nil {
+                return
+            }
+            
+            ret = max(ret, order)
+            
+            if root?.left != nil {
+                maxTree(root?.left, order + 1)
+            }
+            if root?.right != nil {
+                maxTree(root?.right, order + 1)
+            }
+        }
+        
+        maxTree(root, 1)
+        
+        return ret
+    }
 }
