@@ -225,4 +225,23 @@ class Ten: NSObject {
         
         return ans
     }
+    
+    // 108. 将有序数组转换为二叉搜索树
+    func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+        
+        func helper(_ left: Int, _ right: Int) -> TreeNode? {
+            if left > right {
+                return nil
+            }
+            
+            let mid = (left + right) / 2
+            
+            let root = TreeNode.init(nums[mid])
+            root.left = helper(left, mid - 1)
+            root.right = helper(mid + 1, right)
+            return root
+        }
+        
+        return helper(0, nums.count - 1)
+    }
 }
