@@ -197,4 +197,32 @@ class Ten: NSObject {
         
         return helper(0, postIdx)
     }
+    
+    // 107. 二叉树的层序遍历 II
+    func levelOrderBottom (_ root: TreeNode?) -> [[Int]] {
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        if root == nil {
+            return ans
+        }
+        
+        var queue = [TreeNode?](repeating: nil, count: 0)
+        queue.append(root)
+        while !queue.isEmpty {
+            var level = [Int](repeating: 0, count: 0)
+            let count = queue.count
+            for _ in 0..<count {
+                let tree = queue.removeFirst()
+                level.append(tree!.val)
+                if tree?.left != nil {
+                    queue.append(tree?.left)
+                }
+                if tree?.right != nil {
+                    queue.append(tree?.right)
+                }
+            }
+            ans.insert(level, at: 0)
+        }
+        
+        return ans
+    }
 }
