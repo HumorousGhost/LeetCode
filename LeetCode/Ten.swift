@@ -163,4 +163,38 @@ class Ten: NSObject {
         
         return myBuildTree(preorder, inorder, 0, n - 1, 0, n - 1)
     }
+    
+    // 106. 从中序与后序遍历序列构造二叉树
+    func buildTreePostorder(_ inorder: [Int], _ postorder: [Int]) -> TreeNode? {
+        
+        var idxMap = [Int: Int]()
+        for (index, value) in inorder.enumerated() {
+            idxMap[value] = index
+        }
+        var postIdx = postorder.count - 1
+        
+        func helper(_ inLeft: Int, _ inRight: Int) -> TreeNode? {
+            // 如果这里没有节点构造二叉树了，就结束
+            if inLeft > inRight {
+                return nil
+            }
+            
+            // 选择 postIdx 位置的元素作为当前子树根节点
+            let rootVal = postorder[postIdx]
+            let root = TreeNode.init(rootVal)
+            
+            // 根据 root 所在位置分成左右两棵子树
+            let index = idxMap[rootVal]!
+            
+            // 下标减一
+            postIdx -= 1
+            // 构造右子树
+            root.right = helper(index + 1, inRight)
+            // 构造左子树
+            root.left = helper(inLeft, index - 1)
+            return root
+        }
+        
+        return helper(0, postIdx)
+    }
 }
