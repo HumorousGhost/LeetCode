@@ -244,4 +244,30 @@ class Ten: NSObject {
         
         return helper(0, nums.count - 1)
     }
+    
+    // 109. 有序链表转换二叉搜索树
+    func sortedListToBST(_ head: ListNode?) -> TreeNode? {
+        if head == nil {
+            return nil
+        }
+        var list = [Int]()
+        var head = head
+        while head != nil {
+            list.append(head!.val)
+            head = head?.next
+        }
+        
+        func helper(_ left: Int, _ right: Int) -> TreeNode? {
+            if left > right {
+                return nil
+            }
+            let mid = (left + right) / 2
+            let root = TreeNode.init(list[mid])
+            root.left = helper(left, mid - 1)
+            root.right = helper(mid + 1, right)
+            return root
+        }
+        
+        return helper(0, list.count - 1)
+    }
 }
