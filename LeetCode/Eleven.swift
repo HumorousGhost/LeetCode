@@ -25,4 +25,25 @@ class Eleven: NSObject {
         }
         return height(root) >= 0
     }
+    
+    // 111. 二叉树的最小深度
+    func minDepth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        }
+        
+        if root?.left == nil && root?.right == nil {
+            return 1
+        }
+        
+        var minOrder = Int.max
+        if root?.left != nil {
+            minOrder = min(minDepth(root?.left), minOrder)
+        }
+        if root?.right != nil {
+            minOrder = min(minDepth(root?.right), minOrder)
+        }
+        
+        return minOrder + 1
+    }
 }
