@@ -86,4 +86,24 @@ class Eleven: NSObject {
         dfs(root, targetSum)
         return ret
     }
+    
+    // 104. 二叉树展开为链表
+    func flatten(_ root: TreeNode?) {
+        var list = [TreeNode]()
+        func preorderTraversal(_ root: TreeNode?) {
+            if let tree = root {
+                list.append(tree)
+                preorderTraversal(tree.left)
+                preorderTraversal(tree.right)
+            } else {
+                return
+            }
+        }
+        preorderTraversal(root)
+        for i in 1..<list.count {
+            let prev = list[i - 1], curr = list[i]
+            prev.left = nil
+            prev.right = curr
+        }
+    }
 }
