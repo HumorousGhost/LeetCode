@@ -46,4 +46,20 @@ class Eleven: NSObject {
         
         return minOrder + 1
     }
+    
+    // 112. 路径总和
+    func hasPathSum(_ root: TreeNode?, _ targetSum: Int) -> Bool {
+        
+        if root == nil {
+            return false
+        }
+        
+        if root?.left == nil && root?.right == nil {
+            return targetSum == root!.val
+        }
+        
+        let target = targetSum - root!.val
+        
+        return hasPathSum(root?.left, target) || hasPathSum(root?.right, target)
+    }
 }
