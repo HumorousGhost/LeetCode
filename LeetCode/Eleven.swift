@@ -62,4 +62,28 @@ class Eleven: NSObject {
         
         return hasPathSum(root?.left, target) || hasPathSum(root?.right, target)
     }
+    
+    // 113. 路径总和 II
+    func pathSum(_ root: TreeNode?, _ targetSum: Int) -> [[Int]] {
+        
+        var ret = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)
+        var path = [Int](repeating: 0, count: 0)
+        
+        func dfs(_ root: TreeNode?, _ targetSum: Int) {
+            if root == nil {
+                return
+            }
+            path.append(root!.val)
+            let sum = targetSum - root!.val
+            if root?.left == nil && root?.right == nil && sum == 0 {
+                ret.append(path)
+            }
+            dfs(root?.left, sum)
+            dfs(root?.right, sum)
+            path.removeLast()
+        }
+        
+        dfs(root, targetSum)
+        return ret
+    }
 }
