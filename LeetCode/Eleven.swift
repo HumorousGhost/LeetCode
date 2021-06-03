@@ -100,10 +100,42 @@ class Eleven: NSObject {
             }
         }
         preorderTraversal(root)
+        if list.count == 0 {
+            return
+        }
         for i in 1..<list.count {
             let prev = list[i - 1], curr = list[i]
             prev.left = nil
             prev.right = curr
         }
+    }
+    
+    // 115. 不同的子序列
+    func numDistinct(_ s: String, _ t: String) -> Int {
+        let m = s.count, n = t.count
+        if m < n {
+            return 0
+        }
+        let sArr = s.map { String($0) }
+        let tArr = t.map { String($0) }
+        
+        var dp = [[Double]](repeating: [Double](repeating: 0, count: n + 1), count: m + 1)
+        for i in 0...m {
+            dp[i][n] = 1
+        }
+        for i in 0..<m {
+            let index = m - 1 - i
+            let si = sArr[index]
+            for j in 0..<n {
+                let jndex = n - 1 - j
+                let tj = tArr[jndex]
+                if si == tj {
+                    dp[index][jndex] = dp[index + 1][jndex + 1] + dp[index + 1][jndex]
+                } else {
+                    dp[index][jndex] = dp[index + 1][jndex]
+                }
+            }
+        }
+        return Int(dp[0][0])
     }
 }
