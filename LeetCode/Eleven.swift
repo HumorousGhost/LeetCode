@@ -164,4 +164,30 @@ class Eleven: NSObject {
         }
         return root
     }
+    
+    // 117. 填充每个节点的下一个右侧节点指针 II
+    func connectNode(_ root: Node?) -> Node? {
+        if root == nil {
+            return root
+        }
+        
+        var queue = [Node?]()
+        queue.append(root)
+        while !queue.isEmpty {
+            let size = queue.count
+            for i in 0..<size {
+                let node = queue.removeFirst()
+                if i < size - 1 {
+                    node?.next = queue.first!
+                }
+                if node?.left != nil {
+                    queue.append(node?.left)
+                }
+                if node?.right != nil {
+                    queue.append(node?.right)
+                }
+            }
+        }
+        return root
+    }
 }
