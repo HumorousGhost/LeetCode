@@ -138,4 +138,42 @@ class Eleven: NSObject {
         }
         return Int(dp[0][0])
     }
+    
+    // 116. 填充每个节点的下一个右侧节点指针
+    func connect(_ root: Node?) -> Node? {
+        if root == nil {
+            return root
+        }
+        
+        var res = [[Node?]](repeating: [Node?](repeating: nil, count: 0), count: 0)
+        var queue = [Node?]()
+        queue.append(root)
+        while !queue.isEmpty {
+            var level = [Node?]()
+            let size = queue.count
+            for _ in 0..<size {
+                let node = queue.removeFirst()
+                level.append(node)
+                if node?.left != nil {
+                    queue.append(node?.left)
+                }
+                if node?.right != nil {
+                    queue.append(node?.right)
+                }
+            }
+            res.append(level)
+        }
+        
+        for level in res {
+            if level.count > 1 {
+                for i in 1..<level.count {
+                    let a = level[i - 1]
+                    let b = level[i]
+                    a?.next = b
+                    b?.next = nil
+                }
+            }
+        }
+        return res[0][0]
+    }
 }

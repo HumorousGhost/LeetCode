@@ -25,6 +25,7 @@
 		98D0F03C2631589100D51735 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F03B2631589100D51735 /* ListNode.swift */; };
 		98D0F0442631592F00D51735 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F0432631592F00D51735 /* One.swift */; };
 		98D0F04926315B7300D51735 /* Three.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F04826315B7300D51735 /* Three.swift */; };
+		98D7B37C2668B9530063CFF9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B37B2668B9530063CFF9 /* Node.swift */; };
 		98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F5FA44265CD73000CE2605 /* TreeNode.swift */; };
 		98FFECC42657ADD400C645EB /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FFECC32657ADD400C645EB /* Nine.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		98D0F03B2631589100D51735 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		98D0F0432631592F00D51735 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
 		98D0F04826315B7300D51735 /* Three.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Three.swift; sourceTree = "<group>"; };
+		98D7B37B2668B9530063CFF9 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		98F5FA44265CD73000CE2605 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		98FFECC32657ADD400C645EB /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				983CB9E1254BB37A007B5639 /* ViewController.swift */,
 				98D0F03B2631589100D51735 /* ListNode.swift */,
 				98F5FA44265CD73000CE2605 /* TreeNode.swift */,
+				98D7B37B2668B9530063CFF9 /* Node.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -305,6 +308,7 @@
 				98D0F04926315B7300D51735 /* Three.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
 				98D0F037263157E900D51735 /* Zero.swift in Sources */,
+				98D7B37C2668B9530063CFF9 /* Node.swift in Sources */,
 				98B7FA0D2643C5A00025D633 /* Five.swift in Sources */,
 				98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */,
 				987E03C42636B0F000962029 /* Four.swift in Sources */,
