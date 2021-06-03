@@ -190,4 +190,27 @@ class Eleven: NSObject {
         }
         return root
     }
+    
+    // 118. 杨辉三角
+    func generate(_ numRows: Int) -> [[Int]] {
+        if numRows == 0 {
+            return []
+        }
+        
+        var res = [[Int]]()
+        res.append([1])
+        for i in 1..<numRows {
+            var level = [Int]()
+            level.append(1)
+            let flows = res[i - 1]
+            for j in 0..<flows.count {
+                if flows.count - 2 >= j {
+                    level.append(flows[j] + flows[j + 1])
+                }
+            }
+            level.append(1)
+            res.append(level)
+        }
+        return res
+    }
 }

@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         let tree = TreeNode.init(3, TreeNode.init(9), TreeNode.init(20, TreeNode.init(15), TreeNode.init(7)))
         let tree2 = TreeNode.init(2, TreeNode.init(1), TreeNode.init(3))
         
-        let result = Eleven().connect(Node.init(1, Node.init(2, Node.init(4), Node.init(5)), Node.init(3, Node.init(6), Node.init(7))))
+        let result = Eleven().generate(5)
         print(result)
 //        print(arr)
     }
