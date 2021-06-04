@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         let tree = TreeNode.init(3, TreeNode.init(9), TreeNode.init(20, TreeNode.init(15), TreeNode.init(7)))
         let tree2 = TreeNode.init(2, TreeNode.init(1), TreeNode.init(3))
         
-        let result = Twelve().minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]])
+        let result = Twelve().maxProfit([7,1,5,3,6,4])
         print(result)
 //        print(arr)
     }

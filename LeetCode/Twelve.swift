@@ -26,4 +26,18 @@ class Twelve: NSObject {
         }
         return minTotal
     }
+    
+    // 121. 买卖股票的最佳时机
+    func maxProfit(_ prices: [Int]) -> Int {
+        var price = 0
+        var minPrice = Int.max
+        for i in 0..<prices.count {
+            if prices[i] < minPrice {
+                minPrice = prices[i]
+            } else if prices[i] - minPrice > price {
+                price = prices[i] - minPrice
+            }
+        }
+        return price
+    }
 }
