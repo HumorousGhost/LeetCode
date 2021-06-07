@@ -40,4 +40,14 @@ class Twelve: NSObject {
         }
         return price
     }
+    
+    // 122. 买卖股票的最佳时机 II
+    func maxProfit2(_ prices: [Int]) -> Int {
+        var ans = 0
+        let n = prices.count
+        for i in 1..<n {
+            ans += max(0, prices[i] - prices[i - 1])
+        }
+        return ans
+    }
 }
