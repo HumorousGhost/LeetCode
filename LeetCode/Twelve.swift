@@ -64,4 +64,33 @@ class Twelve: NSObject {
         }
         return sell2
     }
+    
+    // 124. 二叉树中最大路径和
+    func maxPathSum(_ root: TreeNode?) -> Int {
+        var maxSum = Int.min
+        
+        func maxGain(_ node: TreeNode?) -> Int {
+            if node == nil {
+                return 0
+            }
+            
+            // 递归计算左右子节点的最大贡献值
+            // 只有在最大贡献值大于 0 时，才会选取对应子节点
+            let leftGain = max(maxGain(node?.left), 0)
+            let rightGain = max(maxGain(node?.right), 0)
+            
+            // 节点的最大路径和取决于该节点的值与节点的左右子节点的最大贡献值
+            let priceNewpath = node!.val + leftGain + rightGain
+            
+            // 更新答案
+            maxSum = max(maxSum, priceNewpath)
+            
+            // 返回节点的最大贡献值
+            return node!.val + max(leftGain, rightGain)
+        }
+        
+        _ = maxGain(root)
+        
+        return maxSum
+    }
 }
