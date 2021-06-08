@@ -93,4 +93,30 @@ class Twelve: NSObject {
         
         return maxSum
     }
+    
+    // 125. 验证回文串
+    func isPalidrome(_ s: String) -> Bool {
+        let str = s.lowercased()
+        let sArr = str.map { String($0) }
+        
+        let letter = "a"..."z"
+        let number = "0"..."9"
+        
+        var left = 0, right = sArr.count - 1
+        while left <= right {
+            let leftStr = sArr[left]
+            let rightStr = sArr[right]
+            if !letter.contains(leftStr) && !number.contains(leftStr) {
+                left += 1
+            } else if !letter.contains(rightStr) && !number.contains(rightStr) {
+                right -= 1
+            } else if leftStr == rightStr {
+                left += 1
+                right -= 1
+            } else {
+                return false
+            }
+        }
+        return true
+    }
 }
