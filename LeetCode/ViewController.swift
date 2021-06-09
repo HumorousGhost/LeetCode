@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         let tree = TreeNode.init(3, TreeNode.init(9), TreeNode.init(20, TreeNode.init(15), TreeNode.init(7)))
         let tree2 = TreeNode.init(2, TreeNode.init(1), TreeNode.init(3))
         
-        let result = Twelve().isPalidrome("0P")
+        let result = Twelve().ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])
         print(result)
 //        print(arr)
     }

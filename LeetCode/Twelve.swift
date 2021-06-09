@@ -119,4 +119,150 @@ class Twelve: NSObject {
         }
         return true
     }
+    
+    // 126. 单词接龙 II
+    func findLadders(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> [[String]] {
+        var ans = [[String]]()
+        if !wordList.contains(endWord) {
+            return ans
+        }
+        
+        // direction 为 true 代表向下扩展，false 代表向上扩展
+        func bfsHelper(_ set1: [String], _ set2: [String], _ wordSet: [String], _ direction: Bool, _ map: [String: [String]]) -> Bool {
+            // set1 为空了，就直接结束
+            // 比如下边的例子就会造成 set1 为空
+            /**
+             "hot"
+             "dog"
+             ["hot", "dog"]
+             */
+            if set1.isEmpty {
+                return false
+            }
+            // set1 的数量多，就反向扩展
+            if set1.count > set2.count {
+                return bfsHelper(set2, set1, wordSet, !direction, map)
+            }
+            let wordSet = NSMutableArray.init(array: wordSet)
+            wordSet.removeObjects(in: set1)
+            wordSet.removeObjects(in: set2)
+            
+            var done = false
+            
+            // 保存新扩展得到的节点
+            var set = [String]()
+            
+            for str in set1 {
+                // 遍历每一位
+                for (index, value) in str.enumerated() {
+                    
+                }
+            }
+            
+            return false
+        }
+        
+        // 利用递归实现双向搜索
+        func bfs(_ beginWord: String, _ endWord: String, _ wordList: [String], _ map: [String: [String]]) {
+            var arr1 = [String]()
+            arr1.append(beginWord)
+            var arr2 = [String]()
+            arr2.append(endWord)
+        }
+        
+        
+        // 利用 BFS 得到所有的邻居节点
+        var map = [String: [String]]()
+        
+        
+        return ans
+    }
+    
+    // 127. 单词接龙
+    func ladderLength(_ beginWord: String, _ endWord: String, _ wordList: [String]) -> Int {
+        
+        var wordId = [String: Int]()
+        var edge = [[Int]](repeating: [Int](repeating: 0, count: 0), count: wordList.count)
+        var  nodeNum = 0
+        
+        func addWord(_ word: String) {
+            if !wordId.keys.contains(word) {
+                nodeNum += 1
+                wordId[word] = nodeNum
+                edge.append([Int](repeating: 0, count: 0))
+            }
+        }
+        
+        func addEdge(_ word: String) {
+            addWord(word)
+            let id1 = wordId[word]!
+            var array = word.map { String($0) }
+            for i in 0..<array.count {
+                let tmp = array[i]
+                array[i] = "*"
+                let newWord = array.joined()
+                addWord(newWord)
+                let id2 = wordId[newWord]!
+                edge[id1].append(id2)
+                edge[id2].append(id1)
+                array[i] = tmp
+            }
+        }
+        
+        for word in wordList {
+            addEdge(word)
+        }
+        addEdge(beginWord)
+        if !wordId.keys.contains(endWord) {
+            return 0
+        }
+        
+        var disBegin = [Int](repeating: Int.max, count: nodeNum + 1)
+        let beginId = wordId[beginWord]!
+        disBegin[beginId] = 0
+        var queBegin = [Int]()
+        queBegin.append(beginId)
+        
+        var disEnd = [Int](repeating: Int.max, count: nodeNum + 1)
+        let endId = wordId[endWord]!
+        disEnd[endId] = 0
+        var queEnd = [Int]()
+        queEnd.append(endId)
+        
+        while !queBegin.isEmpty && !queEnd.isEmpty {
+            let queBeginSize = queBegin.count
+            for _ in 0..<queBeginSize {
+                let nodeBegin = queBegin.removeFirst()
+                if disEnd[nodeBegin] != Int.max {
+                    return (disBegin[nodeBegin] + disEnd[nodeBegin]) / 2 + 1
+                }
+                let arr = edge[nodeBegin] as [Int]
+                for it in arr {
+                    if disBegin[it] == Int.max {
+                        disBegin[it] = disBegin[nodeBegin] + 1
+                        queBegin.append(it)
+                    }
+                }
+            }
+            
+            let queEndSize = queEnd.count
+            for _ in 0..<queEndSize {
+                let nodeEnd = queEnd.removeFirst()
+                if disBegin[nodeEnd] != Int.max {
+                    return (disBegin[nodeEnd] + disEnd[nodeEnd]) / 2 + 1
+                }
+                let arr = edge[nodeEnd] as [Int]
+                for it in arr {
+                    if disEnd[it] == Int.max {
+                        disEnd[it] = disEnd[nodeEnd] + 1
+                        queEnd.append(it)
+                    }
+                }
+            }
+        }
+        
+        return 0
+    }
+    
+    
 }
