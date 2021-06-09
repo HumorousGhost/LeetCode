@@ -264,5 +264,29 @@ class Twelve: NSObject {
         return 0
     }
     
+    // 128. 最长连续序列
+    func longestConsecutive(_ nums: [Int]) -> Int {
+        if nums.count <= 1 {
+            return nums.count
+        }
+        var map = [Int: Int]()
+        for num in nums {
+            map[num] = num
+        }
+        let dictKeys = [Int](map.keys)
+        let nums = dictKeys.sorted()
+        var length = 0
+        var currentLength = 1
+        for i in 0..<nums.count - 1 {
+            if nums[i] + 1 == nums[i + 1] {
+                currentLength += 1
+            } else {
+                length = max(length, currentLength)
+                currentLength = 1
+            }
+        }
+        length = max(length, currentLength)
+        return length
+    }
     
 }
