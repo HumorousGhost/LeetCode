@@ -49,4 +49,47 @@ class Thirteen: NSObject {
             }
         }
     }
+    
+    // 131. 分割回文串
+    func partition(_ s: String) -> [[String]] {
+        let n = s.count
+        let sArr = s.map { String($0) }
+        var f = [[Int]](repeating: [Int](repeating: 0, count: n), count: n)
+        var ret = [[String]]()
+        var ans = [String]()
+        
+        // 记忆化搜索中，f[i][j] = 0 表示未搜索，1 表示是回文串，-1 表示不是回文串
+        func isPalindrome(_ i: Int, _ j: Int) -> Int {
+            if f[i][j] != 0 {
+                return f[i][j]
+            }
+            
+            if i >= j {
+                f[i][j] = 1
+            } else if sArr[i] == sArr[j] {
+                f[i][j] = isPalindrome(i + 1, j - 1)
+            } else {
+                f[i][j] = -1
+            }
+            return f[i][j]
+        }
+        
+        func dfs(_ i: Int) {
+            if i == n {
+                ret.append(ans)
+                return
+            }
+            for j in i..<n {
+                if isPalindrome(i, j) == 1 {
+                    ans.append((sArr[i..<j + 1]).joined())
+                    dfs(j + 1)
+                    ans.removeLast()
+                }
+            }
+        }
+        
+        dfs(0)
+        
+        return ret
+    }
 }
