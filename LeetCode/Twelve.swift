@@ -289,4 +289,21 @@ class Twelve: NSObject {
         return length
     }
     
+    // 129. 求跟节点到叶节点数字之和
+    func sumNumbers(_ root: TreeNode?) -> Int {
+        
+        func dfs(_ root: TreeNode?, _ prevSum: Int) -> Int {
+            if root == nil {
+                return 0
+            }
+            let sum = prevSum * 10 + root!.val
+            if root?.left == nil && root?.right == nil {
+                return sum
+            } else {
+                return dfs(root?.left, sum) + dfs(root?.right, sum)
+            }
+        }
+        
+        return dfs(root, 0)
+    }
 }
