@@ -92,4 +92,72 @@ class Thirteen: NSObject {
         
         return ret
     }
+    
+    // 132. 分割回文串 II
+    func minCut(_ s: String) -> Int {
+        let n = s.count
+        let sArr = s.map { String($0) }
+        var f = [[Int]](repeating: [Int](repeating: 0, count: n), count: n)
+        var result = Int.max
+        var ans = [String]()
+        
+        // 记忆化搜索中，f[i][j] = 0 表示未搜索，1 表示是回文串，-1 表示不是回文串
+        func isPalindrome(_ i: Int, _ j: Int) -> Int {
+            if f[i][j] != 0 {
+                return f[i][j]
+            }
+            
+            if i >= j {
+                f[i][j] = 1
+            } else if sArr[i] == sArr[j] {
+                f[i][j] = isPalindrome(i + 1, j - 1)
+            } else {
+                f[i][j] = -1
+            }
+            return f[i][j]
+        }
+        
+        func dfs(_ i: Int) {
+            if i == n {
+                result = min(ans.count, result)
+                return
+            }
+            for j in i..<n {
+                if isPalindrome(i, j) == 1 {
+                    ans.append((sArr[i..<j + 1]).joined())
+                    dfs(j + 1)
+                    ans.removeLast()
+                }
+            }
+        }
+        
+        dfs(0)
+        
+        return result - 1
+    }
+    
+    // 133. 克隆图
+    var visited = [Int: Node?]()
+    func cloneGraph(_ node: Node?) -> Node? {
+        if node == nil {
+            return node
+        }
+        
+        // 如果该节点已经被访问过了，则直接从哈希表中取出对应的克隆节点返回
+        if visited.keys.contains(node!.val) {
+            return visited[node!.val]!
+        }
+        
+        // 克隆节点，注意到为了深拷贝，我们不会克隆它的邻居的列表
+        let cloneNode = Node.init(node!.val)
+        // 哈希表存储
+        visited[node!.val] = cloneNode
+        
+        // 遍历该节点的邻居并更新克隆节点的邻居列表
+        for neighbor in node!.neighbors {
+            cloneNode.neighbors.append(cloneGraph(neighbor))
+        }
+        
+        return cloneNode
+    }
 }
