@@ -208,4 +208,13 @@ class Thirteen: NSObject {
         }
         return ret
     }
+    
+    // 136. 只出现一次的数字
+    func singleNumber(_ nums: [Int]) -> Int {
+        var single = 0
+        for num in nums {
+            single ^= num
+        }
+        return single
+    }
 }
