@@ -160,4 +160,29 @@ class Thirteen: NSObject {
         
         return cloneNode
     }
+    
+    // 134. 加油站
+    func canCompleteCircuit(_ gas: [Int], _ cost: [Int]) ->Int {
+        let n = gas.count
+        var i = 0
+        while i < n {
+            var sumOfGas = 0, sumOfCost = 0
+            var cnt = 0
+            while cnt < n {
+                let j = (i + cnt) % n
+                sumOfGas += gas[j]
+                sumOfCost += cost[j]
+                if sumOfCost > sumOfGas {
+                    break
+                }
+                cnt += 1
+            }
+            if cnt == n {
+                return i
+            } else {
+                i = i + cnt + 1
+            }
+        }
+        return -1
+    }
 }
