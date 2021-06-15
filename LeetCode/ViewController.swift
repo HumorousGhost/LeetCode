@@ -26,7 +26,7 @@ class ViewController: NSViewController {
         node2.neighbors = [node1, node3]
         node3.neighbors = [node2, node4]
         node4.neighbors = [node1, node3]
-        let result = Thirteen().canCompleteCircuit([1, 2, 3,4,5], [3,4,5,1,2])
+        let result = Thirteen().candy([1, 2, 2])
         print(result)
 //        print(arr)
     }

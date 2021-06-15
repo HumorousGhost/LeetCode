@@ -185,4 +185,27 @@ class Thirteen: NSObject {
         }
         return -1
     }
+    
+    // 135. 分发糖果
+    func candy(_ ratings: [Int]) -> Int {
+        let n = ratings.count
+        var ret = 1
+        var inc = 1, dec = 0, pre = 1
+        for i in 1..<n {
+            if ratings[i] >= ratings[i - 1] {
+                dec = 0
+                pre = ratings[i] == ratings[i - 1] ? 1 : pre + 1
+                ret += pre
+                inc = pre
+            } else {
+                dec += 1
+                if dec == inc {
+                    dec += 1
+                }
+                ret += dec
+                pre = 1
+            }
+        }
+        return ret
+    }
 }
