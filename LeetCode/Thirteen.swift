@@ -251,4 +251,22 @@ class Thirteen: NSObject {
         node.random = copyRandomList(head?.random)
         return node
     }
+    
+    // 139. 单词拆分
+    func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
+        let n = s.count
+        var dp = [Bool](repeating: false, count: n + 1)
+        dp[0] = true
+        let sArr = s.map { String($0) }
+        
+        for i in 1...n {
+            for j in 0..<i {
+                if dp[j] && wordDict.contains((sArr[j..<i]).joined()) {
+                    dp[i] = true
+                    break
+                }
+            }
+        }
+        return dp[n]
+    }
 }
