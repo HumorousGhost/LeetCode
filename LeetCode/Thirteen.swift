@@ -232,4 +232,23 @@ class Thirteen: NSObject {
         }
         return 0
     }
+    
+    // 138. 复制带随机指针的链表
+    var map = [Int: Node?]()
+    func copyRandomList(_ head: Node?) -> Node? {
+        if head == nil {
+            return nil
+        }
+        
+        
+        if map.keys.contains(head!.val) {
+            return map[head!.val]!
+        }
+        let node = Node.init(head!.val)
+        map[head!.val] = node
+        
+        node.next = copyRandomList(head?.next)
+        node.random = copyRandomList(head?.random)
+        return node
+    }
 }
