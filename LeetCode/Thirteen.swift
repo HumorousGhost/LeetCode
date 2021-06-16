@@ -217,4 +217,19 @@ class Thirteen: NSObject {
         }
         return single
     }
+    
+    // 137. 只出现一次的数字
+    func singleNumber2(_ nums: [Int]) -> Int {
+        var map = [Int: Int]()
+        for num in nums {
+            map[num] = map[num] != nil ? map[num]! + 1 : 1
+        }
+        
+        for (key, value) in map {
+            if value == 1 {
+                return key
+            }
+        }
+        return 0
+    }
 }
