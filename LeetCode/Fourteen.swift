@@ -43,4 +43,35 @@ class Fourteen: NSObject {
         }
         return breakList
     }
+    
+    // 141. 环形链表
+    func hasCycle(_ head: ListNode?) -> Bool {
+        /** // 方法一
+        var array = [String]()
+        var head = head
+        while head != nil {
+            if array.contains(head.debugDescription) {
+                return true
+            } else {
+                array.append(head.debugDescription)
+            }
+            head = head?.next
+        }
+        
+        return false
+        */
+        if head == nil || head?.next == nil {
+            return false
+        }
+        var slow = head
+        var fast = head?.next
+        while slow.debugDescription != fast.debugDescription {
+            if fast == nil || fast?.next == nil {
+                return false
+            }
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+        return true
+    }
 }
