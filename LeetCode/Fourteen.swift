@@ -74,4 +74,42 @@ class Fourteen: NSObject {
         }
         return true
     }
+    
+    // 142. 环形链表 II
+    func detectCycle(_ head: ListNode?) -> ListNode? {
+        /** // 方法一
+        var array = [String]()
+        var pos = head
+        while pos != nil {
+            if array.contains(pos.debugDescription) {
+                return pos
+            } else {
+                array.append(pos.debugDescription)
+            }
+            pos = pos?.next
+        }
+        return nil
+        */
+        if head == nil {
+            return nil
+        }
+        var slow = head, fast = head
+        while fast != nil {
+            slow = slow?.next
+            if fast?.next != nil {
+                fast = fast?.next?.next
+            } else {
+                return nil
+            }
+            if fast.debugDescription == slow.debugDescription {
+                var ptr = head
+                while ptr.debugDescription != slow.debugDescription {
+                    ptr = ptr?.next
+                    slow = slow?.next
+                }
+                return ptr
+            }
+        }
+        return nil
+    }
 }
