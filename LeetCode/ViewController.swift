@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Thirteen().wordBreak("leetcode", ["leet", "code"])
+        let result = Fourteen().wordBreak("catsanddog", ["cat", "cats", "and", "sand", "dog"])
         print(result)
 //        print(arr)
     }
