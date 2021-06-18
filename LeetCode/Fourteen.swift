@@ -155,4 +155,22 @@ class Fourteen: NSObject {
         
         return orders
     }
+    
+    // 145. 二叉树的后序遍历
+    func postorderTraversal(_ root: TreeNode?) -> [Int] {
+        var orders = [Int]()
+        
+        func postorder(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            postorder(root?.left)
+            postorder(root?.right)
+            orders.append(root!.val)
+        }
+        
+        postorder(root)
+        
+        return orders
+    }
 }
