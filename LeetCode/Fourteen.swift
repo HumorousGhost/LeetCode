@@ -112,4 +112,29 @@ class Fourteen: NSObject {
         }
         return nil
     }
+    
+    // 143. 重排链表
+    func reorderList(_ head: ListNode?) {
+        var nodes = [ListNode?]()
+        var node = head
+        while node != nil {
+            nodes.append(node)
+            node = node?.next
+        }
+        
+        var i = 0, j = nodes.count - 1
+        while i < j {
+            let leftNode = nodes[i]
+            let rightNode = nodes[j]
+            leftNode?.next = rightNode
+            i += 1
+            if i == j {
+                break
+            }
+            rightNode?.next = nodes[i]
+            j -= 1
+        }
+        let leftNode = nodes[i]
+        leftNode?.next = nil
+    }
 }
