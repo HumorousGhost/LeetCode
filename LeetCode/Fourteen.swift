@@ -137,4 +137,22 @@ class Fourteen: NSObject {
         let leftNode = nodes[i]
         leftNode?.next = nil
     }
+    
+    // 144. 二叉树的前序遍历
+    func preorderTraversal(_ root: TreeNode?) -> [Int] {
+        var orders = [Int]()
+        
+        func preorder(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            orders.append(root!.val)
+            preorder(root?.left)
+            preorder(root?.right)
+        }
+        
+        preorder(root)
+        
+        return orders
+    }
 }
