@@ -174,5 +174,27 @@ class Fourteen: NSObject {
         return orders
     }
     
-    
+    // 147. 对链表进行插入排序
+    func insertionSortList(_ head: ListNode?) -> ListNode? {
+        if head == nil {
+            return head
+        }
+        let dummyHead = ListNode.init(0, head)
+        var lastSorted = head, curr = head?.next
+        while curr != nil {
+            if lastSorted!.val <= curr!.val {
+                lastSorted = lastSorted?.next
+            } else {
+                var prev: ListNode? = dummyHead
+                while prev?.next != nil && prev!.next!.val <= curr!.val {
+                    prev = prev?.next
+                }
+                lastSorted?.next = curr?.next
+                curr?.next = prev?.next
+                prev?.next = curr
+            }
+            curr = lastSorted?.next
+        }
+        return dummyHead.next
+    }
 }
