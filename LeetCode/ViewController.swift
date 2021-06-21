@@ -32,7 +32,15 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Fourteen().wordBreak("catsanddog", ["cat", "cats", "and", "sand", "dog"])
+        let result = LRUCache.init(2)
+        result.put(1, 1)
+        result.put(2, 2)
+        let a = result.get(1)
+        print(a)
+        result.put(3, 3)
+        let b = result.get(2)
+        print(b)
+        result.put(4, 4)
         print(result)
 //        print(arr)
     }

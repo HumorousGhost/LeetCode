@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "98C0CD4D267C382E006ED19D"
-               BuildableName = "LeetCode copy.app"
-               BlueprintName = "LeetCode copy"
+               BuildableName = "LeetCode_dev.app"
+               BlueprintName = "LeetCode_dev"
                ReferencedContainer = "container:LeetCode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98C0CD4D267C382E006ED19D"
-            BuildableName = "LeetCode copy.app"
-            BlueprintName = "LeetCode copy"
+            BuildableName = "LeetCode_dev.app"
+            BlueprintName = "LeetCode_dev"
             ReferencedContainer = "container:LeetCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98C0CD4D267C382E006ED19D"
-            BuildableName = "LeetCode copy.app"
-            BlueprintName = "LeetCode copy"
+            BuildableName = "LeetCode_dev.app"
+            BlueprintName = "LeetCode_dev"
             ReferencedContainer = "container:LeetCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
