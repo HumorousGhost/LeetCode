@@ -197,4 +197,66 @@ class Fourteen: NSObject {
         }
         return dummyHead.next
     }
+    
+    // 148. 排序链表
+    func sortList(_ head: ListNode?) -> ListNode? {
+        
+        func merge(_ head1: ListNode?, _ head2: ListNode?) -> ListNode? {
+            let dummyHead: ListNode? = ListNode.init(0)
+            var temp = dummyHead, temp1 = head1, temp2 = head2
+            while temp1 != nil && temp2 != nil {
+                if temp1!.val <= temp2!.val {
+                    temp?.next = temp1
+                    temp1 = temp1?.next
+                } else {
+                    temp?.next = temp2
+                    temp2 = temp2?.next
+                }
+                temp = temp?.next
+            }
+            if temp1 != nil {
+                temp?.next = temp1
+            } else if temp2 != nil {
+                temp?.next = temp2
+            }
+            return dummyHead?.next
+        }
+        
+        func address(_ obj: Any?) -> Int {
+            let point = Unmanaged<AnyObject>.passUnretained(obj as AnyObject).toOpaque()
+            return point.hashValue
+        }
+        func address2(_ obj: Any?) -> Int {
+            let hashValue = withUnsafePointer(to: obj) { (point) -> Int in
+                return point.hashValue
+            }
+            return hashValue
+        }
+        
+        func sortList(_ head: ListNode?, _ tail: ListNode?) -> ListNode? {
+            if head == nil {
+                return head
+            }
+            if address(head?.next) == address(tail) {
+                head?.next = nil
+                return head
+            }
+            
+            var slow = head, fast = head
+            while address(fast) != address(tail) {
+                slow = slow?.next
+                fast = fast?.next
+                if address(fast) != address(tail) {
+                    fast = fast?.next
+                }
+            }
+            let mid = slow
+            let list1 = sortList(head, mid)
+            let list2 = sortList(mid, tail)
+            let sorted = merge(list1, list2)
+            return sorted
+        }
+        
+        return sortList(head, nil)
+    }
 }
