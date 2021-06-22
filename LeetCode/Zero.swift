@@ -188,7 +188,7 @@ class Zero: NSObject {
         }
         string.insert(contentsOf: fuhao, at: string.startIndex);
         let value = Int(string) ?? 0;
-        if value > ((1<<31) - 1) || value < -(1<<31) {
+        if value > ((1 << 31) - 1) || value < -(1 << 31) {
             return 0;
         }
         return value;
@@ -220,14 +220,14 @@ class Zero: NSObject {
         var ans = 0;
         while idx < n && Character.init(chars[idx]).isNumber {
             guard let digit = Int(chars[idx]) else { return 0 };
-            if ans > ((1<<31) - 1 - digit) / 10 {
-                return negative ? -(1<<31) : (1<<31) - 1;
+            if ans > ((1 << 31) - 1 - digit) / 10 {
+                return negative ? -(1 << 31) : (1 << 31) - 1;
             }
             ans = ans * 10 + digit;
             idx += 1;
         }
-        if ans > (1<<31) - 1 || -ans < -(1<<31) {
-            return negative ? -(1<<31) : (1<<31) - 1;
+        if ans > (1 << 31) - 1 || -ans < -(1 << 31) {
+            return negative ? -(1 << 31) : (1 << 31) - 1;
         }
         return negative ? -ans : ans;
     }

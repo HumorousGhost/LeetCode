@@ -14,7 +14,7 @@ class Eight: NSObject {
         var i = nums.count - 1
         while i >= 0 {
             let value = nums[i]
-            map[value] = map[value] != nil ? map[value]! + 1 : 1
+            map[value, default: 0] += 1
             if map[value]! > 2 {
                 nums.remove(at: i)
             }
@@ -230,11 +230,11 @@ class Eight: NSObject {
             var freq = [String: Int]()
             for i in i1..<i1 + length {
                 let c = s1Arr[i]
-                freq[c] = freq[c] != nil ? freq[c]! + 1 : 1
+                freq[c, default: 0] += 1
             }
             for i in i2..<i2 + length {
                 let c = s2Arr[i]
-                freq[c] = freq[c] != nil ? freq[c]! - 1 : -1
+                freq[c, default: 0] += 1
             }
             
             for (_, value) in freq {

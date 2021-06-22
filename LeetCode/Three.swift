@@ -28,7 +28,7 @@ class Three: NSObject {
         
         var wordFreqCnt = [String : Int]()
         for word in words {
-            wordFreqCnt[word] = wordFreqCnt[word] != nil ? wordFreqCnt[word]! + 1 : 1
+            wordFreqCnt[word, default: 0] += 1
         }
         
         var i = 0
@@ -39,7 +39,7 @@ class Three: NSObject {
             var j = i
             while j < i + wordLenCnt {
                 let tmpString = (s as NSString).substring(with: NSRange.init(location: j, length: everyWordLen))
-                tmpFreqCnt[tmpString] = tmpFreqCnt[tmpString] != nil ? tmpFreqCnt[tmpString]! + 1 : 1
+                tmpFreqCnt[tmpString, default: 0] += 1
                 j += everyWordLen
             }
             

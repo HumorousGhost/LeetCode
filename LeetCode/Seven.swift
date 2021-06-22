@@ -187,7 +187,7 @@ class Seven: NSObject {
         }
         
         for char in (t.map { String($0) }) {
-            ori[char] = ori[char] != nil ? ori[char]! + 1 : 1
+            ori[char, default: 0] += 1
         }
         
         var l = 0, r = -1
@@ -200,7 +200,7 @@ class Seven: NSObject {
             r += 1
             
             if r < sLen && ori[sArray[r]] ?? 0 > 0 {
-                cnt[sArray[r]] = cnt[sArray[r]] != nil ? cnt[sArray[r]]! + 1 : 1
+                cnt[sArray[r], default: 0] += 1
             }
             
             while check() && l <= r {

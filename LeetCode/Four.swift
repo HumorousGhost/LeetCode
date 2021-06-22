@@ -322,8 +322,8 @@ class Four: NSObject {
             var array = str.map{ $0 }
             array.sort()
             let key = String(array)
-            var list = map[key] != nil ? map[key] : [String]()
-            list?.append(str)
+            var list = map[key, default: [String]()]
+            list.append(str)
             map[key] = list
         }
         var array = [[String]]()

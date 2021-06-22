@@ -222,7 +222,7 @@ class Thirteen: NSObject {
     func singleNumber2(_ nums: [Int]) -> Int {
         var map = [Int: Int]()
         for num in nums {
-            map[num] = map[num] != nil ? map[num]! + 1 : 1
+            map[num, default: 0] += 1
         }
         
         for (key, value) in map {
