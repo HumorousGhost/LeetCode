@@ -34,4 +34,16 @@ class Fifteen: NSObject {
         }
         return stack.removeLast()
     }
+    
+    // 151. 翻转字符串里的单词
+    func reverseWords(_ s: String) -> String {
+        let sArr = s.components(separatedBy: " ")
+        var newArr = [String]()
+        for i in 0..<sArr.count {
+            if sArr[i] != "" {
+                newArr.insert(sArr[i], at: 0)
+            }
+        }
+        return newArr.joined(separator: " ")
+    }
 }

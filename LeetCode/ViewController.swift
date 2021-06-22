@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Fourteen().maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]])
+        let result = Fifteen().reverseWords("  hello world  ")
         print(result)
 //        print(arr)
     }
