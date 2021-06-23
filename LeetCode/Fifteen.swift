@@ -81,7 +81,7 @@ class Fifteen: NSObject {
     func findMinII(_ nums: [Int]) -> Int {
         var low = 0, high = nums.count - 1
         while low < high {
-            let pivot = low + (high - low) / 2
+            let pivot = (high + low) / 2
             if nums[pivot] < nums[high] {
                 high = pivot
             } else if nums[pivot] > nums[high] {
