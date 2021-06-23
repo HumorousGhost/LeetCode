@@ -46,4 +46,17 @@ class Fifteen: NSObject {
         }
         return newArr.joined(separator: " ")
     }
+    
+    // 152. 乘积最大子数组
+    func maxProduct(_ nums: [Int]) -> Int {
+        var maxF = nums[0], minF = nums[0], ans = nums[0]
+        let length = nums.count
+        for i in 1..<length {
+            let mx = maxF, mn = minF
+            maxF = max(mx * nums[i], max(nums[i], mn * nums[i]))
+            minF = min(mn * nums[i], min(nums[i], mx * nums[i]))
+            ans = max(maxF, ans)
+        }
+        return ans
+    }
 }
