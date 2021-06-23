@@ -59,4 +59,21 @@ class Fifteen: NSObject {
         }
         return ans
     }
+    
+    // 153. 寻找旋转排序数组中的最小值
+    func findMin(_ nums: [Int]) -> Int {
+        var left = 0, right = nums.count - 1
+        var minValue = nums[0]
+        while left <= right {
+            let mid = (left + right) / 2
+            if nums[left] <= nums[mid] {
+                minValue = min(minValue, nums[left])
+                left = mid + 1
+            } else {
+                minValue = min(minValue, nums[mid])
+                right = mid - 1
+            }
+        }
+        return minValue
+    }
 }
