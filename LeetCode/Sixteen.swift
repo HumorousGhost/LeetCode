@@ -26,4 +26,17 @@ class Sixteen {
         }
         return pA
     }
+    
+    // 162. 寻找峰值
+    func findPeakElement(_ nums: [Int]) -> Int {
+        var nums = nums
+        nums.insert(Int.min, at: 0)
+        nums.append(Int.min)
+        for i in 1..<nums.count - 1 {
+            if nums[i] > nums[i - 1] && nums[i] > nums[i + 1] {
+                return i
+            }
+        }
+        return Int.min
+    }
 }
