@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Ten: NSObject {
+class Ten {
     // 100. 相同的树
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil && q == nil {

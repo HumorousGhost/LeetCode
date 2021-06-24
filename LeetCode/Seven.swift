@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Seven: NSObject {
+class Seven {
     // 70. 爬楼梯
     func climbStairs(_ n: Int) -> Int {
         var p = 0, q = 0, r = 1

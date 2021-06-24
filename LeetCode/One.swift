@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class One: NSObject {
+class One {
     // 10. 正则表达式匹配
     func isMatch(_ s: String, _ p: String) -> Bool {
         if s.count > 20 || p.count > 30 {

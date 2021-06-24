@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Thirteen: NSObject {
+class Thirteen {
     // 130. 被围绕的区域
     func solve(_ board: inout [[Character]]) {
         let n = board.count

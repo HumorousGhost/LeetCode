@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Eight: NSObject {
+class Eight {
     // 80. 删除有序数组中的重复项 II
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         var map = [Int: Int]()

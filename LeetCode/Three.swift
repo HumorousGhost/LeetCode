@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Three: NSObject {
+class Three {
     // 30. 串联所有单词的子串
     func findSubstring(_ s: String, _ words: [String]) -> [Int] {
         // 哈希表+滑动窗口

@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Nine: NSObject {
+class Nine {
     // 90. 子集 II
     func subsetsWithDup(_ nums: [Int]) -> [[Int]] {
         var t = [Int](repeating: 0, count: 0)

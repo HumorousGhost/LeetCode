@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Fourteen: NSObject {
+class Fourteen {
     // 140. 单词拆分 II
     func wordBreak(_ s: String, _ wordDict: [String]) -> [String] {
         var map = [Int: [[String]]]()

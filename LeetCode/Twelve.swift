@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Twelve: NSObject {
+class Twelve {
     // 120. 三角形最小路径和
     func minimumTotal(_ triangle: [[Int]]) -> Int {
         let n = triangle.count

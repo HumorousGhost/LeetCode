@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Two: NSObject {
+class Two {
     // 20. 有效的括号
     func isValid(_ s: String) -> Bool {
         

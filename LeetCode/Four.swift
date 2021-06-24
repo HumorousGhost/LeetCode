@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Four: NSObject {
+class Four {
     // 40. 组合总和II
     func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
         var freq = [[Int]](repeating: [Int](repeating: 0, count: 0), count: 0)

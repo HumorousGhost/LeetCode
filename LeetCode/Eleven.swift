@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Eleven: NSObject {
+class Eleven {
     // 110. 平衡二叉树
     func isBalanced(_ root: TreeNode?) -> Bool {
         

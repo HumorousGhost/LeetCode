@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Fifteen: NSObject {
+class Fifteen {
     // 150. 逆波兰表达式求值
     func evalRPN(_ tokens: [String]) -> Int {
         var stack = [Int]()

@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Five: NSObject {
+class Five {
     // 50. Pow(x, n)
     func myPow(_ x: Double, _ n: Int) -> Double {
         

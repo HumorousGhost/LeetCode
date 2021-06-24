@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Six: NSObject {
+class Six {
     // 60. 排列序列
     func getPermutation(_ n: Int, _ k: Int) -> String {
         var factorial = [Int](repeating: 0, count: n)

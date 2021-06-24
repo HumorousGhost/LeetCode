@@ -23,6 +23,7 @@
 		987FE32E2653AB6800C894B4 /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FE32D2653AB6800C894B4 /* Eight.swift */; };
 		98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B468264D2BF100CD4ADE /* Seven.swift */; };
 		98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE2BB3266A04670036EA96 /* Twelve.swift */; };
+		98B701042684618E009E4934 /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
 		98B7FA0D2643C5A00025D633 /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7FA0C2643C5A00025D633 /* Five.swift */; };
 		98C0CD4F267C382E006ED19D /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		98C0CD50267C382E006ED19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
@@ -100,6 +101,7 @@
 		987FE32D2653AB6800C894B4 /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
 		98A2B468264D2BF100CD4ADE /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
 		98AE2BB3266A04670036EA96 /* Twelve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twelve.swift; sourceTree = "<group>"; };
+		98B701032684618E009E4934 /* Sixteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sixteen.swift; sourceTree = "<group>"; };
 		98B7FA0C2643C5A00025D633 /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
 		98C0CD6A267C382E006ED19D /* LeetCode_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C0CD6B267C382E006ED19D /* LeetCodeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LeetCodeDev-Info.plist"; path = "/Users/ued/Desktop/Xcode/LeetCode/LeetCodeDev-Info.plist"; sourceTree = "<absolute>"; };
@@ -197,6 +199,7 @@
 				981E8AC22671AFF500AA0D6C /* Thirteen.swift */,
 				98CE5B492679E752003DBDDF /* Fourteen.swift */,
 				983E990B2681C91F00EB76F2 /* Fifteen.swift */,
+				98B701032684618E009E4934 /* Sixteen.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -388,6 +391,7 @@
 				980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */,
 				98D0F0442631592F00D51735 /* One.swift in Sources */,
 				986A58A226660CBB0053C53B /* Eleven.swift in Sources */,
+				98B701042684618E009E4934 /* Sixteen.swift in Sources */,
 				981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */,
 				98D0F04926315B7300D51735 /* Three.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,
