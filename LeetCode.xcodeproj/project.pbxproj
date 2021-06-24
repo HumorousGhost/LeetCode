@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA5E126831EFC00C7F2E6 /* MinStack.swift */; };
 		980CAD76265F7635009B8DE2 /* Ten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CAD75265F7635009B8DE2 /* Ten.swift */; };
 		98118DBE26491BB3001F12FF /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E8AC22671AFF500AA0D6C /* Thirteen.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		980CA5E126831EFC00C7F2E6 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		980CAD75265F7635009B8DE2 /* Ten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ten.swift; sourceTree = "<group>"; };
 		98118DBD26491BB3001F12FF /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				98F5FA44265CD73000CE2605 /* TreeNode.swift */,
 				98D7B37B2668B9530063CFF9 /* Node.swift */,
 				98C0CD78267C7F29006ED19D /* LRUCache.swift */,
+				980CA5E126831EFC00C7F2E6 /* MinStack.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -382,6 +385,7 @@
 				98D0F0322631257D00D51735 /* Two.swift in Sources */,
 				98D0F03C2631589100D51735 /* ListNode.swift in Sources */,
 				983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */,
+				980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */,
 				98D0F0442631592F00D51735 /* One.swift in Sources */,
 				986A58A226660CBB0053C53B /* Eleven.swift in Sources */,
 				981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */,
