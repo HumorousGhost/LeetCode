@@ -34,9 +34,49 @@ class Sixteen {
         nums.append(Int.min)
         for i in 1..<nums.count - 1 {
             if nums[i] > nums[i - 1] && nums[i] > nums[i + 1] {
-                return i
+                return i - 1
             }
         }
         return Int.min
+    }
+    
+    // 164. 最大间距
+    func maximumGap(_ nums: [Int]) -> Int {
+        if nums.count < 2 {
+            return 0
+        }
+        
+        let minValue = nums.min()!
+        let maxValue = nums.max()!
+        
+        let d = max(1, (maxValue - minValue) / (nums.count - 1))
+        let bucketSize = ((maxValue - minValue) / d) + 1
+        // 存储（桶内最小值，桶内最大值）对，（-1， -1）表示该桶是空的
+        var bucket = [[Int]](repeating: [-1, -1], count: bucketSize)
+        
+        for i in 0..<nums.count {
+            let idx = (nums[i] - minValue) / d
+            if bucket[idx][0] == -1 {
+                bucket[idx][0] = nums[i]
+                bucket[idx][1] = nums[i]
+            } else {
+                bucket[idx][0] = min(bucket[idx][0], nums[i])
+                bucket[idx][1] = max(bucket[idx][1], nums[i])
+            }
+        }
+        
+        var res = 0
+        var prev = -1
+        for i in 0..<bucketSize {
+            if bucket[i][0] == -1 {
+                continue
+            }
+            if prev != -1 {
+                res = max(res, bucket[i][0] - bucket[prev][1])
+            }
+            prev = i
+        }
+        
+        return res
     }
 }
