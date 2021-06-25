@@ -79,4 +79,53 @@ class Sixteen {
         
         return res
     }
+    
+    // 165. 比较版本号
+    func compareVersion(_ version1: String, _ version2: String) -> Int {
+        
+        func getNextChunk(_ version: String, _ n: Int, _ p: Int) -> (Int, Int) {
+            // if pointer is set to the end of string
+            // return 0
+            if p > n - 1 {
+                return (0, p)
+            }
+            
+            let versionArr = version.map { String($0) }
+            
+            // find the end of chunk
+            var i = 0, p = p, pEnd = p
+            while pEnd < n && versionArr[pEnd] != "." {
+                pEnd += 1
+            }
+            
+            // retrieve the chunk
+            if pEnd != n - 1 {
+                i = (versionArr[p..<pEnd].joined() as NSString).integerValue
+            } else {
+                i = (versionArr[p..<n].joined() as NSString).integerValue
+            }
+            
+            // find the beginning of next chunk
+            p = pEnd + 1
+            return (i, p)
+        }
+        
+        var p1 = 0, p2 = 0
+        let n1 = version1.count, n2 = version2.count
+        
+        // compare versions
+        var i1 = 0, i2 = 0
+        while p1 < n1 || p2 < n2 {
+            (i1, p1) = getNextChunk(version1, n1, p1)
+            
+            (i2, p2) = getNextChunk(version2, n2, p2)
+            
+            if i1 != i2 {
+                return i1 > i2 ? 1 : -1
+            }
+        }
+        
+        // the versions are equal
+        return 0
+    }
 }
