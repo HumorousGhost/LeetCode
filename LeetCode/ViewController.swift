@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Fifteen().findMin([2,1])
+        let result = Sixteen().fractionToDecimal(4, 333)
         print(result)
 //        print(arr)
     }

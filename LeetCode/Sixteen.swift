@@ -128,4 +128,39 @@ class Sixteen {
         // the versions are equal
         return 0
     }
+    
+    // 166. 分数到小数
+    func fractionToDecimal(_ numerator: Int, _ denominator: Int) -> String {
+        if numerator == 0 {
+            return "0"
+        }
+        
+        var fraction = [String]()
+        // If either one is negative (not both)
+        if (numerator < 0 && denominator > 0) || (numerator > 0 && denominator < 0) {
+            fraction.append("-")
+        }
+        // Convert to Int or else abs(-2147483648) overflows
+        let dividend = abs(numerator)
+        let divisor = abs(denominator)
+        fraction.append("\(dividend / divisor)")
+        var remainder = dividend % divisor
+        if remainder == 0 {
+            return fraction.joined()
+        }
+        fraction.append(".")
+        var map = [Int: Int]()
+        while remainder != 0 {
+            if map.keys.contains(remainder) {
+                fraction.insert("(", at: map[remainder]!)
+                fraction.append(")")
+                break
+            }
+            map[remainder] = fraction.count
+            remainder *= 10
+            fraction.append("\(remainder / divisor)")
+            remainder %= divisor
+        }
+        return fraction.joined()
+    }
 }
