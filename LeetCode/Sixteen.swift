@@ -242,4 +242,20 @@ class Sixteen {
         res = title(number) + res
         return res
     }
+    
+    // 169. 多数元素
+    func majorityElement(_ nums: [Int]) -> Int {
+        var map = [Int: Int]()
+        for num in nums {
+            map[num, default: 0] += 1
+        }
+        
+        for (key, value) in map {
+            if value > nums.count / 2 {
+                return key
+            }
+        }
+        
+        return 0
+    }
 }
