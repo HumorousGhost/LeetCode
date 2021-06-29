@@ -54,4 +54,15 @@ class Seventeen: NSObject {
         
         return ans
     }
+    
+    // 172. 阶乘后的零
+    func trailingZeroes(_ n: Int) -> Int {
+        var zeroCount = 0
+        var n = n
+        while n > 0 {
+            n /= 5
+            zeroCount += n
+        }
+        return zeroCount
+    }
 }
