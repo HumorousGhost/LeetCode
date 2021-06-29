@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Sixteen().convertToTitle(2147483647)
+        let result = Seventeen().titleToNumber("FXSHRXW")
         print(result)
 //        print(arr)
     }
