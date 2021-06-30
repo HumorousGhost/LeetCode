@@ -45,9 +45,13 @@ class Seventeen: NSObject {
         let titles = columnTitle.map { String($0) }
         var ans = 0
         var multiple = 1
-        for i in 0..<titles.count {
-            let index = titles.count - 1 - i
-            let num = number(titles[index])
+        
+        for i in stride(from: titles.count - 1, through: 0, by: -1) {
+            print(i)
+        }
+        
+        for i in (0..<titles.count).reversed() {
+            let num = number(titles[i])
             ans += num * multiple
             multiple *= 26
         }
@@ -64,5 +68,23 @@ class Seventeen: NSObject {
             zeroCount += n
         }
         return zeroCount
+    }
+    
+    // 174. 地下城游戏
+    func calculateMinimumHP(_ dungeon: [[Int]]) -> Int {
+        let n = dungeon.count, m = dungeon[0].count
+        var dp = [[Int]](repeating: [Int](repeating: Int.max, count: m + 1), count: n + 1)
+        
+        dp[n][m - 1] = 1
+        dp[n - 1][m] = 1
+        
+        for i in stride(from: n - 1, through: 0, by: -1) {
+            for j in stride(from: m - 1, through: 0, by: -1) {
+                let minValue = min(dp[i + 1][j], dp[i][j + 1])
+                dp[i][j] = max(minValue - dungeon[i][j], 1)
+            }
+        }
+        
+        return dp[0][0]
     }
 }
