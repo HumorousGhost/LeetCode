@@ -111,4 +111,33 @@ class Seventeen: NSObject {
     /**
      SELECT Score, DENSE_RANK() OVER (ORDER BY Score DESC) AS `Rank` FROM Scores
      */
+    
+    // 179. 最大数
+    func largestNumber(_ nums: [Int]) -> String {
+        let n = nums.count
+        var numsArr = [Int](repeating: 0, count: n)
+        for i in 0..<n {
+            numsArr[i] = nums[i]
+        }
+        
+        numsArr.sort { (x, y) -> Bool in
+            var sx = 10, sy = 10
+            while sx <= x {
+                sx *= 10
+            }
+            while sy <= y {
+                sy *= 10
+            }
+            return sy * x + y > sx * y + x
+        }
+        
+        if numsArr[0] == 0 {
+            return "0"
+        }
+        var string = ""
+        for num in numsArr {
+            string += "\(num)"
+        }
+        return string
+    }
 }
