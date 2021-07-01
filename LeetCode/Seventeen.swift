@@ -93,4 +93,17 @@ class Seventeen: NSObject {
     
     // 176. 第二高的薪水
     // SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+    
+    // 177. 第N高的薪水
+    /**
+     CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+     BEGIN
+        SET N := N - 1;
+        RETURN (
+            # Write your MySQL query statement below
+            
+            SELECT Salary FROM Employee GROUP BY Salary ORDER BY Salary DESC LIMIT N, 1
+        );
+     END
+     */
 }
