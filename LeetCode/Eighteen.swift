@@ -8,7 +8,7 @@
 import Foundation
 
 class Eighteen {
-    // 连续出现的数字
+    // 180. 连续出现的数字
     /**
      SELECT DISTINCT
         l1.Num AS ConsecutiveNums
@@ -22,5 +22,15 @@ class Eighteen {
         AND l1.Num = l2.Num
         AND l2.Num = l3.Num
      ;
+     */
+    
+    // 181. 超过经理收入的员工
+    /**
+    SELECT
+        a.Name AS Employee
+    FROM Employee AS a JOIN Employee AS b
+        ON a.ManagerId = b.Id
+        AND a.Salary > b.Salary
+    ;
      */
 }
