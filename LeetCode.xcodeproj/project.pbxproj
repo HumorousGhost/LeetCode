@@ -12,6 +12,10 @@
 		98118DBE26491BB3001F12FF /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E8AC22671AFF500AA0D6C /* Thirteen.swift */; };
+		9820FA89268EAAE3006ECD9E /* Eighteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987EA1B8268DB17D000CDD91 /* Eighteen.swift */; };
+		9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
+		9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
+		9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9DF254BB37A007B5639 /* AppDelegate.swift */; };
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
 		983CB9E4254BB37D007B5639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E3254BB37D007B5639 /* Assets.xcassets */; };
@@ -21,6 +25,7 @@
 		983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		986A58A226660CBB0053C53B /* Eleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A58A126660CBB0053C53B /* Eleven.swift */; };
 		987E03C42636B0F000962029 /* Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E03C32636B0F000962029 /* Four.swift */; };
+		987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987EA1B8268DB17D000CDD91 /* Eighteen.swift */; };
 		987FE32E2653AB6800C894B4 /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FE32D2653AB6800C894B4 /* Eight.swift */; };
 		98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B468264D2BF100CD4ADE /* Seven.swift */; };
 		98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE2BB3266A04670036EA96 /* Twelve.swift */; };
@@ -101,6 +106,7 @@
 		9865566426325DB300F6841F /* LeetCode.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = LeetCode.entitlements; sourceTree = "<group>"; };
 		986A58A126660CBB0053C53B /* Eleven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eleven.swift; sourceTree = "<group>"; };
 		987E03C32636B0F000962029 /* Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Four.swift; sourceTree = "<group>"; };
+		987EA1B8268DB17D000CDD91 /* Eighteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eighteen.swift; sourceTree = "<group>"; };
 		987FE32D2653AB6800C894B4 /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
 		98A2B468264D2BF100CD4ADE /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
 		98AE2BB3266A04670036EA96 /* Twelve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twelve.swift; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 				983E990B2681C91F00EB76F2 /* Fifteen.swift */,
 				98B701032684618E009E4934 /* Sixteen.swift */,
 				9811E86E2689B82B00FB58EA /* Seventeen.swift */,
+				987EA1B8268DB17D000CDD91 /* Eighteen.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -401,6 +408,7 @@
 				981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */,
 				98D0F04926315B7300D51735 /* Three.swift in Sources */,
 				98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */,
+				987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
 				983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */,
@@ -442,14 +450,17 @@
 				98C0CD50267C382E006ED19D /* ViewController.swift in Sources */,
 				98C0CD51267C382E006ED19D /* Two.swift in Sources */,
 				98C0CD52267C382E006ED19D /* ListNode.swift in Sources */,
+				9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */,
 				98C0CD53267C382E006ED19D /* AppDelegate.swift in Sources */,
 				98C0CD54267C382E006ED19D /* One.swift in Sources */,
 				98C0CD55267C382E006ED19D /* Eleven.swift in Sources */,
 				98C0CD56267C382E006ED19D /* Thirteen.swift in Sources */,
+				9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */,
 				98C0CD57267C382E006ED19D /* Three.swift in Sources */,
 				98C0CD58267C382E006ED19D /* Fourteen.swift in Sources */,
 				98C0CD59267C382E006ED19D /* TreeNode.swift in Sources */,
 				98C0CD5A267C382E006ED19D /* Zero.swift in Sources */,
+				9820FA89268EAAE3006ECD9E /* Eighteen.swift in Sources */,
 				98C0CD5B267C382E006ED19D /* Twelve.swift in Sources */,
 				98C0CD5C267C382E006ED19D /* Node.swift in Sources */,
 				98C0CD5D267C382E006ED19D /* Five.swift in Sources */,
@@ -458,6 +469,7 @@
 				98C0CD60267C382E006ED19D /* Ten.swift in Sources */,
 				98C0CD61267C382E006ED19D /* Eight.swift in Sources */,
 				98C0CD62267C382E006ED19D /* Nine.swift in Sources */,
+				9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,10 +928,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 35V98WX3X4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "LeetCodeDev-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
