@@ -53,4 +53,25 @@ class Eighteen {
     )
     ;
      */
+    
+    // 184. 部门工资最高的员工
+    /**
+    SELECT
+        Department.Name AS 'Department',
+        Employee.Name AS 'Employee',
+        Salary
+    FROM
+        Employee
+            JOIN
+        Department ON Employee.DepartmentId = Department.Id
+    WHERE (Employee.DepartmentId, Salary) IN (
+        SELECT
+            DepartmentId,
+            MAX(Salary)
+        FROM
+            Employee
+        GROUP BY DepartmentId
+    )
+    ;
+     */
 }
