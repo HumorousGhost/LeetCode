@@ -43,4 +43,14 @@ class Eighteen {
         HAVING COUNT(Email) > 1
     ;
      */
+    
+    // 183. 从不订购的客户
+    /**
+    SELECT Customers.Name AS 'Customers'
+    FROM Customers
+    WHERE Customers.Id NOT IN (
+        SELECT CustomerId FROM Orders
+    )
+    ;
+     */
 }
