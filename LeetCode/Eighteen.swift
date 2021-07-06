@@ -119,4 +119,27 @@ class Eighteen {
         }
         return output
     }
+    
+    // 188. 买卖股票的最佳时机 IV
+    func maxProfit(_ k: Int, _ prices: [Int]) -> Int {
+        if prices.count == 0 || k == 0 {
+            return 0
+        }
+        
+        let n = prices.count
+        let k = min(k, n / 2)
+        var buy = [Int](repeating: Int.min / 2, count: k + 1)
+        var sell = [Int](repeating: Int.min / 2, count: k + 1)
+        buy[0] = -prices[0]
+        sell[0] = 0
+        
+        for i in 1..<n {
+            buy[0] = max(buy[0], sell[0] - prices[i])
+            for j in 1...k {
+                buy[j] = max(buy[j], sell[j] - prices[i])
+                sell[j] = max(sell[j], buy[j - 1] + prices[i])
+            }
+        }
+        return sell.max()!
+    }
 }

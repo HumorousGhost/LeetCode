@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Seventeen().largestNumber([10, 2])
+        let result = Eighteen().maxProfit(0, [1,3])
         print(result)
 //        print(arr)
     }
