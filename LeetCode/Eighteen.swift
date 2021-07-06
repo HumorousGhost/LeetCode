@@ -100,4 +100,23 @@ class Eighteen {
         )
     ;
      */
+    
+    // 187. 重复的DNA序列
+    func findRepeatedDnaSquences(_ s: String) -> [String] {
+        let L = 10, n = s.count
+        let sArr = s.map { String($0) }
+        var seen = [String](), output = [String]()
+        
+        // iterate over all squences of length L.
+        for start in stride(from: 0, to: n - L + 1, by: 1) {
+            let tmp = sArr[start..<start + L].joined()
+            if seen.contains(tmp) {
+                if !output.contains(tmp) {
+                    output.append(tmp)
+                }
+            }
+            seen.append(tmp)
+        }
+        return output
+    }
 }
