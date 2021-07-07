@@ -19,4 +19,14 @@ class Nineteen {
         }
         return rev
     }
+    
+    // 191. 位1的个数
+    func hammingWeight(_ n: Int) -> Int {
+        var ret = 0, n = n
+        while n > 0 {
+            n &= n - 1
+            ret += 1
+        }
+        return ret
+    }
 }
