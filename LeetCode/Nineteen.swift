@@ -34,4 +34,9 @@ class Nineteen {
     /**
      cat words.txt |tr -s ' ' '\n' |sort|uniq -c|sort -r|awk '{print $2,$1}'
      */
+    
+    // 193. 有效电话号码
+    /**
+     awk '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/' file.txt
+     */
 }
