@@ -50,4 +50,9 @@ class Nineteen {
          awk -v col=$i '{print $col}' file.txt | xargs
      done
      */
+    
+    // 195. 第十行
+    /**
+     sed -n "10p" file.txt
+     */
 }
