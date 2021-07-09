@@ -79,4 +79,27 @@ class Nineteen {
         weather.Temperature > w.Temperature
     ;
      */
+    
+    // 198. 打家劫舍
+    func rob(_ nums: [Int]) -> Int {
+        if nums.count == 0 {
+            return 0
+        }
+        
+        let count = nums.count
+        if count == 1 {
+            return nums[0]
+        }
+        
+        var first = nums[0], second = max(nums[0], nums[1])
+        if count == 2 {
+            return second
+        }
+        for i in 2..<count {
+            let temp = second
+            second = max(first + nums[i], second)
+            first = temp
+        }
+        return second
+    }
 }
