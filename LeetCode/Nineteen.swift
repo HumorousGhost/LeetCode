@@ -66,4 +66,17 @@ class Nineteen {
     AND p1.Id > p2.Id
     ;
      */
+    
+    // 197. 上升的温度
+    /**
+    SELECT
+        weather.Id AS 'Id'
+    FROM
+        Weather
+    JOIN
+        weather w ON DATEDIFF(weather.RecordDate, w.RecordDate) = 1
+    AND
+        weather.Temperature > w.Temperature
+    ;
+     */
 }
