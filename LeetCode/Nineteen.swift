@@ -102,4 +102,44 @@ class Nineteen {
         }
         return second
     }
+    
+    // 199. 二叉树的右视图
+    func rightSideView(_ root: TreeNode?) -> [Int] {
+        if root == nil {
+            return []
+        }
+        var rightmostValueAtDepth = [Int: Int]()
+        var maxDepth = -1
+        
+        var nodes = [TreeNode?]()
+        var depths = [Int]()
+        nodes.append(root)
+        depths.append(0)
+        
+        while !nodes.isEmpty {
+            let node = nodes.removeLast()
+            let depth = depths.removeLast()
+            if node != nil {
+                // 维护二叉树的最大深度
+                maxDepth = max(maxDepth, depth)
+                
+                // 如果不存在对应深度的节点我们才插入
+                if !rightmostValueAtDepth.keys.contains(depth) {
+                    rightmostValueAtDepth[depth] = node!.val
+                }
+                
+                nodes.append(node?.left)
+                nodes.append(node?.right)
+                depths.append(depth + 1)
+                depths.append(depth + 1)
+            }
+        }
+        
+        var rightView = [Int]()
+        for depth in 0...maxDepth {
+            rightView.append(rightmostValueAtDepth[depth]!)
+        }
+        
+        return rightView
+    }
 }

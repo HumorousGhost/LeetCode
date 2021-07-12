@@ -16,7 +16,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         var arr = [1,1,1,2,2,3]
         let list = ListNode.init(1, ListNode.init(4, ListNode.init(3, ListNode.init(2, ListNode.init(5, ListNode.init(2, ListNode.init(5, nil)))))))
-        let tree = TreeNode.init(3, TreeNode.init(9), TreeNode.init(20, TreeNode.init(15), TreeNode.init(7)))
+        let tree = TreeNode.init(1, TreeNode.init(2, nil, TreeNode.init(5)), TreeNode.init(3, nil, TreeNode.init(4)))
         let tree2 = TreeNode.init(2, TreeNode.init(1), TreeNode.init(3))
         let node1 = Node.init(7)
         let node2 = Node.init(13)
@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Eighteen().maxProfit(0, [1,3])
+        let result = Nineteen().rightSideView(tree)
         print(result)
 //        print(arr)
     }
