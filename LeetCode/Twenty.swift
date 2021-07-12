@@ -43,4 +43,16 @@ class Twenty {
         
         return numIslands
     }
+    
+    // 201. 数字范围按位与
+    func rangeBitwiseAnd(_ left: Int, _ right: Int) -> Int {
+        var shift = 0, left = left, right = right
+        // 找到公共前缀
+        while left < right {
+            left >>= 1
+            right >>= 1
+            shift += 1
+        }
+        return left << shift
+    }
 }
