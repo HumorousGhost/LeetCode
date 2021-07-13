@@ -78,4 +78,22 @@ class Twenty {
         return n == 1
     }
     
+    
+    // 203. 移除链表元素
+    func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
+        
+        let newHead = ListNode.init(0, head)
+        var temp: ListNode? = newHead
+        
+        while temp?.next != nil {
+            
+            if temp!.next!.val == val {
+                temp?.next = temp?.next?.next
+            } else {
+                temp = temp?.next
+            }
+        }
+        
+        return newHead.next
+    }
 }
