@@ -55,4 +55,27 @@ class Twenty {
         }
         return left << shift
     }
+    
+    // 202. 快乐数
+    func isHappy(_ n: Int) -> Bool {
+        
+        func getNext(_ n: Int) -> Int {
+            var totalSum = 0, n = n
+            while n > 0 {
+                let d = n % 10
+                n = n / 10
+                totalSum += d * d
+            }
+            return totalSum
+        }
+        
+        var seen = [Int](), n = n
+        while n != 1 && !seen.contains(n) {
+            seen.append(n)
+            n = getNext(n)
+        }
+        
+        return n == 1
+    }
+    
 }
