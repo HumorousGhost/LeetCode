@@ -96,4 +96,31 @@ class Twenty {
         
         return newHead.next
     }
+    
+    // 204. 计数质数
+    func countPrimes(_ n: Int) -> Int {
+        
+        func isPrimes(_ x: Int) -> Bool {
+            var i = 2
+            while i * i <= x {
+                if x % i == 0 {
+                    return false
+                }
+                i += 1
+            }
+            return true
+        }
+        
+        if n <= 2 {
+            return 0
+        }
+        
+        var ans = 0
+        for i in 2..<n {
+            ans += isPrimes(i) ? 1 : 0
+        }
+        NumberFormatter.Style
+        
+        return ans
+    }
 }
