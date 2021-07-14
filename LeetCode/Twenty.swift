@@ -153,4 +153,41 @@ class Twenty {
         }
         return prev
     }
+    
+    // 207. 课程表
+    func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
+        var edges = [[Int]](repeating: [Int](repeating: 0, count: 0), count: numCourses)
+        for info in prerequisites {
+            edges[info[1]].append(info[0])
+        }
+        
+        var visited = [Int](repeating: 0, count: numCourses)
+        var valid = true
+        
+        func dfs(_ u: Int) {
+            visited[u] = 1
+            for v in edges[u] {
+                if visited[v] == 0 {
+                    dfs(v)
+                    if !valid {
+                        return
+                    }
+                } else if visited[v] == 1 {
+                    valid = false
+                    return
+                }
+            }
+            visited[u] = 2
+        }
+        
+        var i = 0
+        while i < numCourses && valid {
+            if visited[i] == 0 {
+                dfs(i)
+            }
+            i += 1
+        }
+        
+        return valid
+    }
 }
