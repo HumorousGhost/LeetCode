@@ -119,8 +119,25 @@ class Twenty {
         for i in 2..<n {
             ans += isPrimes(i) ? 1 : 0
         }
-        NumberFormatter.Style
         
         return ans
+    }
+    
+    // 205. 同构字符串
+    func isIsomorphic(_ s: String, _ t: String) -> Bool {
+        let sArr = s.map({ String($0) }), tArr = t.map({ String($0) })
+        
+        var s2t = [String: String]()
+        var t2s = [String: String]()
+        let count = s.count
+        for i in 0..<count {
+            let x = sArr[i], y = tArr[i]
+            if (s2t[x] != nil && s2t[x] != y) || (t2s[y] != nil && t2s[y] != x) {
+                return false
+            }
+            s2t[x] = y
+            t2s[y] = x
+        }
+        return true
     }
 }
