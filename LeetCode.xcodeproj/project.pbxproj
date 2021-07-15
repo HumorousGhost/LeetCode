@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9805D03A269ECDA100973892 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805D039269ECDA100973892 /* Trie.swift */; };
 		980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA5E126831EFC00C7F2E6 /* MinStack.swift */; };
 		980CAD76265F7635009B8DE2 /* Ten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CAD75265F7635009B8DE2 /* Ten.swift */; };
 		98118DBE26491BB3001F12FF /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9805D039269ECDA100973892 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		980CA5E126831EFC00C7F2E6 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		980CAD75265F7635009B8DE2 /* Ten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ten.swift; sourceTree = "<group>"; };
 		98118DBD26491BB3001F12FF /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				98C0CD78267C7F29006ED19D /* LRUCache.swift */,
 				980CA5E126831EFC00C7F2E6 /* MinStack.swift */,
 				98EFDED4268B0133000AE6AB /* BSTIterator.swift */,
+				9805D039269ECDA100973892 /* Trie.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -417,6 +420,7 @@
 				98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */,
 				987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,
+				9805D03A269ECDA100973892 /* Trie.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
 				98407213269C205C00BAE235 /* Twenty.swift in Sources */,
 				983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */,
