@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Twenty().canFinish(2, [[1, 0], [0, 1]])
+        let result = Twenty().minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1])
         print(result)
 //        print(arr)
     }

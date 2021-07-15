@@ -190,4 +190,29 @@ class Twenty {
         
         return valid
     }
+    
+    // 209. 长度最小的子数组
+    func minSubArrayLen(_ target: Int, _ nums: [Int]) -> Int {
+        var lengths = [Int]()
+        let count = nums.count
+        for i in 0..<count {
+            let num = nums[i]
+            var sum = target - num
+            if sum <= 0 {
+                return 1
+            }
+            var length = 1
+            for j in i + 1..<count {
+                if sum - nums[j] <= 0 {
+                    length += 1
+                    lengths.append(length)
+                    break
+                } else {
+                    sum -= nums[j]
+                    length += 1
+                }
+            }
+        }
+        return lengths.min() ?? 0
+    }
 }
