@@ -32,16 +32,8 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = TwentyOne().findOrder(4, [[1,0],[2,0],[3,1],[3,2]])
+        let result = TwentyOne().findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], ["oath","pea","eat","rain"])
         print(result)
-        
-        let word = WordDictionary()
-        word.addWord("a")
-        word.addWord("ab")
-        print(word.search("a"))
-        print(word.search("a."))
-        print(word.search("ab"))
-        print(word.search(".a"))
         
 //        print(arr)
     }

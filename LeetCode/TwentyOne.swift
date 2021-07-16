@@ -65,4 +65,71 @@ class TwentyOne {
         // 如果没有环，那么就有拓扑排序
         return result
     }
+    
+    // 212. 单词搜索 II
+    func findWords(_ board: [[Character]], _ words: [String]) -> [String] {
+        
+        class TrieNode {
+            var children: [Character: TrieNode]
+            var word: String?
+            init() {
+                children = [Character: TrieNode]()
+                word = nil
+            }
+        }
+        
+        var board = board
+        var result = [String]()
+        
+        func buildTrie(_ words: [String]) -> TrieNode {
+            let root = TrieNode()
+            for word in words {
+                var node = root
+                for char in word {
+                    if node.children[char] == nil {
+                        node.children[char] = TrieNode()
+                    }
+                    node = node.children[char]!
+                }
+                node.word = word
+            }
+            return root
+        }
+        
+        func backtrack(_ i: Int, _ j: Int, _ parent: TrieNode) {
+            guard i >= 0 && j >= 0 && i < board.count && j < board[0].count else {
+                return
+            }
+            
+            let char = board[i][j]
+            guard let currNode = parent.children[char] else {
+                return
+            }
+            
+            if let word = currNode.word {
+                result.append(word)
+                currNode.word = nil
+            }
+            
+            board[i][j] = "#"
+            backtrack(i + 1, j, currNode)
+            backtrack(i - 1, j, currNode)
+            backtrack(i, j + 1, currNode)
+            backtrack(i, j - 1, currNode)
+            board[i][j] = char
+            
+            if currNode.children.isEmpty {
+                parent.children[char] = nil
+            }
+        }
+        
+        let root = buildTrie(words)
+        for i in 0..<board.count {
+            for j in 0..<board[0].count {
+                backtrack(i, j, root)
+            }
+        }
+        
+        return result
+    }
 }
