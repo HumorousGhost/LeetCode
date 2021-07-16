@@ -129,7 +129,6 @@ class TwentyOne {
                 backtrack(i, j, root)
             }
         }
-        
         return result
     }
 }
