@@ -158,4 +158,36 @@ class TwentyOne {
             return max(robRange(0, count - 2), robRange(1, count - 1))
         }
     }
+    
+    // 214. 最短回文串
+    func shortestPalindrome(_ s: String) -> String {
+        if s.count < 1 {
+            return ""
+        }
+        
+        let array = s.map{$0}
+        var index = 0
+        for i in (0..<s.count).reversed() {
+            var a = 0
+            var b = i
+            while a <= b {
+                if array[a] == array[b] {
+                    a += 1
+                    b -= 1
+                } else {
+                    break
+                }
+            }
+            if a >= b {
+                index = i
+                break
+            }
+        }
+        
+        var result = s
+        for i in index + 1..<s.count {
+            result.insert(array[i], at: result.startIndex)
+        }
+        return result
+    }
 }
