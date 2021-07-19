@@ -190,4 +190,14 @@ class TwentyOne {
         }
         return result
     }
+    
+    // 215. 数组中的第K个最大元素
+    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+        let array = nums.sorted()
+        if k > array.count {
+            return 0
+        } else {
+            return array[array.count - k]
+        }
+    }
 }
