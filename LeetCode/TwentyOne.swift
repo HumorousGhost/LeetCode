@@ -131,4 +131,31 @@ class TwentyOne {
         }
         return result
     }
+    
+    // 213. 打家劫舍 II
+    func rob(_ nums: [Int]) -> Int {
+        
+        func robRange(_ start: Int, _ end: Int) -> Int {
+            var first = nums[start], second = max(nums[start], nums[start + 1])
+            for i in start + 2...end {
+                let temp = second
+                second = max(first + nums[i], second)
+                first = temp
+            }
+            return second
+        }
+        
+        let count = nums.count
+        if count == 0 {
+            return 0
+        } else if count == 1 {
+            return nums[0]
+        } else if count == 2 {
+            return max(nums[0], nums[1])
+        } else if count == 3 {
+            return max(nums[0], max(nums[1], nums[2]))
+        } else {
+            return max(robRange(0, count - 2), robRange(1, count - 1))
+        }
+    }
 }
