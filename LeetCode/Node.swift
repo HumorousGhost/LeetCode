@@ -8,12 +8,14 @@
 import Cocoa
 
 public class Node {
+    
     public var val: Int
     public var left: Node?
     public var right: Node?
     public var next: Node?
     public var neighbors: [Node?] // 图表
     public var random: Node? // 随机指针
+    
     public init(_ val: Int, _ left: Node? = nil, _ right: Node? = nil) {
         self.val = val
         self.left = left

@@ -200,4 +200,34 @@ class TwentyOne {
             return array[array.count - k]
         }
     }
+    
+    // 216. 组合总和 III
+    func combinationSum3(_ k: Int, _ n: Int) -> [[Int]] {
+        var temp = [Int]()
+        var ans = [[Int]]()
+        
+        func check(_ mask: Int) -> Bool {
+            temp.removeAll()
+            for i in 0..<9 {
+                if ((1 << i) & mask) != 0 {
+                    temp.append(i + 1)
+                }
+            }
+            if temp.count != k {
+                return false
+            }
+            var sum = 0
+            for num in temp {
+                sum += num
+            }
+            return sum == n
+        }
+        
+        for mask in 0..<(1 << 9) {
+            if check(mask) {
+                ans.append(temp)
+            }
+        }
+        return ans
+    }
 }
