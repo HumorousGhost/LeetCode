@@ -243,4 +243,42 @@ class TwentyOne {
         }
         return false
     }
+    
+    // 218. 天际线问题
+    func getSkyline(_ buildings: [[Int]]) -> [[Int]] {
+        
+        var points = [Int]()
+        for building in buildings {
+            points.append(building[0])
+            points.append(building[1])
+        }
+        points.sort()
+        var pointsHigh = [Int](repeating: 0, count: points.count)
+        var pos = 0
+        for building in buildings {
+            while points[pos] < building[0] {
+                pos += 1
+            }
+            var i = pos
+            while points[i] < building[1] {
+                if pointsHigh[i] < building[2] {
+                    pointsHigh[i] = building[2]
+                }
+                i += 1
+            }
+        }
+        
+        var res = [[Int]]()
+        var currentHigh = 0
+        for i in 0..<pointsHigh.count {
+            let high = pointsHigh[i]
+            if high != currentHigh {
+                res.append([points[i], high])
+                currentHigh = high
+            }
+            
+        }
+        
+        return res
+    }
 }
