@@ -18,6 +18,7 @@
 		9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
 		9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
+		98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98238D6126A7FBBD005238C9 /* TwentyTwo.swift */; };
 		9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836086226A1695C00BE3D5D /* WordDictionary.swift */; };
 		983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9DF254BB37A007B5639 /* AppDelegate.swift */; };
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
@@ -97,6 +98,7 @@
 		98118DBD26491BB3001F12FF /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		9811E86E2689B82B00FB58EA /* Seventeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seventeen.swift; sourceTree = "<group>"; };
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
+		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 		983CB9DC254BB37A007B5639 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9DF254BB37A007B5639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				98592CA32694419800F1B8F2 /* Nineteen.swift */,
 				98407212269C205C00BAE235 /* Twenty.swift */,
 				980D017E26A01F7E00140ABF /* TwentyOne.swift */,
+				98238D6126A7FBBD005238C9 /* TwentyTwo.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -415,6 +418,7 @@
 				9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */,
 				983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */,
 				98D0F0322631257D00D51735 /* Two.swift in Sources */,
+				98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */,
 				98D0F03C2631589100D51735 /* ListNode.swift in Sources */,
 				983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */,
 				980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */,
