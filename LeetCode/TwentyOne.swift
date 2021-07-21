@@ -281,4 +281,19 @@ class TwentyOne {
         
         return res
     }
+    
+    // 219. 存在重复元素 II
+    func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
+        var map = [Int: Int]()
+        for i in 0..<nums.count {
+            let num = nums[i]
+            if let value = map[num] {
+                if i - value <= k {
+                    return true
+                }
+            }
+            map[num] = i
+        }
+        return false
+    }
 }
