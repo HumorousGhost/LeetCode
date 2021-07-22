@@ -61,4 +61,22 @@ class TwentyTwo {
         }
         return maxSide * maxSide
     }
+    
+    // 222. 完全二叉树的节点个数
+    func countNodes(_ root: TreeNode?) -> Int {
+        var result = 0
+        
+        func getNode(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            result += 1
+            getNode(root?.left)
+            getNode(root?.right)
+        }
+        
+        getNode(root)
+        
+        return result
+    }
 }
