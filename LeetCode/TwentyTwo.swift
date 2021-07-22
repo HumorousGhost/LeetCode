@@ -95,4 +95,55 @@ class TwentyTwo {
         
         return a + b - (ay1 >= by2 || ax2 <= bx1 || ay2 <= by1 || ax1 >= bx2 ? 0 : area)
     }
+    
+    // 224. 基本计算器
+    func calculate(_ s: String) -> Int {
+        // ops：栈数组，sign：正负标识，num：数字容器，result：结果
+        // 栈数组用来存储当前 结果以及符号
+        var ops = [Int](), sign = 1, num = "", result = 0
+        
+        // 用来计算
+        func calNum(_ char: String) {
+            result += Int(char) ?? 0 * sign
+            num = ""
+        }
+        
+        // 定义 temp 为去除空格字符串之后的 s
+        let temp = s.replacingOccurrences(of: " ", with: "")
+        
+        // 循环 temp
+        for char in temp {
+            if char == "(" {
+                // 先求和
+                calNum(num)
+                // 存之前的和
+                ops.append(result)
+                // 存当前符号
+                ops.append(sign)
+                result = 0
+                sign = 1
+            } else if char == ")" {
+                // 求和
+                calNum(num)
+                // 乘之前的符号
+                result *= ops.removeLast()
+                // 加上之前的和
+                result += ops.removeLast()
+            } else if char == "+" {
+                calNum(num)
+                sign = 1
+            } else if char == "-" {
+                calNum(num)
+                sign = -1
+            } else {
+                // 如果是数字，num依次拼接
+                num.append(char)
+            }
+        }
+        
+        // 循环结束，求最后的和
+        calNum(num)
+        
+        return result
+    }
 }
