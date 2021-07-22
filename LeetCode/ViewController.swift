@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = TwentyTwo().containsNearbyAlmostDuplicate([1,2,3,1], 3, 0)
+        let result = TwentyTwo().computeArea(-3,0,3,4,0,-1,9,2)
         print(result)
         
 //        print(arr)

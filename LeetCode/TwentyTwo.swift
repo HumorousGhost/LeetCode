@@ -79,4 +79,20 @@ class TwentyTwo {
         
         return result
     }
+    
+    // 223. 矩形面积
+    func computeArea(_ ax1: Int, _ ay1: Int, _ ax2: Int, _ ay2: Int, _ bx1: Int, _ by1: Int, _ bx2: Int, _ by2: Int) -> Int {
+        
+        let x1 = max(ax1, bx1)
+        let y1 = max(ay1, by1)
+        let x2 = min(ax2, bx2)
+        let y2 = min(ay2, by2)
+        let area = (x2 - x1) * (y2 - y1)
+        
+        let a = (ax2 - ax1) * (ay2 - ay1)
+        let b = (bx2 - bx1) * (by2 - by1)
+        
+        
+        return a + b - (ay1 >= by2 || ax2 <= bx1 || ay2 <= by1 || ax1 >= bx2 ? 0 : area)
+    }
 }
