@@ -164,4 +164,40 @@ class TwentyTwo {
         invert(root)
         return root
     }
+    
+    // 227. 基本计算器 II
+    func calculate2(_ s: String) -> Int {
+        var stack = [Int]()
+        
+        var num = 0
+        var operation = "+"
+
+        for c in s + "+" {
+            guard c != " " else { continue }
+            if c.isNumber {
+                num = num * 10 + Int(String(c))!
+            } else {
+                switch operation {
+                    case "+":
+                        stack.append(num)
+                    case "-":
+                        stack.append(-num)
+                    case "*":
+                        stack.append(stack.popLast()! * num)
+                    case "/":
+                        stack.append(stack.popLast()! / num)
+                    default:
+                        break
+                }
+                operation = String(c)
+                num = 0
+            }
+        }
+
+        var res = 0
+        for item in stack {
+            res += item
+        }
+        return res
+    }
 }
