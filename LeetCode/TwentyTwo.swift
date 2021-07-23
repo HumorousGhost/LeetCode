@@ -146,4 +146,22 @@ class TwentyTwo {
         
         return result
     }
+    
+    // 226. 翻转二叉树
+    func invertTree(_ root: TreeNode?) -> TreeNode? {
+        
+        func invert(_ root: TreeNode?) {
+            if root == nil {
+                return
+            }
+            let temp = root?.left
+            root?.left = root?.right
+            root?.right = temp
+            invert(root?.left)
+            invert(root?.right)
+        }
+        
+        invert(root)
+        return root
+    }
 }
