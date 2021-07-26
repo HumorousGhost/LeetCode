@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = TwentyTwo().calculate("1 + 1")
+        let result = TwentyTwo().summaryRanges([0,2,3,4,5,6,8,9])
         print(result)
         
 //        print(arr)

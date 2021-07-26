@@ -200,4 +200,26 @@ class TwentyTwo {
         }
         return res
     }
+    
+    // 228. 汇总区间
+    func summaryRanges(_ nums: [Int]) -> [String] {
+        var ans = [String]()
+        var i = 0
+        let n = nums.count
+        while i < n {
+            let low = i
+            i += 1
+            while i < n && nums[i] == nums[i - 1] + 1 {
+                i += 1
+            }
+            let high = i - 1
+            var temp = "\(nums[low])"
+            if low < high {
+                temp.append("->\(nums[high])")
+            }
+            ans.append(temp)
+        }
+        
+        return ans
+    }
 }
