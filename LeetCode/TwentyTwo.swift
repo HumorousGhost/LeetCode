@@ -222,4 +222,20 @@ class TwentyTwo {
         
         return ans
     }
+    
+    // 229. 求众数 II
+    func majorityElement(_ nums: [Int]) -> [Int] {
+        let m = nums.count / 3
+        var map = [Int: Int]()
+        for num in nums {
+            map[num, default: 0] += 1
+        }
+        var ans = [Int]()
+        for (key, value) in map {
+            if value > m {
+                ans.append(key)
+            }
+        }
+        return ans
+    }
 }
