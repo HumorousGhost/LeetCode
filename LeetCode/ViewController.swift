@@ -32,9 +32,8 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = TwentyTwo().majorityElement([1,1,1,3,3,2,2,2])
+        let result = TwentyThree().countDigitOne(13)
         print(result)
-        
 //        print(arr)
     }
 

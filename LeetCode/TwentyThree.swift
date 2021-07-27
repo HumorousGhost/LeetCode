@@ -30,4 +30,36 @@ class TwentyThree {
     func isPowerOfTwo(_ n: Int) -> Bool {
         return n > 0 && (n & -n) == n
     }
+    
+    // 233. 数字 1 的个数
+    func countDigitOne(_ n: Int) -> Int {
+        guard n > 0 else {
+            return 0
+        }
+
+        var res = 0
+        var digit = 1
+        var high = n / 10
+        var curr = n % 10
+        var low = 0
+
+        while high != 0 || curr != 0 {
+
+            if curr == 0 {
+                res += high * digit
+            } else if curr == 1 {
+                res += (high * digit + low + 1)
+            } else {
+                res += (high + 1) * digit
+            }
+
+            // 左移
+            low += curr * digit
+            curr = high % 10
+            high /= 10
+            digit *= 10
+        }
+
+        return res
+    }
 }
