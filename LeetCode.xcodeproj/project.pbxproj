@@ -71,6 +71,7 @@
 		98D0F04926315B7300D51735 /* Three.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F04826315B7300D51735 /* Three.swift */; };
 		98D7B37C2668B9530063CFF9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B37B2668B9530063CFF9 /* Node.swift */; };
 		98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDED4268B0133000AE6AB /* BSTIterator.swift */; };
+		98F1C10726AFE4F700E6EC00 /* MyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1C10626AFE4F700E6EC00 /* MyQueue.swift */; };
 		98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F5FA44265CD73000CE2605 /* TreeNode.swift */; };
 		98FFECC42657ADD400C645EB /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FFECC32657ADD400C645EB /* Nine.swift */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		98D0F04826315B7300D51735 /* Three.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Three.swift; sourceTree = "<group>"; };
 		98D7B37B2668B9530063CFF9 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		98EFDED4268B0133000AE6AB /* BSTIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTIterator.swift; sourceTree = "<group>"; };
+		98F1C10626AFE4F700E6EC00 /* MyQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueue.swift; sourceTree = "<group>"; };
 		98F5FA44265CD73000CE2605 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		98FFECC32657ADD400C645EB /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 				9805D039269ECDA100973892 /* Trie.swift */,
 				9836086226A1695C00BE3D5D /* WordDictionary.swift */,
 				988A44E426A95C1F00B25A87 /* MyStack.swift */,
+				98F1C10626AFE4F700E6EC00 /* MyQueue.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -431,6 +434,7 @@
 				98D0F0442631592F00D51735 /* One.swift in Sources */,
 				98592CA42694419900F1B8F2 /* Nineteen.swift in Sources */,
 				986A58A226660CBB0053C53B /* Eleven.swift in Sources */,
+				98F1C10726AFE4F700E6EC00 /* MyQueue.swift in Sources */,
 				98B701042684618E009E4934 /* Sixteen.swift in Sources */,
 				98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */,
 				981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */,
