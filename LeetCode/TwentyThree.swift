@@ -25,4 +25,9 @@ class TwentyThree {
         
         return nums[k - 1]
     }
+    
+    // 231. 2 的幂
+    func isPowerOfTwo(_ n: Int) -> Bool {
+        return n > 0 && (n & -n) == n
+    }
 }
