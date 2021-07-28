@@ -100,4 +100,40 @@ class TwentyThree {
         }
         return ancestor
     }
+    
+    // 236. 二叉树的最近公共祖先
+    func lowestCommonAncestor2(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        var parent = [Int: TreeNode?]()
+        var visited = [Int]()
+        
+        func dfs(_ root: TreeNode?) {
+            guard root != nil else {
+                return
+            }
+            if root?.left != nil {
+                parent[root!.left!.val] = root
+                dfs(root?.left)
+            }
+            if root?.right != nil {
+                parent[root!.right!.val] = root
+                dfs(root?.right)
+            }
+        }
+        
+        dfs(root)
+        var p = p
+        while p != nil {
+            visited.append(p!.val)
+            p = parent[p!.val] ?? nil
+        }
+        
+        var q = q
+        while q != nil {
+            if visited.contains(q!.val) {
+                return q
+            }
+            q = parent[q!.val] ?? nil
+        }
+        return nil
+    }
 }
