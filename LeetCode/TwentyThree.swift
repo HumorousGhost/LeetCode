@@ -85,4 +85,19 @@ class TwentyThree {
         
         return true
     }
+    
+    // 235. 二叉搜索树的最近公共祖先
+    func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        var ancestor = root
+        while true {
+            if p?.val ?? 0 < ancestor?.val ?? 0 && q?.val ?? 0 < ancestor?.val ?? 0 {
+                ancestor = ancestor?.left
+            } else if p?.val ?? 0 > ancestor?.val ?? 0 && q?.val ?? 0 > ancestor?.val ?? 0 {
+                ancestor = ancestor?.right
+            } else {
+                break
+            }
+        }
+        return ancestor
+    }
 }
