@@ -62,4 +62,27 @@ class TwentyThree {
 
         return res
     }
+    
+    // 234. 回文链表
+    func isPalindrome(_ head: ListNode?) -> Bool {
+        var list = [Int]()
+        var curr = head
+        while curr != nil {
+            list.append(curr!.val)
+            curr = curr?.next
+        }
+        
+        var left = 0
+        var right = list.count - 1
+        while left < right {
+            if list[left] == list[right] {
+                left += 1
+                right -= 1
+            } else {
+                return false
+            }
+        }
+        
+        return true
+    }
 }
