@@ -175,4 +175,39 @@ class TwentyThree {
         }
         return answer
     }
+    
+    // 239. 滑动窗口最大值
+    func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
+        if nums.count == 0 {
+            return []
+        }
+        if k == 1 {
+            return nums
+        }
+        
+        var answer = [Int]()
+        // 存储窗口数据的索引
+        var window = [Int]()
+        
+        for (index, value) in nums.enumerated() {
+            
+            // 可以理解为滑动window，移动到最右边的时候
+            if index >= k && window[0] <= (index - k) {
+                // 滑动到下一个位置的时候，要移除最左边的，保持window的长度
+                window.removeFirst()
+            }
+            
+            while window.count > 0 && nums[window.last!] <= value {
+                window.popLast()
+            }
+            
+            window.append(index)
+            
+            if index >= (k - 1) {
+                answer.append(nums[window[0]])
+            }
+        }
+        
+        return answer
+    }
 }
