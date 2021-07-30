@@ -29,6 +29,7 @@
 		983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		98407213269C205C00BAE235 /* Twenty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98407212269C205C00BAE235 /* Twenty.swift */; };
 		98592CA42694419900F1B8F2 /* Nineteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98592CA32694419800F1B8F2 /* Nineteen.swift */; };
+		98677E0926B3D55400A17970 /* TwentyFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98677E0826B3D55400A17970 /* TwentyFour.swift */; };
 		986A58A226660CBB0053C53B /* Eleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A58A126660CBB0053C53B /* Eleven.swift */; };
 		987E03C42636B0F000962029 /* Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987E03C32636B0F000962029 /* Four.swift */; };
 		987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987EA1B8268DB17D000CDD91 /* Eighteen.swift */; };
@@ -119,6 +120,7 @@
 		98407212269C205C00BAE235 /* Twenty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twenty.swift; sourceTree = "<group>"; };
 		98592CA32694419800F1B8F2 /* Nineteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nineteen.swift; sourceTree = "<group>"; };
 		9865566426325DB300F6841F /* LeetCode.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = LeetCode.entitlements; sourceTree = "<group>"; };
+		98677E0826B3D55400A17970 /* TwentyFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyFour.swift; sourceTree = "<group>"; };
 		986A58A126660CBB0053C53B /* Eleven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eleven.swift; sourceTree = "<group>"; };
 		987E03C32636B0F000962029 /* Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Four.swift; sourceTree = "<group>"; };
 		987EA1B8268DB17D000CDD91 /* Eighteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eighteen.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				980D017E26A01F7E00140ABF /* TwentyOne.swift */,
 				98238D6126A7FBBD005238C9 /* TwentyTwo.swift */,
 				98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */,
+				98677E0826B3D55400A17970 /* TwentyFour.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -445,6 +448,7 @@
 				987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,
 				9805D03A269ECDA100973892 /* Trie.swift in Sources */,
+				98677E0926B3D55400A17970 /* TwentyFour.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
 				98407213269C205C00BAE235 /* Twenty.swift in Sources */,
 				983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */,

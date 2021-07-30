@@ -198,7 +198,7 @@ class TwentyThree {
             }
             
             while window.count > 0 && nums[window.last!] <= value {
-                window.popLast()
+                window.removeLast()
             }
             
             window.append(index)
