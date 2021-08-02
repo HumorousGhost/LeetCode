@@ -36,4 +36,9 @@ class TwentyFive {
         
         return paths
     }
+    
+    // 258. 各位相加
+    func addDigits(_ num: Int) -> Int {
+        return (num - 1) % 9 + 1
+    }
 }
