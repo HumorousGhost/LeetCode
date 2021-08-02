@@ -28,6 +28,7 @@
 		983CB9FE254BB37E007B5639 /* LeetCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9FD254BB37E007B5639 /* LeetCodeUITests.swift */; };
 		983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		98407213269C205C00BAE235 /* Twenty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98407212269C205C00BAE235 /* Twenty.swift */; };
+		9856F72F26B7D2310077D426 /* TwentySix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9856F72E26B7D2310077D426 /* TwentySix.swift */; };
 		98592CA42694419900F1B8F2 /* Nineteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98592CA32694419800F1B8F2 /* Nineteen.swift */; };
 		98677E0926B3D55400A17970 /* TwentyFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98677E0826B3D55400A17970 /* TwentyFour.swift */; };
 		986A58A226660CBB0053C53B /* Eleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A58A126660CBB0053C53B /* Eleven.swift */; };
@@ -119,6 +120,7 @@
 		983CB9FF254BB37E007B5639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983E990B2681C91F00EB76F2 /* Fifteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fifteen.swift; sourceTree = "<group>"; };
 		98407212269C205C00BAE235 /* Twenty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twenty.swift; sourceTree = "<group>"; };
+		9856F72E26B7D2310077D426 /* TwentySix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentySix.swift; sourceTree = "<group>"; };
 		98592CA32694419800F1B8F2 /* Nineteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nineteen.swift; sourceTree = "<group>"; };
 		9865566426325DB300F6841F /* LeetCode.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = LeetCode.entitlements; sourceTree = "<group>"; };
 		98677E0826B3D55400A17970 /* TwentyFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyFour.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */,
 				98677E0826B3D55400A17970 /* TwentyFour.swift */,
 				987F444226B3E2510023CB84 /* TwentyFive.swift */,
+				9856F72E26B7D2310077D426 /* TwentySix.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -455,6 +458,7 @@
 				98677E0926B3D55400A17970 /* TwentyFour.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
 				98407213269C205C00BAE235 /* Twenty.swift in Sources */,
+				9856F72F26B7D2310077D426 /* TwentySix.swift in Sources */,
 				983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */,
 				98D0F037263157E900D51735 /* Zero.swift in Sources */,
 				98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */,
