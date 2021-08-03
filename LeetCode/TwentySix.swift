@@ -46,4 +46,21 @@ class TwentySix {
      * GROUP BY Request_at
      * ;
      */
+    
+    // 263. 丑数
+    func isUgly(_ n: Int) -> Bool {
+        if n <= 0 {
+            return false
+        }
+        
+        let factors = [2, 3, 5]
+        var n = n
+        for factor in factors {
+            while n % factor == 0 {
+                n /= factor
+            }
+        }
+        
+        return n == 1
+    }
 }
