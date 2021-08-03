@@ -31,4 +31,19 @@ class TwentySix {
         
         return [a, b]
     }
+    
+    // 262. 行程和用户
+    /**
+     * SELECT
+     *    Request_at AS Day,
+     *    ROUND(AVG(Status != 'completed'), 2) AS 'Cancellation Rate'
+     * FROM
+     *    Trips t JOIN Users u1 ON (t.Client_Id = u1.Users_Id AND u1.Banned = 'No')
+     * JOIN
+     *    Users u2 ON (t.Driver_Id = u2.Users_Id AND u2.Banned = 'No')
+     * WHERE
+     *    Request_at BETWEEN '2013-10-01' AND '2013-10-03'
+     * GROUP BY Request_at
+     * ;
+     */
 }
