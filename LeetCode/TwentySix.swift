@@ -63,4 +63,35 @@ class TwentySix {
         
         return n == 1
     }
+    
+    // 264. 丑数 II
+    func nthUglyNumber(_ n: Int) -> Int {
+        var dp = [Int](repeating: 0, count: n)
+        dp[0] = 1
+        var p2 = 0
+        var p3 = 0
+        var p5 = 0
+                
+        for i in 1..<n {
+            let v2 = dp[p2] * 2
+            let v3 = dp[p3] * 3
+            let v5 = dp[p5] * 5
+
+            // 取与 2，3，5相乘最小的值放入 丑数 数组中
+            let ugly = min(v2, v3, v5)
+            dp[i] = ugly
+                    
+            // 判断 2，3，5 里已经在此次求丑数中用过的，用过则把指针前进
+            if ugly == v2 {
+                p2 += 1
+            }
+            if ugly == v3 {
+                p3 += 1
+            }
+            if ugly == v5 {
+                p5 += 1
+            }
+        }
+        return dp[n - 1]
+    }
 }
