@@ -94,4 +94,16 @@ class TwentySix {
         }
         return dp[n - 1]
     }
+    
+    // 268. 丢失的数字
+    func missingNumber(_ nums: [Int]) -> Int {
+        
+        for (index, num) in nums.sorted().enumerated() {
+            if index != num {
+                return index
+            }
+        }
+        
+        return nums.count
+    }
 }
