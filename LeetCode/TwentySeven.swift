@@ -152,4 +152,23 @@ class TwentySeven {
         }
         return count - left
     }
+    
+    // 278. 第一个错误的版本
+    func firstBadVersion(_ n: Int) -> Int {
+        func isBadVersion(_ version: Int) -> Bool {
+            return true
+        }
+        
+        var left = 1, right = n
+        while left < right { // 循环至区间左右端点相同
+            let mid = (left + right) / 2
+            if isBadVersion(mid) {
+                right = mid // 答案在区间 [left, mid] 中
+            } else {
+                left = mid + 1 // 答案在区间 [mid + 1, right] 中
+            }
+        }
+        // 此时有 left == right, 区间缩为一个点，即为答案
+        return left
+    }
 }
