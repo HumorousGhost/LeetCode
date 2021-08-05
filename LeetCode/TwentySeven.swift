@@ -155,6 +155,9 @@ class TwentySeven {
     
     // 278. 第一个错误的版本
     func firstBadVersion(_ n: Int) -> Int {
+        /**
+         * The knows API is defined in the parent class VersionControl.
+         */
         func isBadVersion(_ version: Int) -> Bool {
             return true
         }
@@ -170,5 +173,41 @@ class TwentySeven {
         }
         // 此时有 left == right, 区间缩为一个点，即为答案
         return left
+    }
+    
+    // 279. 完全平方数
+    func numSquares(_ n: Int) -> Int {
+        // 判断是否为完全平方数
+        func isPerfectSquare(_ x: Int) -> Bool {
+            let y = Int(sqrt(Double(x)))
+            return y * y == x
+        }
+        
+        // 判断是否能表示未 4^k *(8m + 7)
+        func checkAnswer4(_ x: Int) -> Bool {
+            var x = x
+            while x % 4 == 0 {
+                x /= 4
+            }
+            return x % 8 == 7
+        }
+        
+        if isPerfectSquare(n) {
+            return 1
+        }
+        
+        if checkAnswer4(n) {
+            return 4
+        }
+        
+        var i = 1
+        while i * i <= n {
+            let j = n - i * i
+            if isPerfectSquare(j) {
+                return 2
+            }
+            i += 1
+        }
+        return 3
     }
 }
