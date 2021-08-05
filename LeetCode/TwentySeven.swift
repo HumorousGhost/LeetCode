@@ -137,4 +137,19 @@ class TwentySeven {
         }
         return h
     }
+    
+    // 275. H 指数 II
+    func hIndex2(_ citations: [Int]) -> Int {
+        let count = citations.count
+        var left = 0, right = count - 1
+        while left <= right {
+            let mid = (left + right) / 2
+            if citations[mid] >= count - mid {
+                right = mid - 1
+            } else {
+                left = mid + 1
+            }
+        }
+        return count - left
+    }
 }
