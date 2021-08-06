@@ -46,4 +46,21 @@ class TwentyEight {
         
         return result
     }
+    
+    // 283. 移动零
+    func moveZeroes(_ nums: inout [Int]) {
+        let count = nums.count
+        var i = 0
+        var index = 0
+        while i < count && index < count {
+            let num = nums[i]
+            if num == 0 {
+                nums.remove(at: i)
+                nums.append(num)
+            } else {
+                i += 1
+            }
+            index += 1
+        }
+    }
 }
