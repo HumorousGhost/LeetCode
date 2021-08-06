@@ -41,6 +41,7 @@
 		98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */; };
 		98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE2BB3266A04670036EA96 /* Twelve.swift */; };
 		98B701042684618E009E4934 /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
+		98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7947D26BB8F45008EDC17 /* TwentyEight.swift */; };
 		98B7FA0D2643C5A00025D633 /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7FA0C2643C5A00025D633 /* Five.swift */; };
 		98C0CD4F267C382E006ED19D /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		98C0CD50267C382E006ED19D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
@@ -135,6 +136,7 @@
 		98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyThree.swift; sourceTree = "<group>"; };
 		98AE2BB3266A04670036EA96 /* Twelve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twelve.swift; sourceTree = "<group>"; };
 		98B701032684618E009E4934 /* Sixteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sixteen.swift; sourceTree = "<group>"; };
+		98B7947D26BB8F45008EDC17 /* TwentyEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyEight.swift; sourceTree = "<group>"; };
 		98B7FA0C2643C5A00025D633 /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
 		98C0CD6A267C382E006ED19D /* LeetCode_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C0CD6B267C382E006ED19D /* LeetCodeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LeetCodeDev-Info.plist"; path = "/Users/ued/Desktop/Xcode/LeetCode/LeetCodeDev-Info.plist"; sourceTree = "<absolute>"; };
@@ -252,6 +254,7 @@
 				987F444226B3E2510023CB84 /* TwentyFive.swift */,
 				9856F72E26B7D2310077D426 /* TwentySix.swift */,
 				98D4F3F826BA72B2001ACCA6 /* TwentySeven.swift */,
+				98B7947D26BB8F45008EDC17 /* TwentyEight.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -473,6 +476,7 @@
 				980CAD76265F7635009B8DE2 /* Ten.swift in Sources */,
 				98C0CD79267C7F29006ED19D /* LRUCache.swift in Sources */,
 				987FE32E2653AB6800C894B4 /* Eight.swift in Sources */,
+				98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */,
 				98FFECC42657ADD400C645EB /* Nine.swift in Sources */,
 				9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */,
 			);
