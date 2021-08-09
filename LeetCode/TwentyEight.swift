@@ -80,4 +80,47 @@ class TwentyEight {
         }
         return slow
     }
+    
+    // 289. 生命游戏
+    func gameOfLife(_ board: inout [[Int]]) {
+        let neighbors = [0, 1, -1]
+        
+        let rows = board.count
+        let cols = board[0].count
+        
+        // 创建复制数组 copyBoard
+        let copyBoard = board
+        
+        // 遍历面板每一个格子里的细胞
+        for row in 0..<rows {
+            for col in 0..<cols {
+                // 对于每一个细胞统计其八个相邻位置里的活细胞数量
+                var liveNeighbors = 0
+                
+                for i in 0..<3 {
+                    for j in 0..<3 {
+                        if !(neighbors[i] == 0 && neighbors[j] == 0) {
+                            let r = row + neighbors[i]
+                            let c = col + neighbors[j]
+                            
+                            // 查看相邻的细胞是否是活细胞
+                            if r < rows && r >= 0 && c < cols && c >= 0 && copyBoard[r][c] == 1 {
+                                liveNeighbors += 1
+                            }
+                        }
+                    }
+                }
+                
+                // 规则 1 或规则 3
+                if copyBoard[row][col] == 1 && (liveNeighbors < 2 || liveNeighbors > 3) {
+                    board[row][col] = 0
+                }
+                
+                // 规则 4
+                if copyBoard[row][col] == 0 && liveNeighbors == 3 {
+                    board[row][col] = 1
+                }
+            }
+        }
+    }
 }
