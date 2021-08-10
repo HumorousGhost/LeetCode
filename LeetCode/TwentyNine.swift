@@ -37,4 +37,9 @@ class TwentyNine {
         }
         return i >= m
     }
+    
+    // 292. Nim 游戏
+    func canWinNim(_ n: Int) -> Bool {
+        return n % 4 != 0
+    }
 }
