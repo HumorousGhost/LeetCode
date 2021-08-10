@@ -35,6 +35,12 @@ class ViewController: NSViewController {
         let result = TwentyEight().addOperators("123", 6)
         print(result)
 //        print(arr)
+        let obj = MedianFinder()
+        obj.addNum(1)
+        obj.addNum(2)
+        print(obj.findMedian())
+        obj.addNum(3)
+        print(obj.findMedian())
     }
 
     override var representedObject: Any? {

@@ -40,6 +40,7 @@
 		988A44E526A95C1F00B25A87 /* MyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A44E426A95C1F00B25A87 /* MyStack.swift */; };
 		9896D3CE26C0CFB10018CC7A /* TwentyNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */; };
 		98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B468264D2BF100CD4ADE /* Seven.swift */; };
+		98A508DE26C21394007A1098 /* MedianFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A508DD26C21394007A1098 /* MedianFinder.swift */; };
 		98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */; };
 		98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE2BB3266A04670036EA96 /* Twelve.swift */; };
 		98B701042684618E009E4934 /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
@@ -137,6 +138,7 @@
 		988A44E426A95C1F00B25A87 /* MyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStack.swift; sourceTree = "<group>"; };
 		9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyNine.swift; sourceTree = "<group>"; };
 		98A2B468264D2BF100CD4ADE /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
+		98A508DD26C21394007A1098 /* MedianFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedianFinder.swift; sourceTree = "<group>"; };
 		98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyThree.swift; sourceTree = "<group>"; };
 		98AE2BB3266A04670036EA96 /* Twelve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twelve.swift; sourceTree = "<group>"; };
 		98B701032684618E009E4934 /* Sixteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sixteen.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				988A44E426A95C1F00B25A87 /* MyStack.swift */,
 				98F1C10626AFE4F700E6EC00 /* MyQueue.swift */,
 				988A06BC26BCD3FA00A92063 /* PeekingIterator.swift */,
+				98A508DD26C21394007A1098 /* MedianFinder.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -455,6 +458,7 @@
 				980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */,
 				98D0F0442631592F00D51735 /* One.swift in Sources */,
 				98592CA42694419900F1B8F2 /* Nineteen.swift in Sources */,
+				98A508DE26C21394007A1098 /* MedianFinder.swift in Sources */,
 				986A58A226660CBB0053C53B /* Eleven.swift in Sources */,
 				98F1C10726AFE4F700E6EC00 /* MyQueue.swift in Sources */,
 				98B701042684618E009E4934 /* Sixteen.swift in Sources */,
