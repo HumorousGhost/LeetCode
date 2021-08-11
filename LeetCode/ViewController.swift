@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Thirty().lengthOfLIS([10,9,2,5,3,7,101,18])
+        let result = Thirty().removeInvalidParentheses("()())()")
         print(result)
 //        print(arr)
     }
