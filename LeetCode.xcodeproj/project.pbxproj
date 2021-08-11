@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9805D03A269ECDA100973892 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805D039269ECDA100973892 /* Trie.swift */; };
+		980686B426C366E100D1DD23 /* Thirty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980686B326C366E100D1DD23 /* Thirty.swift */; };
 		980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA5E126831EFC00C7F2E6 /* MinStack.swift */; };
 		980CAD76265F7635009B8DE2 /* Ten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CAD75265F7635009B8DE2 /* Ten.swift */; };
 		980D017F26A01F7E00140ABF /* TwentyOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980D017E26A01F7E00140ABF /* TwentyOne.swift */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		9805D039269ECDA100973892 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
+		980686B326C366E100D1DD23 /* Thirty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirty.swift; sourceTree = "<group>"; };
 		980CA5E126831EFC00C7F2E6 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		980CAD75265F7635009B8DE2 /* Ten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ten.swift; sourceTree = "<group>"; };
 		980D017E26A01F7E00140ABF /* TwentyOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyOne.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				98D4F3F826BA72B2001ACCA6 /* TwentySeven.swift */,
 				98B7947D26BB8F45008EDC17 /* TwentyEight.swift */,
 				9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */,
+				980686B326C366E100D1DD23 /* Thirty.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -495,6 +498,7 @@
 				98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */,
 				98FFECC42657ADD400C645EB /* Nine.swift in Sources */,
 				9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */,
+				980686B426C366E100D1DD23 /* Thirty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

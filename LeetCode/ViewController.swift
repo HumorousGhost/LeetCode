@@ -32,15 +32,9 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = TwentyEight().addOperators("123", 6)
+        let result = Thirty().lengthOfLIS([10,9,2,5,3,7,101,18])
         print(result)
 //        print(arr)
-        let obj = MedianFinder()
-        obj.addNum(1)
-        obj.addNum(2)
-        print(obj.findMedian())
-        obj.addNum(3)
-        print(obj.findMedian())
     }
 
     override var representedObject: Any? {
