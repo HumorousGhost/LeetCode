@@ -42,4 +42,30 @@ class TwentyNine {
     func canWinNim(_ n: Int) -> Bool {
         return n % 4 != 0
     }
+    
+    // 299. 猜数字游戏
+    func getHint(_ secret: String, _ guess: String) -> String {
+        var a = 0, b = 0
+        let ascii0 = Character("0").asciiValue!
+        var nums = [Int](repeating: 0, count: 10)
+        for (c1, c2) in zip(secret, guess) {
+            if c1 == c2 {
+                a += 1
+            } else {
+                let i = Int(c1.asciiValue! - ascii0)
+                let j = Int(c2.asciiValue! - ascii0)
+                // 小于 0 说明 c1 在 guess 中出现过
+                if nums[i] < 0 {
+                    b += 1
+                }
+                // 大于 0 说明 c2 在 secret 中出现过
+                if nums[j] > 0 {
+                    b += 1
+                }
+                nums[i] += 1
+                nums[j] -= 1
+            }
+        }
+        return "\(a)A\(b)B"
+    }
 }
