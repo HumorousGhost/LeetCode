@@ -90,4 +90,57 @@ class Thirty {
         
         return res
     }
+    
+    // 306. 累加数
+    func isAdditiveNumber(_ num: String) -> Bool {
+        let numArr = num.map({$0})
+        let length = numArr.count
+        
+        ///
+        /// - Parameters:
+        ///   - index: 当前的下标
+        ///   - sum: 前两个数的和
+        ///   - previous: 前一个数的值
+        ///   - count: 已生成几个数
+        /// - Returns: <#description#>
+        func toFlashBack(_ index: Int, _ sum: Double, _ previous: Double, _ count: Int) -> Bool {
+            // 如果已生成三个数及以上则返回 true
+            if index == length {
+                return count >= 3
+            }
+            
+            // 拼接数字的值, 值可能越 Int 的界 所以使用 Double
+            var value: Double = 0
+            // 开始拼接数字
+            for i in index..<length {
+                // 除 0 以外，其他数字第一位不能为 0
+                if i > index && numArr[index] == "0" {
+                    break
+                }
+                
+                // 计算数值
+                value = value * 10 + Double(numArr[i].asciiValue! - Character("0").asciiValue!)
+                
+                // 判断数值是否合法，如果前面有两个以上的数，则判断当前两个数的和是否等于这个数
+                if count >= 2 {
+                    if value < sum {
+                        // 小的话继续向后继续拼接
+                        continue
+                    } else if value > sum {
+                        // 大的话直接结束，再向后拼接无意义
+                        break
+                    }
+                }
+                
+                // 使用该数，向下递归
+                if toFlashBack(i + 1, previous + value, value, count + 1) {
+                    return true
+                }
+                // 没有可恢复原样的变量
+            }
+            return false
+        }
+        
+        return toFlashBack(0, 0, 0, 0)
+    }
 }

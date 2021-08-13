@@ -32,13 +32,9 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Thirty().removeInvalidParentheses("()())()")
+        let result = Thirty().isAdditiveNumber("11235813213455890144")
         print(result)
 //        print(arr)
-        let obj = NumMatrix.init([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]])
-        print(obj.sumRegion(2, 1, 4, 3))
-        print(obj.sumRegion(1, 1, 2, 2))
-        print(obj.sumRegion(1, 2, 2, 4))
     }
 
     override var representedObject: Any? {
