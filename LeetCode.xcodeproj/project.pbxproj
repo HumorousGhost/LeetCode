@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9805D03A269ECDA100973892 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805D039269ECDA100973892 /* Trie.swift */; };
 		980686B426C366E100D1DD23 /* Thirty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980686B326C366E100D1DD23 /* Thirty.swift */; };
+		980686B626C3A78A00D1DD23 /* NumArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980686B526C3A78A00D1DD23 /* NumArray.swift */; };
 		980CA5E226831EFC00C7F2E6 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA5E126831EFC00C7F2E6 /* MinStack.swift */; };
 		980CAD76265F7635009B8DE2 /* Ten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CAD75265F7635009B8DE2 /* Ten.swift */; };
 		980D017F26A01F7E00140ABF /* TwentyOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980D017E26A01F7E00140ABF /* TwentyOne.swift */; };
@@ -106,6 +107,7 @@
 /* Begin PBXFileReference section */
 		9805D039269ECDA100973892 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		980686B326C366E100D1DD23 /* Thirty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirty.swift; sourceTree = "<group>"; };
+		980686B526C3A78A00D1DD23 /* NumArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumArray.swift; sourceTree = "<group>"; };
 		980CA5E126831EFC00C7F2E6 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		980CAD75265F7635009B8DE2 /* Ten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ten.swift; sourceTree = "<group>"; };
 		980D017E26A01F7E00140ABF /* TwentyOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyOne.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				988A06BC26BCD3FA00A92063 /* PeekingIterator.swift */,
 				98A508DD26C21394007A1098 /* MedianFinder.swift */,
 				98A508DF26C21AEB007A1098 /* Codec.swift */,
+				980686B526C3A78A00D1DD23 /* NumArray.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -489,6 +492,7 @@
 				98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */,
 				988A06BD26BCD3FA00A92063 /* PeekingIterator.swift in Sources */,
 				98D7B37C2668B9530063CFF9 /* Node.swift in Sources */,
+				980686B626C3A78A00D1DD23 /* NumArray.swift in Sources */,
 				98B7FA0D2643C5A00025D633 /* Five.swift in Sources */,
 				98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */,
 				987E03C42636B0F000962029 /* Four.swift in Sources */,
