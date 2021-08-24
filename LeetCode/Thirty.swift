@@ -143,4 +143,25 @@ class Thirty {
         
         return toFlashBack(0, 0, 0, 0)
     }
+    
+    // 309. 最佳买卖股票时机含冷冻期
+    func maxProfit(_ prices: [Int]) -> Int {
+        guard prices.count > 0 else {
+            return 0
+        }
+        
+        let n = prices.count
+        // f[i][0]: 手上持有股票的最大收益
+        // f[i][1]: 手上不持有股票，并且处于冷冻期中的累计最大收益
+        // f[i][2]: 手上不持有股票，并且不在冷冻期中的累计最大收益
+        var f = [[Int]](repeating: [Int](repeating: 0, count: 3), count: n)
+        f[0][0] = -prices[0]
+        for i in 1..<n {
+            f[i][0] = max(f[i - 1][0], f[i - 1][2] - prices[i])
+            f[i][1] = f[i - 1][0] + prices[i]
+            f[i][2] = max(f[i - 1][1], f[i - 1][2])
+        }
+        
+        return max(f[n - 1][1], f[n - 1][2])
+    }
 }
