@@ -35,6 +35,10 @@ class ViewController: NSViewController {
         let result = Thirty().isAdditiveNumber("11235813213455890144")
         print(result)
 //        print(arr)
+        let aaaaaa = NumArray2.init([1,3,5])
+        print(aaaaaa.sumRange(0, 2))
+        aaaaaa.update(1, 2)
+        print(aaaaaa.sumRange(0, 2))
     }
 
     override var representedObject: Any? {
