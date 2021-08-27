@@ -91,4 +91,30 @@ class ThirtyOne {
         
         return solve(0, n + 1)
     }
+    
+    // 313. 超级丑数
+    func nthSuperUglyNumber(_ n: Int, _ primes: [Int]) -> Int {
+        var dp = [Int](repeating: 0, count: n + 1)
+        dp[1] = 1
+        let m = primes.count
+        var pointers = [Int](repeating: 1, count: m)
+        guard n > 2 else {
+            return n
+        }
+        for i in 2...n {
+            var nums = [Int](repeating: 0, count: m)
+            var minNum = Int.max
+            for j in 0..<m {
+                nums[j] = dp[pointers[j]] * primes[j]
+                minNum = min(minNum, nums[j])
+            }
+            dp[i] = minNum
+            for j in 0..<m {
+                if minNum == nums[j] {
+                    pointers[j] += 1
+                }
+            }
+        }
+        return dp[n]
+    }
 }
