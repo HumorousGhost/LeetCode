@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyOne().findMinHeightTrees(4, [[1,0],[1,2],[1,3]])
+        let result = ThirtyOne().maxCoins([3,1,5,8])
         print(result)
 //        print(arr)
     }

@@ -64,4 +64,31 @@ class ThirtyOne {
         
         return [0]
     }
+    
+    // 312. 戳气球
+    func maxCoins(_ nums: [Int]) -> Int {
+        let n = nums.count
+        var rec = [[Int]](repeating: [Int](repeating: -1, count: n + 2), count: n + 2)
+        var val = [Int](repeating: 1, count: n + 2)
+        for i in 1...n {
+            val[i] = nums[i - 1]
+        }
+        
+        func solve(_ left: Int, _ right: Int) -> Int {
+            if left >= right - 1 {
+                return 0
+            }
+            if rec[left][right] != -1 {
+                return rec[left][right]
+            }
+            for i in left + 1..<right {
+                var sum = val[left] * val[i] * val[right]
+                sum += solve(left, i) + solve(i, right)
+                rec[left][right] = max(rec[left][right], sum);
+            }
+            return rec[left][right];
+        }
+        
+        return solve(0, n + 1)
+    }
 }
