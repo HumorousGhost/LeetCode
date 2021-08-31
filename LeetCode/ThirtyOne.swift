@@ -121,7 +121,9 @@ class ThirtyOne {
     // 315. 计算右侧小于当前元素的个数
     func countSmaller(_ nums: [Int]) -> [Int] {
         
-        guard nums.count > 0 else { return [] }
+        guard nums.count > 0 else {
+            return []
+        }
         
         var resultArray = Array(repeating: 0, count: nums.count)
         var originalArray = Array(repeating: (0, 0), count: nums.count)
@@ -173,5 +175,39 @@ class ThirtyOne {
         var tempArray = Array(repeating: (0, 0), count: nums.count)
         sortSplit(&originalArray, 0, nums.count - 1, &tempArray)
         return resultArray
+    }
+    
+    // 316. 去除重复字母
+    func removeDuplicateLetters(_ s: String) -> String {
+        let aASII = ("a" as Character).asciiValue!
+        var vis = [Bool](repeating: false, count: 26)
+        var num = [Int](repeating: 0, count: 26)
+        
+        for char in s {
+            num[Int(char.asciiValue! - aASII)] += 1
+        }
+        var chars = [Character]()
+        for char in s {
+            if !vis[Int(char.asciiValue! - aASII)] {
+                while chars.count > 0 && chars.last! > char {
+                    let index = Int(chars.last!.asciiValue! - aASII)
+                    if num[index] > 0 {
+                        vis[index] = false
+                        chars.removeLast()
+                    } else {
+                        break
+                    }
+                }
+                vis[Int(char.asciiValue! - aASII)] = true
+                chars.append(char)
+            }
+            num[Int(char.asciiValue! - aASII)] -= 1
+        }
+        
+        var string = ""
+        for char in chars {
+            string.append(char)
+        }
+        return string
     }
 }
