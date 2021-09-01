@@ -231,4 +231,9 @@ class ThirtyOne {
         }
         return result
     }
+    
+    // 319. 灯泡开关
+    func bulbSwitch(_ n: Int) -> Int {
+        return Int(floor(sqrt(Double(n))))
+    }
 }
