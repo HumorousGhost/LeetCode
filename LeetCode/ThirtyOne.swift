@@ -210,4 +210,25 @@ class ThirtyOne {
         }
         return string
     }
+    
+    // 318. 最大单词长度乘积
+    func maxProduct(_ words: [String]) -> Int {
+        let n = words.count
+        let masks = words.map { (word) -> Int in
+            var mask: Int = 0
+            for char in word {
+                mask |=  1 << (char.asciiValue! - 97)
+            }
+            return mask
+        }
+        var result = 0
+        for i in 0..<n {
+            for j in i + 1..<n {
+                if masks[i] & masks[j] == 0 {
+                    result = max(result, words[i].count * words[j].count)
+                }
+            }
+        }
+        return result
+    }
 }
