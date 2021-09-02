@@ -47,6 +47,7 @@
 		98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */; };
 		98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AE2BB3266A04670036EA96 /* Twelve.swift */; };
 		98B701042684618E009E4934 /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
+		98B7702126DF2C05009BE802 /* ThirtyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7702026DF2C05009BE802 /* ThirtyTwo.swift */; };
 		98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7947D26BB8F45008EDC17 /* TwentyEight.swift */; };
 		98B7FA0D2643C5A00025D633 /* Five.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B7FA0C2643C5A00025D633 /* Five.swift */; };
 		98C0CD4F267C382E006ED19D /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
@@ -151,6 +152,7 @@
 		98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyThree.swift; sourceTree = "<group>"; };
 		98AE2BB3266A04670036EA96 /* Twelve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twelve.swift; sourceTree = "<group>"; };
 		98B701032684618E009E4934 /* Sixteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sixteen.swift; sourceTree = "<group>"; };
+		98B7702026DF2C05009BE802 /* ThirtyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyTwo.swift; sourceTree = "<group>"; };
 		98B7947D26BB8F45008EDC17 /* TwentyEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyEight.swift; sourceTree = "<group>"; };
 		98B7FA0C2643C5A00025D633 /* Five.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Five.swift; sourceTree = "<group>"; };
 		98C0CD6A267C382E006ED19D /* LeetCode_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +284,7 @@
 				9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */,
 				980686B326C366E100D1DD23 /* Thirty.swift */,
 				98E7C56E26D4CDAE00B36EDF /* ThirtyOne.swift */,
+				98B7702026DF2C05009BE802 /* ThirtyTwo.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -488,6 +491,7 @@
 				980D017F26A01F7E00140ABF /* TwentyOne.swift in Sources */,
 				98D0F04926315B7300D51735 /* Three.swift in Sources */,
 				98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */,
+				98B7702126DF2C05009BE802 /* ThirtyTwo.swift in Sources */,
 				988A44E526A95C1F00B25A87 /* MyStack.swift in Sources */,
 				987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,

@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyOne().removeDuplicateLetters("bcabc")
+        let result = ThirtyTwo().maxNumber([3,4,6,5], [9,1,2,5,8,3], 5)
         print(result)
 //        print(arr)
     }
