@@ -98,4 +98,20 @@ class ThirtyTwo {
         }
         return dp[amount] > amount ? -1 : dp[amount]
     }
+    
+    // 324. 摆动排序 II
+    func wiggleSort(_ nums: inout [Int]) {
+        let sortNums = nums.sorted()
+        var tail =  nums.count - 1
+        var mid = tail / 2
+        for i in 0..<nums.count {
+            if i % 2 == 0 {
+                nums[i] = sortNums[mid]
+                mid -= 1
+            } else {
+                nums[i] = sortNums[tail]
+                tail -= 1
+            }
+        }
+    }
 }
