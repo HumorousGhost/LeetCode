@@ -126,4 +126,68 @@ class ThirtyTwo {
         }
         return n == 1
     }
+    
+    // 327. 区间和的个数
+    func countRangeSum(_ nums: [Int], _ lower: Int, _ upper: Int) -> Int {
+
+        var sum = [Int](repeating: 0, count: nums.count + 1)
+        for i in 0..<nums.count {
+            sum[i + 1] = nums[i] + sum[i]
+        }
+        
+        func countRangeSumRecurive(_ left: Int, _ right: Int) -> Int {
+            guard left != right else {
+                return 0
+            }
+            
+            let mid = (left + right) / 2
+            let n1 = countRangeSumRecurive(left, mid)
+            let n2 = countRangeSumRecurive(mid + 1, right)
+            var ret = n1 + n2
+            
+            // 首先统计下标对的数量
+            var i = left, l = mid + 1, r = mid + 1
+            while i <= mid {
+                while l <= right && sum[l] - sum[i] < lower {
+                    l += 1
+                }
+                while r <= right && sum[r] - sum[i] <= upper {
+                    r += 1
+                }
+                ret += r - l
+                i += 1
+            }
+            
+            // 随后合并两个排序数组
+            var sorted = [Int](repeating: 0, count: right - left + 1)
+            var p1 = left, p2 = mid + 1, p = 0
+            while p1 <= mid || p2 <= right {
+                if p1 > mid {
+                    sorted[p] = sum[p2]
+                    p += 1
+                    p2 += 1
+                } else if p2 > right {
+                    sorted[p] = sum[p1]
+                    p += 1
+                    p1 += 1
+                } else {
+                    if sum[p1] < sum[p2] {
+                        sorted[p] = sum[p1]
+                        p += 1
+                        p1 += 1
+                    } else {
+                        sorted[p] = sum[p2]
+                        p += 1
+                        p2 += 1
+                    }
+                }
+            }
+            for j in 0..<sorted.count {
+                sum[left + j] = sorted[j]
+            }
+            return ret
+        }
+        
+        return countRangeSumRecurive(0, sum.count - 1)
+    }
 }
