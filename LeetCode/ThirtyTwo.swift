@@ -190,4 +190,22 @@ class ThirtyTwo {
         
         return countRangeSumRecurive(0, sum.count - 1)
     }
+    
+    // 328. 奇偶链表
+    func oddEvenList(_ head: ListNode?) -> ListNode? {
+        guard head != nil else {
+            return head
+        }
+        
+        let evenHead = head?.next
+        var odd = head, even = evenHead
+        while even != nil && even?.next != nil {
+            odd?.next = even?.next
+            odd = odd?.next
+            even?.next = odd?.next
+            even = even?.next
+        }
+        odd?.next = evenHead
+        return head
+    }
 }
