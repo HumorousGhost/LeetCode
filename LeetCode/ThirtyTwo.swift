@@ -208,4 +208,39 @@ class ThirtyTwo {
         odd?.next = evenHead
         return head
     }
+    
+    // 329. 矩阵中的最长递增路径
+    func longestIncreasingPath(_ matrix: [[Int]]) -> Int {
+        
+        if matrix.count == 0 || matrix[0].count == 0 {
+            return 0
+        }
+        
+        let dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+        let rows = matrix.count, columns = matrix[0].count
+        
+        func dfs(_ memo: inout [[Int]], row: Int, column: Int) -> Int {
+            guard memo[row][column] == 0 else {
+                return memo[row][column]
+            }
+            memo[row][column] += 1
+            for dir in dirs {
+                let newRow = row + dir[0], newColumn = column + dir[1]
+                if newRow >= 0 && newRow < rows && newColumn >= 0 && newColumn < columns && matrix[newRow][newColumn] > matrix[row][column] {
+                    memo[row][column] = max(memo[row][column], dfs(&memo, row: newRow, column: newColumn) + 1)
+                }
+            }
+            return memo[row][column]
+        }
+        
+        var memo = [[Int]](repeating: [Int](repeating: 0, count: columns), count: rows)
+        var ans = 0
+        for i in 0..<rows {
+            for j in 0..<columns {
+                ans = max(ans, dfs(&memo, row: i, column: j))
+            }
+        }
+        
+        return ans
+    }
 }
