@@ -22,6 +22,7 @@
 		9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98238D6126A7FBBD005238C9 /* TwentyTwo.swift */; };
 		9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836086226A1695C00BE3D5D /* WordDictionary.swift */; };
+		983966D626E9A8A900A96F02 /* ThirtyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983966D526E9A8A900A96F02 /* ThirtyThree.swift */; };
 		983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9DF254BB37A007B5639 /* AppDelegate.swift */; };
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
 		983CB9E4254BB37D007B5639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983CB9E3254BB37D007B5639 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
 		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
+		983966D526E9A8A900A96F02 /* ThirtyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyThree.swift; sourceTree = "<group>"; };
 		983CB9DC254BB37A007B5639 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9DF254BB37A007B5639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		983CB9E1254BB37A007B5639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				980686B326C366E100D1DD23 /* Thirty.swift */,
 				98E7C56E26D4CDAE00B36EDF /* ThirtyOne.swift */,
 				98B7702026DF2C05009BE802 /* ThirtyTwo.swift */,
+				983966D526E9A8A900A96F02 /* ThirtyThree.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -516,6 +519,7 @@
 				987FE32E2653AB6800C894B4 /* Eight.swift in Sources */,
 				98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */,
 				98FFECC42657ADD400C645EB /* Nine.swift in Sources */,
+				983966D626E9A8A900A96F02 /* ThirtyThree.swift in Sources */,
 				9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */,
 				98E7C56D26D48B1600B36EDF /* NumArray2.swift in Sources */,
 				980686B426C366E100D1DD23 /* Thirty.swift in Sources */,
