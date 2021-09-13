@@ -24,4 +24,38 @@ class ThirtyThree {
         }
         return patches
     }
+    
+    // 331. 验证二叉树的前序序列化
+    func isValidSerialization(_ preorder: String) -> Bool {
+        let preorderArray = preorder.map({ $0 })
+        let n = preorder.count
+        var i = 0
+        var stack = [Int]()
+        stack.append(1)
+        while i < n {
+            if stack.isEmpty {
+                return false
+            }
+            if preorderArray[i] == "," {
+                i += 1
+            } else if preorderArray[i] == "#" {
+                let top = stack.removeLast() - 1
+                if top > 0 {
+                    stack.append(top)
+                }
+                i += 1
+            } else {
+                // 读一个数字
+                while i < n && preorderArray[i] != "," {
+                    i += 1
+                }
+                let top = stack.removeLast() - 1
+                if top > 0 {
+                    stack.append(top)
+                }
+                stack.append(2)
+            }
+        }
+        return stack.isEmpty
+    }
 }
