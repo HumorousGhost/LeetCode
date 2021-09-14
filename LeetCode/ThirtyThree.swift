@@ -58,4 +58,40 @@ class ThirtyThree {
         }
         return stack.isEmpty
     }
+    
+    // 332. 重新安排行程
+    func findItinerary(_ tickets: [[String]]) -> [String] {
+        
+        guard tickets.count > 0 && tickets[0].count > 0 else {
+            return []
+        }
+        
+        var map = [String : [String]]()
+        var itineray = [String]()
+        
+        for ticket in tickets {
+            let src = ticket[0], dst = ticket[1]
+            if let _ = map[src] {
+                map[src]!.append(dst)
+            } else {
+                map[src] = [dst]
+            }
+        }
+        
+        for ticket in tickets {
+            let src = ticket[0]
+            map[src] = map[src]?.sorted()
+        }
+        
+        func dfs(_ current: String) {
+            while map.keys.contains(current) && map[current]!.count > 0 {
+                let temp = map[current]!.removeFirst()
+                dfs(temp)
+            }
+            itineray.append(current)
+        }
+        
+        dfs("JFK")
+        return itineray.reversed()
+    }
 }
