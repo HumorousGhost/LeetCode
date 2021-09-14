@@ -94,4 +94,22 @@ class ThirtyThree {
         dfs("JFK")
         return itineray.reversed()
     }
+    
+    // 334. 递增的三元子序列
+    func increasingTriplet(_ nums: [Int]) -> Bool {
+        guard nums.count >= 3 else {
+            return false
+        }
+        var first = Int.max, second = Int.max
+        for third in nums {
+            if third <= first {
+                first = third
+            } else if third <= second {
+                second = third
+            } else if third > second {
+                return true
+            }
+        }
+        return false
+    }
 }
