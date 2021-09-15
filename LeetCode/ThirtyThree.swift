@@ -112,4 +112,33 @@ class ThirtyThree {
         }
         return false
     }
+    
+    // 335. 路径交叉
+    func isSelfCrossing(_ distance: [Int]) -> Bool {
+        guard distance.count > 3 else {
+            return false
+        }
+        
+        var now = 3, top = distance[2] > distance[0] ? Int.max : distance[1]
+        var width = 0
+        
+        while now < distance.count {
+            if distance[now] >= top {
+                return true
+            }
+            if distance[now] > distance[now - 2] {
+                top = Int.max
+                width = distance[now - 3]
+            } else if distance[now] < distance[now - 2] - width {
+                top = distance[now - 1]
+                width = 0
+            } else {
+                top = distance[now - 1] - distance[now - 3]
+                width = 0
+            }
+            now += 1
+        }
+        
+        return false
+    }
 }
