@@ -141,4 +141,45 @@ class ThirtyThree {
         
         return false
     }
+    
+    // 336. 回文对
+    func palindromePairs(_ words: [String]) -> [[Int]] {
+
+        var indices = [String: Int]()
+        
+        words.enumerated().forEach { (index, word) in
+            indices[String(word.reversed())] = index
+        }
+        
+        
+        func isPalindrome(_ word: String) -> Bool {
+            return word == String(word.reversed())
+        }
+        
+        var ret = [[Int]]()
+        for (i, word) in words.enumerated() {
+            if word.isEmpty {
+                indices.forEach { element in
+                    if isPalindrome(element.key) && i != element.value {
+                        ret.append([i, element.value])
+                    }
+                }
+            }
+            
+            for index in 0..<word.count {
+                let midIndex = word.index(word.startIndex, offsetBy: index)
+                let firstPart = String(word[..<midIndex])
+                let secondPart = String(word[midIndex...])
+                
+                if isPalindrome(firstPart), let j = indices[secondPart], i != j {
+                    ret.append([j, i])
+                }
+                if isPalindrome(secondPart), let j = indices[firstPart], i != j {
+                    ret.append([i, j])
+                }
+            }
+        }
+        
+        return ret
+    }
 }

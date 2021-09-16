@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyTwo().countRangeSum([-1,1],0,0)
+        let result = ThirtyThree().palindromePairs(["abcd","dcba","lls","s","sssll"])
         print(result)
 //        print(arr)
     }
