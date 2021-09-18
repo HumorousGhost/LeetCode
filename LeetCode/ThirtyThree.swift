@@ -182,4 +182,24 @@ class ThirtyThree {
         
         return ret
     }
+    
+    // 337. 打家劫舍 III
+    func rob(_ root: TreeNode?) -> Int {
+        func robDP(_ root: TreeNode?) -> [Int] {
+            guard let node = root else {
+                return [0, 0]
+            }
+            
+            let leftInfo = robDP(node.left)
+            let rightInfo = robDP(node.right)
+            
+            // 当前节点有 2 个选择
+            // 1. 偷当前节点，那么左右子节点就不能偷
+            let tou = node.val + leftInfo[0] + rightInfo[0]
+            // 2. 不偷当前节点，那么需要查看左右节点 是偷利益大还是不偷利益大
+            let butou = max(leftInfo[1], leftInfo[0]) + max(rightInfo[0], rightInfo[1])
+            return [butou, tou]
+        }
+        return robDP(root).max()!
+    }
 }
