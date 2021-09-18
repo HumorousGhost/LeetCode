@@ -202,4 +202,24 @@ class ThirtyThree {
         }
         return robDP(root).max()!
     }
+    
+    // 338. 比特位计数
+    func countBits(_ n: Int) -> [Int] {
+        func countOnes(_ n: Int) -> Int {
+            var x = n
+            var ones = 0
+            while x > 0 {
+                x &= (x - 1)
+                ones += 1
+            }
+            return ones
+        }
+        
+        var bits = [Int]()
+        for i in 0...n {
+            bits.append(countOnes(i))
+        }
+        
+        return bits
+    }
 }
