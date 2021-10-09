@@ -32,9 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        var s: [Character] = ["H","a","n","n","a","h"]
-        let result = ThirtyFour().reverseString(&s);
-        print(s)
+        let result = ThirtyFour().reverseVowels("leetcode")
         print(result)
 //        print(arr)
     }
