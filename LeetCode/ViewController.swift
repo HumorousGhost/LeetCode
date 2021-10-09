@@ -32,7 +32,9 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyThree().palindromePairs(["abcd","dcba","lls","s","sssll"])
+        var s: [Character] = ["H","a","n","n","a","h"]
+        let result = ThirtyFour().reverseString(&s);
+        print(s)
         print(result)
 //        print(arr)
     }

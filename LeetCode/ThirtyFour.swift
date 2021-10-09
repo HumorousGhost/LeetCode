@@ -27,4 +27,14 @@ class ThirtyFour {
         }
         return dp[n]
     }
+    
+    // 344. 反装字符串
+    func reverseString(_ s: inout [Character]) {
+        let mid = s.count / 2, length = s.count - 1
+        for i in 0..<mid {
+            let temp = s[i]
+            s[i] = s[length - i]
+            s[length - i] = temp
+        }
+    }
 }
