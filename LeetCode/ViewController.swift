@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyFour().reverseVowels("leetcode")
+        let result = ThirtyFour().topKFrequent([1,1,1,2,2,3], 2)
         print(result)
 //        print(arr)
     }

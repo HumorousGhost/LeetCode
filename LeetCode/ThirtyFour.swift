@@ -70,4 +70,30 @@ class ThirtyFour {
         
         return String(result)
     }
+    
+    // 347. 前 K 个高频元素
+    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+        guard nums.count > 0 else {
+            return []
+        }
+        
+        var map = [Int: Int]()
+        for num in nums {
+            map[num, default: 0] += 1
+        }
+        
+        let newMap = map.sorted { value1, value2 in
+            return value1.value > value2.value;
+        }
+        var count = k
+        var result = [Int]()
+        for (key, _) in newMap {
+            if count > 0 {
+                result.append(key)
+            }
+            count -= 1
+        }
+        
+        return result
+    }
 }
