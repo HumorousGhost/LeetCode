@@ -16,6 +16,7 @@
 		98118DBE26491BB3001F12FF /* Six.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98118DBD26491BB3001F12FF /* Six.swift */; };
 		9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E8AC22671AFF500AA0D6C /* Thirteen.swift */; };
+		98200ADC271D078D001397E0 /* ThirtyFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98200ADB271D078D001397E0 /* ThirtyFive.swift */; };
 		9820FA89268EAAE3006ECD9E /* Eighteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987EA1B8268DB17D000CDD91 /* Eighteen.swift */; };
 		9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
@@ -121,6 +122,7 @@
 		98118DBD26491BB3001F12FF /* Six.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Six.swift; sourceTree = "<group>"; };
 		9811E86E2689B82B00FB58EA /* Seventeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seventeen.swift; sourceTree = "<group>"; };
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
+		98200ADB271D078D001397E0 /* ThirtyFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyFive.swift; sourceTree = "<group>"; };
 		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 		983966D526E9A8A900A96F02 /* ThirtyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyThree.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				98B7702026DF2C05009BE802 /* ThirtyTwo.swift */,
 				983966D526E9A8A900A96F02 /* ThirtyThree.swift */,
 				98AA3E56270FDD0B004037FF /* ThirtyFour.swift */,
+				98200ADB271D078D001397E0 /* ThirtyFive.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -493,6 +496,7 @@
 				986A58A226660CBB0053C53B /* Eleven.swift in Sources */,
 				98F1C10726AFE4F700E6EC00 /* MyQueue.swift in Sources */,
 				98D7003926C608E200E47360 /* NumMatrix.swift in Sources */,
+				98200ADC271D078D001397E0 /* ThirtyFive.swift in Sources */,
 				98B701042684618E009E4934 /* Sixteen.swift in Sources */,
 				98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */,
 				98E7C56F26D4CDAE00B36EDF /* ThirtyOne.swift in Sources */,
