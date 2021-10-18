@@ -96,4 +96,15 @@ class ThirtyFour {
         
         return result
     }
+    
+    // 349. 两个数组的交集
+    func intersction(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var result = [Int]()
+        for num in nums1 {
+            if nums2.contains(num) && !result.contains(num) {
+                result.append(num)
+            }
+        }
+        return result
+    }
 }
