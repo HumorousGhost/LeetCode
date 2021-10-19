@@ -17,6 +17,7 @@
 		9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E8AC22671AFF500AA0D6C /* Thirteen.swift */; };
 		98200ADC271D078D001397E0 /* ThirtyFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98200ADB271D078D001397E0 /* ThirtyFive.swift */; };
+		98200ADE271D1B98001397E0 /* SummaryRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98200ADD271D1B98001397E0 /* SummaryRanges.swift */; };
 		9820FA89268EAAE3006ECD9E /* Eighteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987EA1B8268DB17D000CDD91 /* Eighteen.swift */; };
 		9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
@@ -123,6 +124,7 @@
 		9811E86E2689B82B00FB58EA /* Seventeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seventeen.swift; sourceTree = "<group>"; };
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
 		98200ADB271D078D001397E0 /* ThirtyFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyFive.swift; sourceTree = "<group>"; };
+		98200ADD271D1B98001397E0 /* SummaryRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRanges.swift; sourceTree = "<group>"; };
 		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 		983966D526E9A8A900A96F02 /* ThirtyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyThree.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				98D7003826C608E200E47360 /* NumMatrix.swift */,
 				98E7C56C26D48B1600B36EDF /* NumArray2.swift */,
 				985908CF26F5C0E100B92910 /* NestedIterator.swift */,
+				98200ADD271D1B98001397E0 /* SummaryRanges.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -516,6 +519,7 @@
 				9896D3CE26C0CFB10018CC7A /* TwentyNine.swift in Sources */,
 				98407213269C205C00BAE235 /* Twenty.swift in Sources */,
 				9856F72F26B7D2310077D426 /* TwentySix.swift in Sources */,
+				98200ADE271D1B98001397E0 /* SummaryRanges.swift in Sources */,
 				983E990C2681C91F00EB76F2 /* Fifteen.swift in Sources */,
 				98D0F037263157E900D51735 /* Zero.swift in Sources */,
 				98AE2BB4266A04670036EA96 /* Twelve.swift in Sources */,

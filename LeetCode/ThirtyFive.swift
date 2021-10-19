@@ -21,11 +21,9 @@ class ThirtyFive {
         
         var result = [Int]()
         for nums2 in nums2 {
-            if let count = map[nums2] {
-                if count > 0 {
-                    result.append(nums2);
-                    map[nums2]! -= 1
-                }
+            if let count = map[nums2], count > 0 {
+                result.append(nums2);
+                map[nums2]! -= 1
             }
         }
         
