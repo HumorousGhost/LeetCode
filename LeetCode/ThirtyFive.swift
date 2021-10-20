@@ -29,4 +29,26 @@ class ThirtyFive {
         
         return result
     }
+    
+    // 354. 俄罗斯套娃信封问题
+    func maxEnvelopes(_ envelopes: [[Int]]) -> Int {
+        guard envelopes.count > 0 else {
+            return 0
+        }
+        let newEnvelopes = envelopes.sorted { e1, e2 in
+            return e1[0] < e2[0] || (e1[0] == e2[0] && e1[1] > e2[1])
+        }
+        var maxLength = 1
+        var lengths = [Int](repeating: 1, count: newEnvelopes.count)
+        
+        for i in 0..<newEnvelopes.count {
+            for j in 0..<i {
+                if newEnvelopes[i][1] > newEnvelopes[j][1] {
+                    lengths[i] = max(lengths[i], lengths[j] + 1);
+                }
+            }
+            maxLength = max(lengths[i], maxLength);
+        }
+        return maxLength
+    }
 }
