@@ -35,6 +35,19 @@ class ViewController: NSViewController {
         let result = ThirtyFour().topKFrequent([1,1,1,2,2,3], 2)
         print(result)
 //        print(arr)
+        
+        let twitter = Twitter()
+        twitter.postTweet(1, 5)
+        let a1 = twitter.getNewsFeed(1)
+        print(a1)
+        twitter.follow(1, 2)
+        twitter.postTweet(2, 6)
+        let a2 = twitter.getNewsFeed(1)
+        print(a2)
+        twitter.unfollow(1, 2)
+        let a3 = twitter.getNewsFeed(1)
+        print(a3)
+        
     }
 
     override var representedObject: Any? {

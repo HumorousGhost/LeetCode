@@ -24,6 +24,7 @@
 		9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
 		98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98238D6126A7FBBD005238C9 /* TwentyTwo.swift */; };
 		9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836086226A1695C00BE3D5D /* WordDictionary.swift */; };
+		983957E2271FF37E006C12B6 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983957E1271FF37E006C12B6 /* Twitter.swift */; };
 		983966D626E9A8A900A96F02 /* ThirtyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983966D526E9A8A900A96F02 /* ThirtyThree.swift */; };
 		983CB9E0254BB37A007B5639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9DF254BB37A007B5639 /* AppDelegate.swift */; };
 		983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CB9E1254BB37A007B5639 /* ViewController.swift */; };
@@ -127,6 +128,7 @@
 		98200ADD271D1B98001397E0 /* SummaryRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRanges.swift; sourceTree = "<group>"; };
 		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
+		983957E1271FF37E006C12B6 /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		983966D526E9A8A900A96F02 /* ThirtyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyThree.swift; sourceTree = "<group>"; };
 		983CB9DC254BB37A007B5639 /* LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983CB9DF254BB37A007B5639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				98E7C56C26D48B1600B36EDF /* NumArray2.swift */,
 				985908CF26F5C0E100B92910 /* NestedIterator.swift */,
 				98200ADD271D1B98001397E0 /* SummaryRanges.swift */,
+				983957E1271FF37E006C12B6 /* Twitter.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -487,6 +490,7 @@
 				98118DBE26491BB3001F12FF /* Six.swift in Sources */,
 				98A508E026C21AEB007A1098 /* Codec.swift in Sources */,
 				9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */,
+				983957E2271FF37E006C12B6 /* Twitter.swift in Sources */,
 				983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */,
 				98D0F0322631257D00D51735 /* Two.swift in Sources */,
 				98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */,
