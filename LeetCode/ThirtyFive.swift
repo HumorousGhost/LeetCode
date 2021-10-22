@@ -51,4 +51,26 @@ class ThirtyFive {
         }
         return maxLength
     }
+    
+    // 357. 计算各个位数不同的数字个数
+    func countNumberWithUniqueDigits(_ n: Int) -> Int {
+        guard n > 0 else {
+            return 1
+        }
+        guard n > 1 else {
+            return 10
+        }
+        var dp = [Int](repeating: 0, count: n + 1)
+        dp[0] = 0
+        dp[1] = 0
+        for i in 2...n {
+            // (9 * pow(10, i - 2) - dp[i - 1]) 指的是无重复的个数
+            dp[i] = dp[i - 1] * 10 + (9 * Int(pow(10.0, Float(i - 2))) - dp[i - 1]) * (i - 1)
+        }
+        var sum = 0
+        for i in 0...n {
+            sum += dp[i]
+        }
+        return Int(pow(10.0, Float(n))) - sum
+    }
 }

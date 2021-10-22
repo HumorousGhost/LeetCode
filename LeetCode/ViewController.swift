@@ -32,21 +32,9 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyFour().topKFrequent([1,1,1,2,2,3], 2)
+        let result = ThirtyFive().countNumberWithUniqueDigits(2)
         print(result)
 //        print(arr)
-        
-        let twitter = Twitter()
-        twitter.postTweet(1, 5)
-        let a1 = twitter.getNewsFeed(1)
-        print(a1)
-        twitter.follow(1, 2)
-        twitter.postTweet(2, 6)
-        let a2 = twitter.getNewsFeed(1)
-        print(a2)
-        twitter.unfollow(1, 2)
-        let a3 = twitter.getNewsFeed(1)
-        print(a3)
         
     }
 
