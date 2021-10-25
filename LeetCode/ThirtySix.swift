@@ -60,4 +60,21 @@ class ThirtySix {
         }
         return targetCapacity % gcd(jug1Capacity, jug2Capacity) == 0
     }
+    
+    // 367. 有效的完全平方数
+    func isPerfectSquare(_ num: Int) -> Bool {
+        guard num > 1 else {
+            return true
+        }
+        var maxNum = num
+        var s = 2
+        while s < maxNum {
+            if s * s == num {
+                return true
+            }
+            maxNum = num / s
+            s += 1
+        }
+        return false
+    }
 }
