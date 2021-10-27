@@ -77,4 +77,46 @@ class ThirtySix {
         }
         return false
     }
+    
+    // 368. 最大整除子集
+    func largestDivisibleSubset(_ nums: [Int]) -> [Int] {
+        let len = nums.count
+        let sortNums = nums.sorted()
+        // 第一步：动态规划找出最大子集的个数，最大子集中的最大整数
+        var dp = [Int](repeating: 1, count: len)
+        var maxSize = 1, maxVal = dp[0]
+        for i in 1..<len {
+            for j in 0..<i {
+                // 题目中说 没有重复元素 很重要
+                if sortNums[i] % sortNums[j] == 0 {
+                    dp[i] = max(dp[i], dp[j] + 1)
+                }
+            }
+            
+            if dp[i] > maxSize {
+                maxSize = dp[i]
+                maxVal = sortNums[i]
+            }
+        }
+        
+        // 第二步：倒推获得的最大子集
+        var res = [Int]()
+        if maxSize == 1 {
+            res.append(sortNums[0])
+            return res
+        }
+        
+        for i in stride(from: len - 1, through: 0, by: -1) {
+            if maxSize <= 0 {
+                break
+            }
+            if dp[i] == maxSize && maxVal % sortNums[i] == 0 {
+                res.append(sortNums[i])
+                maxVal = sortNums[i]
+                maxSize -= 1
+            }
+        }
+        
+        return res
+    }
 }

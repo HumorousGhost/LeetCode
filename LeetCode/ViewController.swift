@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtySix().maxSumSubmatrix([[2, 2, -1]], 0)
+        let result = ThirtySix().largestDivisibleSubset([1,2,3])
         print(result)
 //        print(arr)
         
