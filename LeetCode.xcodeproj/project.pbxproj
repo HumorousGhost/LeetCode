@@ -90,6 +90,7 @@
 		98D4F3F926BA72B2001ACCA6 /* TwentySeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D4F3F826BA72B2001ACCA6 /* TwentySeven.swift */; };
 		98D7003926C608E200E47360 /* NumMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7003826C608E200E47360 /* NumMatrix.swift */; };
 		98D7B37C2668B9530063CFF9 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B37B2668B9530063CFF9 /* Node.swift */; };
+		98D893952728FB1500EC323A /* ThirtySeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D893942728FB1500EC323A /* ThirtySeven.swift */; };
 		98E7C56D26D48B1600B36EDF /* NumArray2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7C56C26D48B1600B36EDF /* NumArray2.swift */; };
 		98E7C56F26D4CDAE00B36EDF /* ThirtyOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7C56E26D4CDAE00B36EDF /* ThirtyOne.swift */; };
 		98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDED4268B0133000AE6AB /* BSTIterator.swift */; };
@@ -182,6 +183,7 @@
 		98D4F3F826BA72B2001ACCA6 /* TwentySeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentySeven.swift; sourceTree = "<group>"; };
 		98D7003826C608E200E47360 /* NumMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumMatrix.swift; sourceTree = "<group>"; };
 		98D7B37B2668B9530063CFF9 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		98D893942728FB1500EC323A /* ThirtySeven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtySeven.swift; sourceTree = "<group>"; };
 		98E7C56C26D48B1600B36EDF /* NumArray2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumArray2.swift; sourceTree = "<group>"; };
 		98E7C56E26D4CDAE00B36EDF /* ThirtyOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyOne.swift; sourceTree = "<group>"; };
 		98EFDED4268B0133000AE6AB /* BSTIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTIterator.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				98AA3E56270FDD0B004037FF /* ThirtyFour.swift */,
 				98200ADB271D078D001397E0 /* ThirtyFive.swift */,
 				982EB90C27225FA1001E5864 /* ThirtySix.swift */,
+				98D893942728FB1500EC323A /* ThirtySeven.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -492,6 +495,7 @@
 				98D4F3F926BA72B2001ACCA6 /* TwentySeven.swift in Sources */,
 				98118DBE26491BB3001F12FF /* Six.swift in Sources */,
 				98A508E026C21AEB007A1098 /* Codec.swift in Sources */,
+				98D893952728FB1500EC323A /* ThirtySeven.swift in Sources */,
 				9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */,
 				983957E2271FF37E006C12B6 /* Twitter.swift in Sources */,
 				983CB9E2254BB37A007B5639 /* ViewController.swift in Sources */,
