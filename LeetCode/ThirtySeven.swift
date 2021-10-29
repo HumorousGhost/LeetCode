@@ -104,7 +104,7 @@ class ThirtySeven: GuessGame {
             let guessNum = guess(mid)
             if guessNum == 0 {
                 return mid
-            } else if guessNum == -1 {
+            } else if guessNum == 1 {
                 left = mid + 1
             } else {
                 right = mid - 1
