@@ -7,7 +7,9 @@
 
 import Foundation
 
-class ThirtySeven {
+class ThirtySeven: GuessGame {
+    
+    
     // 371. 两整数之和
     func getSum(_ a: Int, _ b: Int) -> Int {
         var a = a, b = b
@@ -81,5 +83,33 @@ class ThirtySeven {
         }
         
         return res
+    }
+    
+    // 374. 猜数字大小
+    func guess(_ nums: Int) -> Int {
+        return 0
+    }
+    /**
+     * Forward declaration of guess API.
+     * @param  num -> your guess number
+     * @return          -1 if the picked number is lower than your guess number
+     *                  1 if the picked number is higher than your guess number
+     *               otherwise return 0
+     * func guess(_ num: Int) -> Int
+     */
+    func guessNumber(_ n: Int) -> Int {
+        var left = 1, right = n
+        while left < right {
+            let mid = (left + right) / 2
+            let guessNum = guess(mid)
+            if guessNum == 0 {
+                return mid
+            } else if guessNum == -1 {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+        return left
     }
 }
