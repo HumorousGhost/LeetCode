@@ -139,4 +139,31 @@ class ThirtySeven: GuessGame {
         
         return calculate(1, n)
     }
+    
+    // 376. 摆动序列
+    func wiggleMaxLength(_ nums: [Int]) -> Int {
+        let n = nums.count
+        guard n > 1 else {
+            return n
+        }
+        
+        var up = [Int](repeating: 0, count: n)
+        var down = [Int](repeating: 0, count: n)
+        up[0] = 1
+        down[0] = 1
+        for i in 1..<n {
+            if nums[i] > nums[i - 1] {
+                up[i] = max(up[i - 1], down[i - 1] + 1)
+                down[i] = down[i - 1]
+            } else if nums[i] < nums[i - 1] {
+                up[i] = up[i - 1]
+                down[i] = max(up[i - 1] + 1, down[i - 1])
+            } else {
+                up[i] = up[i - 1]
+                down[i] = down[i - 1]
+            }
+        }
+        
+        return max(up[n - 1], down[n - 1])
+    }
 }
