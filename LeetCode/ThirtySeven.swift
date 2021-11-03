@@ -181,4 +181,34 @@ class ThirtySeven: GuessGame {
         
         return dp[target]
     }
+    
+    // 378. 有序矩阵中第 K 小的元素
+    func kthSmallest(_ matrix: [[Int]], _ k: Int) -> Int {
+        let n = matrix.count
+        var left = matrix[0][0], right = matrix[n - 1][n - 1]
+        
+        func check(_ mid: Int) -> Bool {
+            var i = n - 1, j = 0, num = 0
+            while i >= 0 && j < n {
+                if matrix[i][j] <= mid {
+                    num += i + 1
+                    j += 1
+                } else {
+                    i -= 1
+                }
+            }
+            return num >= k
+        }
+        
+        while left < right {
+            let mid = left + ((right - left) >> 1)
+            if check(mid) {
+                right = mid
+            } else {
+                left = mid + 1
+            }
+        }
+        
+        return left
+    }
 }
