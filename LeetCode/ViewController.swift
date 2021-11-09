@@ -32,21 +32,8 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtySix().largestDivisibleSubset([1,2,3])
+        let result = ThirtyEight().canConstruct("aa", "aab")
         print(result)
-//        print(arr)
-        let collection = RandomizedCollection()
-        print(collection.insert(4))
-        print(collection.insert(3))
-        print(collection.insert(4))
-        print(collection.insert(2))
-        print(collection.insert(4))
-        
-        print(collection.remove(4))
-        print(collection.remove(3))
-        print(collection.remove(4))
-        print(collection.remove(4))
-        print(collection.getRandom())
         
     }
 

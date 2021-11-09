@@ -85,6 +85,7 @@
 		98C0CD77267C3C54006ED19D /* Asset_Dev.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */; };
 		98C0CD79267C7F29006ED19D /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C0CD78267C7F29006ED19D /* LRUCache.swift */; };
 		98C606112738C00E0006ED76 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C606102738C00E0006ED76 /* Solution.swift */; };
+		98C606132738CC7E0006ED76 /* ThirtyEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C606122738CC7E0006ED76 /* ThirtyEight.swift */; };
 		98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CE5B492679E752003DBDDF /* Fourteen.swift */; };
 		98D0F0322631257D00D51735 /* Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F0312631257D00D51735 /* Two.swift */; };
 		98D0F037263157E900D51735 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F036263157E900D51735 /* Zero.swift */; };
@@ -182,6 +183,7 @@
 		98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset_Dev.xcassets; sourceTree = "<group>"; };
 		98C0CD78267C7F29006ED19D /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
 		98C606102738C00E0006ED76 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		98C606122738CC7E0006ED76 /* ThirtyEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyEight.swift; sourceTree = "<group>"; };
 		98CE5B492679E752003DBDDF /* Fourteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fourteen.swift; sourceTree = "<group>"; };
 		98D0F0312631257D00D51735 /* Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Two.swift; sourceTree = "<group>"; };
 		98D0F036263157E900D51735 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				98200ADB271D078D001397E0 /* ThirtyFive.swift */,
 				982EB90C27225FA1001E5864 /* ThirtySix.swift */,
 				98D893942728FB1500EC323A /* ThirtySeven.swift */,
+				98C606122738CC7E0006ED76 /* ThirtyEight.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -537,6 +540,7 @@
 				987EA1B9268DB17D000CDD91 /* Eighteen.swift in Sources */,
 				98CE5B4A2679E752003DBDDF /* Fourteen.swift in Sources */,
 				9805D03A269ECDA100973892 /* Trie.swift in Sources */,
+				98C606132738CC7E0006ED76 /* ThirtyEight.swift in Sources */,
 				987F444326B3E2510023CB84 /* TwentyFive.swift in Sources */,
 				98677E0926B3D55400A17970 /* TwentyFour.swift in Sources */,
 				98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */,
