@@ -32,4 +32,57 @@ class ThirtyEight {
         }
         return false
     }
+    
+    // 385. 迷你语法分析器
+    func deserialize(_ s: String) -> NestedInteger {
+        
+        var integerStr = ""
+        var stack = [NestedInteger()]
+        var lastInteger = stack.first
+        
+        func transformInteger() -> NestedInteger? {
+            guard let val = Int(integerStr) else {
+                return nil
+            }
+            let integer = NestedInteger()
+            integer.setInteger(val)
+            integerStr = ""
+            return integer
+        }
+        
+        s.forEach { char in
+            switch char {
+            case "[":
+                let integer = NestedInteger()
+                lastInteger?.add(integer)
+                lastInteger = integer
+                stack.append(integer)
+                break
+            case "]":
+                if let integer = transformInteger() {
+                    lastInteger?.add(integer)
+                }
+                stack.removeLast()
+                break
+            case "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
+                integerStr.append(char)
+                break
+            case ",":
+                lastInteger = stack.last
+                guard let integer = transformInteger() else {
+                    return
+                }
+                lastInteger?.add(integer)
+                break
+            default:
+                break
+            }
+        }
+        
+        if let integer = transformInteger() {
+            lastInteger?.add(integer)
+        }
+        
+        return stack.first?.getList().first ?? NestedInteger()
+    }
 }

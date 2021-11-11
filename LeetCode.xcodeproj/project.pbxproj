@@ -51,6 +51,7 @@
 		9896D3CE26C0CFB10018CC7A /* TwentyNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */; };
 		989B8BBA272B95ED00C3AD7C /* GuessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B8BB9272B95ED00C3AD7C /* GuessGame.swift */; };
 		98A2B469264D2BF100CD4ADE /* Seven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B468264D2BF100CD4ADE /* Seven.swift */; };
+		98A44D11273BB78F0086B841 /* NestedInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A44D10273BB78F0086B841 /* NestedInteger.swift */; };
 		98A508DE26C21394007A1098 /* MedianFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A508DD26C21394007A1098 /* MedianFinder.swift */; };
 		98A508E026C21AEB007A1098 /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A508DF26C21AEB007A1098 /* Codec.swift */; };
 		98A9AE0326AE9B7A00DADEDB /* TwentyThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */; };
@@ -170,6 +171,7 @@
 		9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyNine.swift; sourceTree = "<group>"; };
 		989B8BB9272B95ED00C3AD7C /* GuessGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGame.swift; sourceTree = "<group>"; };
 		98A2B468264D2BF100CD4ADE /* Seven.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seven.swift; sourceTree = "<group>"; };
+		98A44D10273BB78F0086B841 /* NestedInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedInteger.swift; sourceTree = "<group>"; };
 		98A508DD26C21394007A1098 /* MedianFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedianFinder.swift; sourceTree = "<group>"; };
 		98A508DF26C21AEB007A1098 /* Codec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
 		98A9AE0226AE9B7A00DADEDB /* TwentyThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyThree.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				9895D089273377EC0024B79E /* RandomizedCollection.swift */,
 				98C606102738C00E0006ED76 /* Solution.swift */,
 				98B04EC4273A104700B135C1 /* ShuffleTheArray.swift */,
+				98A44D10273BB78F0086B841 /* NestedInteger.swift */,
 				98D0F036263157E900D51735 /* Zero.swift */,
 				98D0F0432631592F00D51735 /* One.swift */,
 				98D0F0312631257D00D51735 /* Two.swift */,
@@ -513,6 +516,7 @@
 				98D4F3F926BA72B2001ACCA6 /* TwentySeven.swift in Sources */,
 				98118DBE26491BB3001F12FF /* Six.swift in Sources */,
 				98A508E026C21AEB007A1098 /* Codec.swift in Sources */,
+				98A44D11273BB78F0086B841 /* NestedInteger.swift in Sources */,
 				98D893952728FB1500EC323A /* ThirtySeven.swift in Sources */,
 				9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */,
 				983957E2271FF37E006C12B6 /* Twitter.swift in Sources */,
