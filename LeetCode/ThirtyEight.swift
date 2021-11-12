@@ -85,4 +85,30 @@ class ThirtyEight {
         
         return stack.first?.getList().first ?? NestedInteger()
     }
+    
+    // 386. 字典序排数
+    func lexicalOrder(_ n: Int) -> [Int] {
+        guard n >= 1 else {
+            return []
+        }
+        
+        var result = [Int]()
+        
+        func dfs(_ prefix: Int) {
+            guard prefix <= n else {
+                return
+            }
+            result.append(prefix)
+            let c = prefix * 10
+            (c...c + 9).forEach ({
+                dfs($0)
+            })
+        }
+        
+        (1...9).forEach({
+            dfs($0)
+        })
+        
+        return result
+    }
 }
