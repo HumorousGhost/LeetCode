@@ -111,4 +111,18 @@ class ThirtyEight {
         
         return result
     }
+    
+    // 387. 字符串中的第一个唯一字符
+    func firstUniqChar(_ s: String) -> Int {
+        var dict = [Character: Int]()
+        for char in s {
+            dict[char, default: 0] += 1
+        }
+        for (index, char) in s.enumerated() {
+            if let num = dict[char], num == 1 {
+                return index
+            }
+        }
+        return -1
+    }
 }
