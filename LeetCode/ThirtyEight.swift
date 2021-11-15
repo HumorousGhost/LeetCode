@@ -125,4 +125,69 @@ class ThirtyEight {
         }
         return -1
     }
+    
+    // 388. 文件的最长绝对路径
+    func lengthLongestPath(_ input: String) -> Int {
+        guard input.count > 0 else {
+            return 0
+        }
+        
+        struct Node {
+            var level: Int
+            var sum: Int
+            init(_ level: Int, _ sum: Int) {
+                self.level = level
+                self.sum = sum
+            }
+        }
+        
+        func countTab(_ s: String) -> Int {
+            var temp = ""
+            var count = 0
+            while true {
+                temp.append("\t")
+                if s.hasPrefix(temp) {
+                    count += 1
+                } else {
+                    break
+                }
+            }
+            return count
+        }
+        
+        let splits = input.components(separatedBy: "\n")
+        var stack = [Node]()
+        
+        var res = 0
+        var i = 0
+        while i < splits.count {
+            let howMayTabs = countTab(splits[i])
+            
+            if stack.isEmpty {
+                if splits[i].contains(".") {
+                    res = max(res, splits[i].count)
+                } else {
+                    let newNode = Node(howMayTabs, splits[i].count - howMayTabs)
+                    stack.append(newNode)
+                }
+                i += 1
+            } else {
+                let peek = stack.last!
+                // 上下级关系
+                if peek.level + 1 == howMayTabs {
+                    let newNode = Node(howMayTabs, splits[i].count + peek.sum - howMayTabs + 1)
+                    if splits[i].contains(".") {
+                        res = max(res, newNode.sum)
+                    } else {
+                        stack.append(newNode)
+                    }
+                    i += 1
+                } else {
+                    stack.removeLast()
+                }
+            }
+        }
+        
+        return res
+    }
 }
