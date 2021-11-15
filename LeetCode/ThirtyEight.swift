@@ -190,4 +190,22 @@ class ThirtyEight {
         
         return res
     }
+    
+    // 389. 找不同
+    func findTheDifference(_ s: String, _ t: String) -> Character {
+        var map = [Character: Int]()
+        for char in t {
+            map[char, default: 0] += 1
+        }
+        for char in s {
+            map[char, default: 0] -= 1
+            if map[char] == 0 {
+                map.removeValue(forKey: char)
+            }
+        }
+        for (key, _) in map {
+            return key
+        }
+        return Character("")
+    }
 }
