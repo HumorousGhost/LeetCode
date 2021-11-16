@@ -47,6 +47,7 @@
 		987FE32E2653AB6800C894B4 /* Eight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FE32D2653AB6800C894B4 /* Eight.swift */; };
 		988A06BD26BCD3FA00A92063 /* PeekingIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A06BC26BCD3FA00A92063 /* PeekingIterator.swift */; };
 		988A44E526A95C1F00B25A87 /* MyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A44E426A95C1F00B25A87 /* MyStack.swift */; };
+		988F5198274209C70074DEC3 /* ThirtyNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988F5197274209C70074DEC3 /* ThirtyNine.swift */; };
 		9895D08A273377EC0024B79E /* RandomizedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895D089273377EC0024B79E /* RandomizedCollection.swift */; };
 		9896D3CE26C0CFB10018CC7A /* TwentyNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */; };
 		989B8BBA272B95ED00C3AD7C /* GuessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B8BB9272B95ED00C3AD7C /* GuessGame.swift */; };
@@ -167,6 +168,7 @@
 		987FE32D2653AB6800C894B4 /* Eight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eight.swift; sourceTree = "<group>"; };
 		988A06BC26BCD3FA00A92063 /* PeekingIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekingIterator.swift; sourceTree = "<group>"; };
 		988A44E426A95C1F00B25A87 /* MyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStack.swift; sourceTree = "<group>"; };
+		988F5197274209C70074DEC3 /* ThirtyNine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyNine.swift; sourceTree = "<group>"; };
 		9895D089273377EC0024B79E /* RandomizedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizedCollection.swift; sourceTree = "<group>"; };
 		9896D3CD26C0CFB10018CC7A /* TwentyNine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyNine.swift; sourceTree = "<group>"; };
 		989B8BB9272B95ED00C3AD7C /* GuessGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessGame.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				982EB90C27225FA1001E5864 /* ThirtySix.swift */,
 				98D893942728FB1500EC323A /* ThirtySeven.swift */,
 				98C606122738CC7E0006ED76 /* ThirtyEight.swift */,
+				988F5197274209C70074DEC3 /* ThirtyNine.swift */,
 				983CB9E3254BB37D007B5639 /* Assets.xcassets */,
 				98C0CD76267C3C54006ED19D /* Asset_Dev.xcassets */,
 				983CB9E5254BB37D007B5639 /* Main.storyboard */,
@@ -540,6 +543,7 @@
 				98AA3E57270FDD0B004037FF /* ThirtyFour.swift in Sources */,
 				981E8AC32671AFF500AA0D6C /* Thirteen.swift in Sources */,
 				980D017F26A01F7E00140ABF /* TwentyOne.swift in Sources */,
+				988F5198274209C70074DEC3 /* ThirtyNine.swift in Sources */,
 				98D0F04926315B7300D51735 /* Three.swift in Sources */,
 				98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */,
 				98B7702126DF2C05009BE802 /* ThirtyTwo.swift in Sources */,

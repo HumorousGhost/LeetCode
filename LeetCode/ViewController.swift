@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyEight().lengthLongestPath("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext")
+        let result = ThirtyNine().lastRemaining(6)
         print(result)
         
     }
