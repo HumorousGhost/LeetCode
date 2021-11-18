@@ -89,4 +89,25 @@ class ThirtyNine {
         // 四个为1的顶点正好是大矩形的四个顶点
         return set.count == 4 && set.contains(key(a1, b1)) && set.contains(key(a1, b2)) && set.contains(key(a2, b1)) && set.contains(key(a2, b2))
     }
+    
+    // 392. 判断子序列
+    func isSubsequence(_ s: String, _ t: String) -> Bool {
+        guard s.count <= t.count else {
+            return false
+        }
+        if s.count == 0 {
+            return true
+        }
+        let sChars = s.map({$0})
+        var index = 0
+        for char in t {
+            if index == s.count {
+                break
+            }
+            if index < s.count && sChars[index] == char {
+                index += 1
+            }
+        }
+        return index == s.count
+    }
 }
