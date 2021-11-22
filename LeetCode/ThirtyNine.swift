@@ -110,4 +110,46 @@ class ThirtyNine {
         }
         return index == s.count
     }
+    
+    // 393. UTF-8 编码验证
+    func validUtf8(_ data: [Int]) -> Bool {
+        
+        let type0 = 0b00000000, type1 = 0b10000000, type2 = 0b11000000, type3 = 0b11100000, type4 = 0b11110000
+        let masks = [0b10000000, 0b11000000, 0b11100000, 0b11110000, 0b11111000]
+        let types = [type0, type1, type2, type3, type4]
+        let DFA = [0: [type0: 0, type2: 1, type3: 2, type4: 3],
+                   1: [type1: 0],
+                   2: [type1: 4],
+                   3: [type1: 5],
+                   4: [type1: 0],
+                   5: [type1: 6],
+                   6: [type1: 0]]
+        
+        func getType(_ input: Int) -> Int {
+            for i in 0..<types.count {
+                if (masks[i] & input) == types[i] {
+                    return types[i]
+                }
+            }
+            return -1
+        }
+        
+        func getNext(_ cur: Int, _ input: Int) -> Int? {
+            let type = getType(input)
+            if type == -1 {
+                return nil
+            }
+            return DFA[cur]?[type]
+        }
+        
+        var cur = 0
+        for datum in data {
+            guard let next = getNext(cur, datum) else {
+                return false
+            }
+            cur = next
+        }
+        
+        return cur == 0
+    }
 }

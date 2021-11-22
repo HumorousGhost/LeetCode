@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyNine().lastRemaining(6)
+        let result = ThirtyNine().validUtf8([197, 130, 1])
         print(result)
         
     }
