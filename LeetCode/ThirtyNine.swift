@@ -152,4 +152,35 @@ class ThirtyNine {
         
         return cur == 0
     }
+    
+    // 394. 字符串解码
+    func decodeString(_ s: String) -> String {
+        
+        var res = ""
+        var multi = 0
+        var stackMulti = [Int]()
+        var stackRes = [String]()
+        
+        for char in s {
+            if char == "[" {
+                stackMulti.append(multi)
+                stackRes.append(res)
+                multi = 0
+                res = ""
+            } else if char == "]" {
+                var temp = ""
+                let curMulti = stackMulti.removeLast()
+                for _ in 0..<curMulti {
+                    temp.append(res)
+                }
+                res = stackRes.removeLast() + temp
+            } else if char.asciiValue! >= 48 && char.asciiValue! <= 57 {
+                multi = multi * 10 + Int(char.asciiValue!) - 48
+            } else {
+                res.append(char)
+            }
+        }
+        
+        return res
+    }
 }
