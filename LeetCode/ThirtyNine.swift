@@ -183,4 +183,49 @@ class ThirtyNine {
         
         return res
     }
+    
+    // 395. 至少有 K 个重复字符的最长子串
+    func longestSubstring(_ s: String, _ k: Int) -> Int {
+        let a: Character = "a"
+        let sArr = s.map({$0})
+        
+        func dfs(_ left: Int, _ right: Int) -> Int {
+            var cnt = [Int](repeating: 0, count: 26)
+            for i in left...right {
+                cnt[Int(sArr[i].asciiValue! - a.asciiValue!)] += 1
+            }
+            
+            var split = 0
+            for i in 0..<26 {
+                if cnt[i] > 0 && cnt[i] < k {
+                    split = i + Int(a.asciiValue!)
+                    break
+                }
+            }
+            if split == 0 {
+                return right - left + 1
+            }
+            
+            var i = left
+            var ret = 0
+            while i <= right {
+                while i <= right && Int(sArr[i].asciiValue!) == split {
+                    i += 1
+                }
+                if i > right {
+                    break
+                }
+                let start = i
+                while i <= right && Int(sArr[i].asciiValue!) != split {
+                    i += 1
+                }
+                
+                let length = dfs(start, i - 1)
+                ret = max(ret, length)
+            }
+            return ret
+        }
+        
+        return dfs(0, s.count - 1)
+    }
 }
