@@ -228,4 +228,21 @@ class ThirtyNine {
         
         return dfs(0, s.count - 1)
     }
+    
+    // 396. 旋转函数
+    func maxRotateFunction(_ nums: [Int]) -> Int {
+        let n = nums.count
+        var f = [Int](repeating: 0, count: n)
+        var sum = 0
+        for i in 0..<n {
+            sum += nums[i]
+            f[0] += nums[i] * i
+        }
+        var ans = f[0]
+        for i in 1..<n {
+            f[i] = f[i - 1] + sum - n * nums[n - i]
+            ans = max(f[i], ans)
+        }
+        return ans
+    }
 }
