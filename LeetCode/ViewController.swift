@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = ThirtyNine().decodeString("3[a]2[bc]")
+        let result = ThirtyNine().integerReplacement(7)
         print(result)
         
     }
