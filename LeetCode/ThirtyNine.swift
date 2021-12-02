@@ -257,4 +257,77 @@ class ThirtyNine {
         return 2 + min(integerReplacement(n / 2), integerReplacement(n / 2 + 1))
     }
     
+    // 399. 除法求值
+    func calcEquation(_ equations: [[String]], _ values: [Double], _ queries: [[String]]) -> [Double] {
+        var map = [String: [String: Double]]()
+        var res = [Double]()
+        for i in 0..<equations.count {
+            let temp1 = equations[i][0]
+            let temp2 = equations[i][1]
+            let temp = values[i]
+            var sub1 = map[temp1, default: [String: Double]()]
+            sub1[temp2] = temp
+            map[temp1] = sub1
+            var sub2 = map[temp2, default: [String: Double]()]
+            sub2[temp1] = 1 / temp
+            map[temp2] = sub2
+        }
+        
+        for q in queries {
+            if let subMap1 = map[q[0]], let _ = map[q[1]] {
+                var didChecks = [String]()
+                var stack = [[String: Double]]()
+                stack.append(subMap1)
+                didChecks.append(q[0])
+                var paths = [String]()
+                paths.append(q[0])
+                var isSuccess = false
+                while stack.count > 0 {
+                    let oMap = stack.last
+                    var keyCount = 0
+                    for key in oMap!.keys {
+                        if key == q[1] {
+                            // 可计算
+                            paths.append(key)
+                            stack.removeAll()
+                            isSuccess = true
+                            break
+                        } else {
+                            keyCount += 1
+                            if !didChecks.contains(key) {
+                                didChecks.append(key)
+                                if let nextMap = map[key] {
+                                    stack.append(nextMap)
+                                    paths.append(key)
+                                    break
+                                } else {
+                                    stack.removeLast()
+                                    paths.removeLast()
+                                }
+                            } else {
+                                if keyCount >= oMap!.keys.count {
+                                    paths.removeLast()
+                                    stack.removeLast()
+                                }
+                            }
+                        }
+                    }
+                }
+                if isSuccess {
+                    var result = 1.0
+                    for i in 0..<paths.count - 1 {
+                        let tempMap = map[paths[i]]
+                        let temp = tempMap![paths[i + 1]]
+                        result *= temp!
+                    }
+                    res.append(result)
+                } else {
+                    res.append(-1.0)
+                }
+            } else {
+                res.append(-1.0)
+            }
+        }
+        return res
+    }
 }
