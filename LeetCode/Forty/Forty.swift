@@ -39,4 +39,17 @@ class Forty {
         let digit = (num / Int(pow(10.0, Double(d - digitIndex - 1)))) % 10
         return digit
     }
+    
+    // 401. 二进制手表
+    func readBinaryWatch(_ turnedOn: Int) -> [String] {
+        var ans = [String]()
+        for h in 0..<12 {
+            for m in 0..<60 {
+                if h.nonzeroBitCount + m.nonzeroBitCount == turnedOn {
+                    ans.append("\(h):\(m < 10 ? "0" : "")\(m)")
+                }
+            }
+        }
+        return ans
+    }
 }
