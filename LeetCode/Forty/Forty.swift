@@ -52,4 +52,33 @@ class Forty {
         }
         return ans
     }
+    
+    // 402. 移掉 K 位数字
+    func removeKdigits(_ num: String, _ k: Int) -> String {
+        var k = k
+        var deque = [Character]()
+        for digit in num {
+            while !deque.isEmpty && k > 0 && deque.last! > digit {
+                deque.removeLast()
+                k -= 1
+            }
+            deque.append(digit)
+        }
+        
+        for _ in 0..<k {
+            deque.removeLast()
+        }
+        
+        var ret = ""
+        var leadingZero = true
+        while !deque.isEmpty {
+            let digit = deque.removeFirst()
+            if leadingZero && digit == "0" {
+                continue
+            }
+            leadingZero = false
+            ret.append(digit)
+        }
+        return ret.count == 0 ? "0" : ret
+    }
 }
