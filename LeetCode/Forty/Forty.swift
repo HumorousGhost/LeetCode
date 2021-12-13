@@ -81,4 +81,29 @@ class Forty {
         }
         return ret.count == 0 ? "0" : ret
     }
+    
+    // 403. 青蛙过河
+    func canCross(_ stones: [Int]) -> Bool {
+        var dict = [Int: Int]()
+        for (index, value) in stones.enumerated() {
+            dict[value] = index
+        }
+        
+        var dp = [Set<Int>](repeating: Set<Int>(), count: stones.count)
+        dp[0] = [0]
+        for i in 0..<stones.count {
+            for k in dp[i] {
+                if let index = dict[stones[i] + k - 1], index > i, k - 1 > 0 {
+                    dp[index].insert(k - 1)
+                }
+                if let index = dict[stones[i] + k] {
+                    dp[index].insert(k)
+                }
+                if let index = dict[stones[i] + k + 1] {
+                    dp[index].insert(k + 1)
+                }
+            }
+        }
+        return !dp.removeLast().isEmpty
+    }
 }
