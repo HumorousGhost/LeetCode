@@ -106,4 +106,30 @@ class Forty {
         }
         return !dp.removeLast().isEmpty
     }
+    
+    // 404. 左叶子之和
+    func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
+        
+        var ans = 0
+        
+        func dfs(_ root: TreeNode?) {
+            guard let root = root else {
+                return
+            }
+            
+            if let right = root.right {
+                dfs(right)
+            }
+            
+            if let left = root.left, left.left == nil && left.right == nil {
+                ans += left.val
+                return
+            }
+            dfs(root.left)
+        }
+        
+        dfs(root)
+        
+        return ans
+    }
 }
