@@ -132,4 +132,44 @@ class Forty {
         
         return ans
     }
+    
+    // 405. 数字转换为十六进制数
+    func toHex(_ num: Int) -> String {
+        
+        func getHexString(_ n: Int) -> Character {
+            switch n {
+            case 10:
+                return "a"
+            case 11:
+                return "b"
+            case 12:
+                return "c"
+            case 13:
+                return "d"
+            case 14:
+                return "e"
+            case 15:
+                return "f"
+            default:
+                return Character("\(n)")
+            }
+        }
+        
+        guard num != 0 else {
+            return "0"
+        }
+        
+        var num = num
+        var ans = ""
+        if num < 0 {
+            num = Int(pow(2.0, 32.0)) + num
+        }
+        while num != 0 {
+            let u = num % 16
+            ans.insert(getHexString(u), at: ans.startIndex)
+            num /= 16
+        }
+        
+        return ans
+    }
 }
