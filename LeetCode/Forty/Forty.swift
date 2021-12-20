@@ -172,4 +172,33 @@ class Forty {
         
         return ans
     }
+    
+    // 406. 根据身高重建队列
+    func reconstructQueue(_ people: [[Int]]) -> [[Int]] {
+        
+        let newPeople = people.sorted { person1, person2 in
+            if person1[0] != person2[0] {
+                return ((person1[0] - person2[0]) < 0)
+            } else {
+                return ((person2[1] - person1[1]) < 0)
+            }
+        }
+        
+        let n = newPeople.count
+        var ans = [[Int]](repeating: [Int](repeating: 0, count: 0), count: n)
+        for person in newPeople {
+            var spaces = person[1] + 1
+            for i in 0..<n {
+                if ans[i].count == 0 {
+                    spaces -= 1
+                    if spaces == 0 {
+                        ans[i] = person
+                        break
+                    }
+                }
+            }
+        }
+        
+        return ans
+    }
 }

@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = Forty().toHex(26)
+        let result = Forty().reconstructQueue([[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]])
         print(result)
         
     }
