@@ -201,4 +201,52 @@ class Forty {
         
         return ans
     }
+    
+    // 407. 接雨水 II - 超出时间限制
+    func trapRainWater(_ heightMap: [[Int]]) -> Int {
+        guard !heightMap.isEmpty else {
+            return 0
+        }
+        
+        let m = heightMap.count
+        let n = heightMap[0].count
+        var res = 0
+        var mx = Int.min
+        var q = [[Int]]()
+        var visited = [[Bool]](repeating: [Bool](repeating: false, count: n), count: m)
+        let dir = [[0, -1], [-1, 0], [0, 1], [1, 0]]
+        for i in 0..<m {
+            for j in 0..<n {
+                if i == 0 || i == m - 1 || j == 0 || j == n - 1 {
+                    q.append([heightMap[i][j], i * n + j])
+                    visited[i][j] = true
+                }
+            }
+        }
+        
+        q = q.sorted(by: { $0[0] == $1[0] ? $0[1] < $1[1] : $0[0] > $1[0]})
+        
+        while !q.isEmpty {
+            let t = q.removeLast()
+            let h = t[0]
+            let r = t[1] / n
+            let c = t[1] % n
+            mx = max(mx, h)
+            for i in 0..<dir.count {
+                let x = r + dir[i][0]
+                let y = c + dir[i][1]
+                if x < 0 || x >= m || y < 0 || y >= n || visited[x][y] {
+                    continue
+                }
+                visited[x][y] = true
+                if heightMap[x][y] < mx {
+                    res += mx - heightMap[x][y]
+                }
+                q.append([heightMap[x][y], x * n + y])
+            }
+            q = q.sorted(by: { $0[0] == $1[0] ? $0[1] < $1[1] : $0[0] > $1[0]})
+        }
+        
+        return res
+    }
 }
