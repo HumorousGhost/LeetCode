@@ -249,4 +249,30 @@ class Forty {
         
         return res
     }
+    
+    // 409. 最长回文串
+    func longestPalindrome(_ s: String) -> Int {
+        
+        guard !s.isEmpty else {
+            return 0
+        }
+        
+        var record = [Character: Int]()
+        for c in s {
+            record[c, default: 0] += 1
+        }
+        
+        var count = 0
+        var odd = 0
+        for item in record.values {
+            if item % 2 == 0 {
+                count += item
+            } else {
+                count += item - 1
+                odd = 1
+            }
+        }
+        
+        return count + odd
+    }
 }
