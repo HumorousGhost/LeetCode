@@ -26,4 +26,21 @@ class FortyOne {
         }
         return f[n][m]
     }
+    
+    // 412. Fizz Buzz
+    func fizzBuzz(_ n: Int) -> [String] {
+        var ans = [String]()
+        for i in 0..<n {
+            if (i + 1) % 3 == 0 && (i + 1) % 5 == 0 {
+                ans.append("FizzBuzz")
+            } else if (i + 1) % 3 == 0 {
+                ans.append("Fizz")
+            } else if (i + 1) % 5 == 0 {
+                ans.append("Buzz")
+            } else {
+                ans.append("\(i + 1)")
+            }
+        }
+        return ans
+    }
 }
