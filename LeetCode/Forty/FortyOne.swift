@@ -64,4 +64,18 @@ class FortyOne {
         }
         return ans
     }
+    
+    // 414. 第三大的数
+    func thirdMax(_ nums: [Int]) -> Int {
+        var map = [Int: Int]()
+        for num in nums {
+            map[num, default: 0] += 1
+        }
+        let sortNums = map.keys.sorted()
+        if sortNums.count >= 3 {
+            return sortNums[sortNums.count - 3]
+        } else {
+            return sortNums.last!
+        }
+    }
 }
