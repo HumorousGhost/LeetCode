@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = FortyOne().thirdMax([2, 2, 3, 1])
+        let result = FortyOne().addStrings("0", "0")
         print(result)
         
     }

@@ -78,4 +78,44 @@ class FortyOne {
             return sortNums.last!
         }
     }
+    
+    // 415. 字符串相加
+    func addStrings(_ num1: String, _ num2: String) -> String {
+        
+        guard num1.count > 0 && num2.count > 0 else {
+            return num1.count == 0 ? num2 : num1
+        }
+        
+        var maxNum: [Character]
+        var minNum: [Character]
+        if num1.count > num2.count {
+            maxNum = num1.map({$0})
+            minNum = num2.map({$0})
+        } else {
+            maxNum = num2.map({$0})
+            minNum = num1.map({$0})
+        }
+        
+        let lengthDiff = maxNum.count - minNum.count
+        var carry = 0
+        let num0 = Character("0").asciiValue!
+        var ans = [String]()
+        for i in (0..<maxNum.count).reversed() {
+            let j = i - lengthDiff
+            let tempMin = j >= 0 ? minNum[j] : "0"
+            let num = Int(maxNum[i].asciiValue! - num0 + tempMin.asciiValue! - num0) + carry
+            if num >= 10 {
+                carry = num / 10
+                ans.append("\(num % 10)")
+            } else {
+                ans.append("\(num)")
+                carry = 0
+            }
+        }
+        if carry > 0 {
+            ans.append("\(carry)")
+        }
+        
+        return ans.reversed().joined()
+    }
 }
