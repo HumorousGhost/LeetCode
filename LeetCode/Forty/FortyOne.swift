@@ -118,4 +118,34 @@ class FortyOne {
         
         return ans.reversed().joined()
     }
+    
+    // 416. 分割等和子集
+    func canPartition(_ nums: [Int]) -> Bool {
+        guard nums.count >= 2 else {
+            return false
+        }
+        
+        var sum = 0, maxNum = 0
+        for num in nums {
+            sum += num
+            maxNum = max(maxNum, num)
+        }
+        if sum % 2 != 0 {
+            return false
+        }
+        
+        let target = sum / 2
+        if maxNum > target {
+            return false
+        }
+        var dp = [Bool](repeating: false, count: target + 1)
+        dp[0] = true
+        for num in nums {
+            for j in (num...target).reversed() {
+                dp[j] = dp[j] || dp[j - num]
+            }
+        }
+        
+        return dp[target]
+    }
 }
