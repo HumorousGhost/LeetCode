@@ -148,4 +148,96 @@ class FortyOne {
         
         return dp[target]
     }
+    
+    // 417. 太平洋大西洋水流问题
+    func pacificAtlantic(_ heights: [[Int]]) -> [[Int]] {
+        
+        let rows = heights.count
+        guard rows > 0 else {
+            return []
+        }
+        let cols = heights[0].count
+        
+        let rowsRange = 0..<rows
+        let colsRange = 0..<cols
+        
+        enum DFSState {
+            case clear(_ row: Int, _ col: Int)
+            case topMapped(_ row: Int, _ col: Int)
+            case bottomMapped(_ row: Int, _ col: Int)
+            case leftMapped(_ row: Int, _ col: Int)
+            case rightMapped(_ row: Int, _ col: Int)
+        }
+        
+        var flows = [[Int]](repeating: [Int](repeating: 0, count: cols), count: rows)
+        var result = [[Int]]()
+        
+        let dfs: (Int, Int) -> Void = { (row, col) in
+            var positions = [DFSState.clear(row, col)]
+            while let last = positions.last {
+                switch last {
+                case let .clear(row, col):
+                    positions[positions.count - 1] = .topMapped(row, col)
+                    if rowsRange ~= row - 1,
+                       heights[row - 1][col] >= heights[row][col],
+                       flows[row - 1][col] | flows[row][col] > flows[row - 1][col] {
+                        flows[row - 1][col] = flows[row - 1][col] | flows[row][col]
+                        positions.append(.clear(row - 1, col))
+                    }
+                    break
+                case let .topMapped(row, col):
+                    positions[positions.count - 1] = .bottomMapped(row, col)
+                    if rowsRange ~= row + 1, heights[row + 1][col] >= heights[row][col], flows[row + 1][col] | flows[row][col] > flows[row + 1][col] {
+                        flows[row + 1][col] = flows[row + 1][col] | flows[row][col]
+                        positions.append(.clear(row + 1, col))
+                    }
+                    break
+                case let .bottomMapped(row, col):
+                    positions[positions.count - 1] = .leftMapped(row, col)
+                    if colsRange ~= col - 1, heights[row][col - 1] >= heights[row][col], flows[row][col - 1] | flows[row][col] > flows[row][col - 1] {
+                        flows[row][col - 1] = flows[row][col - 1] | flows[row][col]
+                        positions.append(.clear(row, col - 1))
+                    }
+                    break
+                case let .leftMapped(row, col):
+                    positions[positions.count - 1] = .rightMapped( row,  col)
+                    if colsRange ~= col + 1, heights[row][col + 1] >= heights[row][col], flows[row][col + 1] | flows[row][col] > flows[row][col + 1] {
+                        flows[row][col + 1] = flows[row][col + 1] | flows[row][col]
+                        positions.append(.clear(row, col + 1))
+                    }
+                    break
+                case let .rightMapped(row, col):
+                    if flows[row][col] == 3 { result.append([row, col])
+                    }
+                    positions.removeLast()
+                    break
+                }
+            }
+        }
+        
+        for row in rowsRange {
+            if flows[row][0] | 1 > flows[row][0] {
+                flows[row][0] = flows[row][0] | 1
+                dfs(row, 0)
+            }
+            
+            if flows[row][cols - 1] | 2 > flows[row][cols - 1] {
+                flows[row][cols - 1] = flows[row][cols - 1] | 2
+                dfs(row, cols - 1)
+            }
+        }
+        
+        for col in colsRange {
+            if flows[0][col] | 1 > flows[0][col] {
+                flows[0][col] = flows[0][col] | 1
+                dfs(0, col)
+            }
+                
+            if flows[rows - 1][col] | 2 > flows[rows - 1][col] {
+                flows[rows - 1][col] = flows[rows - 1][col] | 2
+                dfs(rows - 1, col)
+            }
+        }
+        return result
+    }
 }
