@@ -240,4 +240,25 @@ class FortyOne {
         }
         return result
     }
+    
+    // 419. 甲板上的战舰
+    func countBattleships(_ board: [[Character]]) -> Int {
+        let row = board.count
+        let col = board[0].count
+        var ans = 0
+        for i in 0..<row {
+            for j in 0..<col {
+                if board[i][j] == "X" {
+                    if i > 0 && board[i - 1][j] == "X" {
+                        continue
+                    }
+                    if j > 0 && board[i][j - 1] == "X" {
+                        continue
+                    }
+                    ans += 1
+                }
+            }
+        }
+        return ans
+    }
 }
