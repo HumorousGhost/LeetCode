@@ -108,6 +108,7 @@
 		98EFDED5268B0134000AE6AB /* BSTIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDED4268B0133000AE6AB /* BSTIterator.swift */; };
 		98F1C10726AFE4F700E6EC00 /* MyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F1C10626AFE4F700E6EC00 /* MyQueue.swift */; };
 		98F5FA45265CD73000CE2605 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F5FA44265CD73000CE2605 /* TreeNode.swift */; };
+		98F66B89278BCA2B005B8E00 /* FortyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F66B88278BCA2B005B8E00 /* FortyTwo.swift */; };
 		98FFECC42657ADD400C645EB /* Nine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FFECC32657ADD400C645EB /* Nine.swift */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +213,7 @@
 		98EFDED4268B0133000AE6AB /* BSTIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTIterator.swift; sourceTree = "<group>"; };
 		98F1C10626AFE4F700E6EC00 /* MyQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueue.swift; sourceTree = "<group>"; };
 		98F5FA44265CD73000CE2605 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		98F66B88278BCA2B005B8E00 /* FortyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortyTwo.swift; sourceTree = "<group>"; };
 		98FFECC32657ADD400C645EB /* Nine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,6 +382,7 @@
 			children = (
 				9855F107275871B400F28375 /* Forty.swift */,
 				98C2B2942779563F004BFB88 /* FortyOne.swift */,
+				98F66B88278BCA2B005B8E00 /* FortyTwo.swift */,
 			);
 			path = Forty;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				985908D026F5C0E100B92910 /* NestedIterator.swift in Sources */,
 				983966D626E9A8A900A96F02 /* ThirtyThree.swift in Sources */,
 				98480AAB273231B100921820 /* RandomizedSet.swift in Sources */,
+				98F66B89278BCA2B005B8E00 /* FortyTwo.swift in Sources */,
 				9811E86F2689B82B00FB58EA /* Seventeen.swift in Sources */,
 				98E7C56D26D48B1600B36EDF /* NumArray2.swift in Sources */,
 				980686B426C366E100D1DD23 /* Thirty.swift in Sources */,

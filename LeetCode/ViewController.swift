@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = FortyOne().countBattleships([["X",".",".","X"],[".",".",".","X"],[".",".",".","X"]])
+        let result = FortyTwo().strongPasswordChecker("bbaaaaaaaaaaaaaaacccccc")
         print(result)
         
     }
