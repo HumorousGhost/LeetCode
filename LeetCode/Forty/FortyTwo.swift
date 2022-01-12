@@ -133,4 +133,80 @@ struct FortyTwo {
         }
         return max(n, needType)
     }
+    
+    // 421. 数组中两个数的最大异或值
+    func findMaximumXOR(_ nums: [Int]) -> Int {
+        
+        class Trie {
+            // 左子树指向表示 0 的子节点
+            var left: Trie?
+            // 右子树指向表示 1 的子节点
+            var right: Trie?
+            init() {
+                left = nil
+                right = nil
+            }
+        }
+        
+        // 字典树的根节点
+        let root = Trie()
+        // 最高位的二进制编号为 30
+        let HIGH_BIT = 30
+        
+        func add(_ num: Int) {
+            var cur: Trie? = root
+            for k in (0...HIGH_BIT).reversed() {
+                let bit = (num >> k) & 1
+                if bit == 0 {
+                    if cur?.left == nil {
+                        cur?.left = Trie()
+                    }
+                    cur = cur?.left
+                } else {
+                    if cur?.right == nil {
+                        cur?.right = Trie()
+                    }
+                    cur = cur?.right
+                }
+            }
+        }
+        
+        func check(_ num: Int) -> Int {
+            var cur: Trie? = root
+            var x = 0
+            for k in (0...HIGH_BIT).reversed() {
+                let bit = (num >> k) & 1
+                if bit == 0 {
+                    // ai 的第 k 个二进制位为 0，应当往 表示 1 的子节点 right 走
+                    if cur?.right != nil {
+                        cur = cur?.right
+                        x = x * 2 + 1
+                    } else {
+                        cur = cur?.left
+                        x = x * 2
+                    }
+                } else {
+                    // ai 的第 k 个二进制位为 1，应当往 表示 0 的子节点 left 走
+                    if cur?.left != nil {
+                        cur = cur?.left
+                        x = x * 2 + 1
+                    } else {
+                        cur = cur?.right
+                        x = x * 2
+                    }
+                }
+            }
+            return x
+        }
+        
+        let n = nums.count
+        var x = 0
+        for i in 1..<n {
+            // 将 nums[n - 1] 放入字典树，此时 nums[i .. i - 1] 都在字典树中
+            add(nums[i - 1])
+            // 将 nums[i] 看做 ai，找出最大的 x 更新答案
+            x = max(x, check(nums[i]))
+        }
+        return x
+    }
 }
