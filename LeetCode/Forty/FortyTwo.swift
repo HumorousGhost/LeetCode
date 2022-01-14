@@ -237,4 +237,24 @@ struct FortyTwo {
         }
         return ans
     }
+    
+    // 424. 替换后的最长重复字符
+    func characterReplacement(_ s: String, _ k: Int) -> Int {
+        var nums = [Int](repeating: 0, count: 26)
+        let sArr = s.map({$0})
+        let A = Character("A").asciiValue!
+        let n = sArr.count
+        var maxN = Int.min
+        var left = 0, right = 0
+        while right < n {
+            nums[Int(sArr[right].asciiValue! - A)] += 1
+            maxN = max(maxN, nums[Int(sArr[right].asciiValue! - A)])
+            if right - left + 1 - maxN > k {
+                nums[Int(sArr[left].asciiValue! - A)] -= 1
+                left += 1
+            }
+            right += 1
+        }
+        return right - left
+    }
 }
