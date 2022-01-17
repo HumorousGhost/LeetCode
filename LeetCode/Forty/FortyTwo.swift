@@ -257,4 +257,40 @@ struct FortyTwo {
         }
         return right - left
     }
+    
+    // 427. 建立四叉树
+    func construct(_ grid: [[Int]]) -> Node2? {
+        
+        func isSame(_ left: Int, _ right: Int, _ up: Int, _ down: Int) -> Bool {
+            var pre = -1
+            for i in up...down {
+                for j in left...right {
+                    if pre != -1, pre != grid[i][j] {
+                        return false
+                    } else {
+                        pre = grid[i][j]
+                    }
+                }
+            }
+            return true
+        }
+        
+        func helper(_ left: Int, _ right: Int, _ up: Int, _ down: Int) -> Node2? {
+            let root = Node2.init(false, false)
+            if isSame(left, right, up, down) {
+                root.val = grid[up][left] == 1
+                root.isLeaf = true
+                return root
+            }
+            
+            root.isLeaf = false
+            root.topLeft = helper(left, (right + left) / 2, up, (up + down) / 2)
+            root.topRight = helper((left + right) / 2 + 1, right, up, (up + down) / 2)
+            root.bottomLeft = helper(left, (left + right) / 2, (up + down) / 2 + 1, down)
+            root.bottomRight = helper((left + right) / 2 + 1, right, (up + down) / 2 + 1, down)
+            return root
+        }
+        
+        return helper(0, grid.count - 1, 0, grid[0].count - 1)
+    }
 }
