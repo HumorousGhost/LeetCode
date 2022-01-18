@@ -293,4 +293,27 @@ struct FortyTwo {
         
         return helper(0, grid.count - 1, 0, grid[0].count - 1)
     }
+    
+    // 429. N 叉树的层序遍历
+    func levelOrder(_ root: Node?) -> [[Int]] {
+        
+        guard root != nil else {
+            return []
+        }
+        
+        var result = [[Int]]()
+        var queue = [Node]()
+        queue.append(root!)
+        while !queue.isEmpty {
+            var level = [Int]()
+            let size = queue.count
+            for _ in 0..<size {
+                let node = queue.removeFirst()
+                level.append(node.val)
+                queue.append(contentsOf: node.children)
+            }
+            result.append(level)
+        }
+        return result
+    }
 }
