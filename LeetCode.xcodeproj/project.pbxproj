@@ -22,6 +22,7 @@
 		9820FA8A268EAAEB006ECD9E /* Seventeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9811E86E2689B82B00FB58EA /* Seventeen.swift */; };
 		9820FA8B268EAAEF006ECD9E /* Sixteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B701032684618E009E4934 /* Sixteen.swift */; };
 		9820FA8C268EAAF2006ECD9E /* Fifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E990B2681C91F00EB76F2 /* Fifteen.swift */; };
+		9822B9AD27993A8100E19729 /* AllOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9822B9AC27993A8100E19729 /* AllOne.swift */; };
 		98238D6226A7FBBE005238C9 /* TwentyTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98238D6126A7FBBD005238C9 /* TwentyTwo.swift */; };
 		982EB90D27225FA1001E5864 /* ThirtySix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982EB90C27225FA1001E5864 /* ThirtySix.swift */; };
 		9836086326A1695C00BE3D5D /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836086226A1695C00BE3D5D /* WordDictionary.swift */; };
@@ -143,6 +144,7 @@
 		981E8AC22671AFF500AA0D6C /* Thirteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thirteen.swift; sourceTree = "<group>"; };
 		98200ADB271D078D001397E0 /* ThirtyFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyFive.swift; sourceTree = "<group>"; };
 		98200ADD271D1B98001397E0 /* SummaryRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRanges.swift; sourceTree = "<group>"; };
+		9822B9AC27993A8100E19729 /* AllOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOne.swift; sourceTree = "<group>"; };
 		98238D6126A7FBBD005238C9 /* TwentyTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyTwo.swift; sourceTree = "<group>"; };
 		982EB90C27225FA1001E5864 /* ThirtySix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtySix.swift; sourceTree = "<group>"; };
 		9836086226A1695C00BE3D5D /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				98A44D10273BB78F0086B841 /* NestedInteger.swift */,
 				9889E6B22755C993002A4DA5 /* RandomIndex.swift */,
 				9891CB0B2795049100052B5B /* Node2.swift */,
+				9822B9AC27993A8100E19729 /* AllOne.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				989B8BBA272B95ED00C3AD7C /* GuessGame.swift in Sources */,
 				987FE32E2653AB6800C894B4 /* Eight.swift in Sources */,
 				98B7947E26BB8F45008EDC17 /* TwentyEight.swift in Sources */,
+				9822B9AD27993A8100E19729 /* AllOne.swift in Sources */,
 				98FFECC42657ADD400C645EB /* Nine.swift in Sources */,
 				985908D026F5C0E100B92910 /* NestedIterator.swift in Sources */,
 				983966D626E9A8A900A96F02 /* ThirtyThree.swift in Sources */,
