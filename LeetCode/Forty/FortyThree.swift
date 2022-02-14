@@ -49,4 +49,41 @@ class FortyThree {
         _ = dfs(head)
         return head
     }
+    
+    // 433. 最小基因变化
+    func minMutation(_ start: String, _ end: String, _ bank: [String]) -> Int {
+        guard bank.contains(end) else {
+            return -1
+        }
+        
+        var bankSet = Set(bank)
+        var minStep = Int.max
+        
+        func backtrack(_ step: Int, _ current: String) {
+            if step >= minStep {
+                return
+            }
+            if current == end {
+                minStep = step
+            }
+            for gene in bankSet {
+                var diffCount = 0
+                for index in 0..<gene.count {
+                    if [Character](gene)[index] != [Character](current)[index] {
+                        diffCount += 1
+                    }
+                    if diffCount > 1 {
+                        break
+                    }
+                }
+                if diffCount == 1 {
+                    bankSet.remove(gene)
+                    backtrack(step + 1, gene)
+                    bankSet.insert(gene)
+                }
+            }
+        }
+        backtrack(0, start)
+        return minStep == Int.max ? -1 : minStep
+    }
 }
