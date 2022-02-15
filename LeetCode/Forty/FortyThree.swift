@@ -86,4 +86,18 @@ class FortyThree {
         backtrack(0, start)
         return minStep == Int.max ? -1 : minStep
     }
+    
+    // 434. 字符串中的单词数
+    func countSegments(_ s: String) -> Int {
+        let sArr = s.components(separatedBy: " ")
+        var count = 0
+        
+        for arranged in sArr {
+            if arranged.count > 0 {
+                count += 1
+            }
+        }
+        
+        return count
+    }
 }
