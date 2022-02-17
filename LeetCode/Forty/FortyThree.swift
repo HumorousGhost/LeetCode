@@ -100,4 +100,25 @@ class FortyThree {
         
         return count
     }
+    
+    // 435. 无重叠区间
+    func eraseOverlapIntervals(_ intervals: [[Int]]) -> Int {
+        guard intervals.count > 0 else {
+            return 0
+        }
+        
+        var sortIntervals = intervals.sorted { interval1, interval2 in
+            return interval1[0] < interval2[0]
+        }
+        
+        let n = sortIntervals.count
+        var ans = 0
+        for i in 1..<n {
+            if sortIntervals[i - 1][1] - sortIntervals[i][0] > 0 {
+                ans += 1
+                sortIntervals[i][1] = min(sortIntervals[i - 1][1], sortIntervals[i][1])
+            }
+        }
+        return ans
+    }
 }

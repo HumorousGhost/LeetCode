@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = FortyTwo().originalDigits("fviefuro")
+        let result = FortyThree().eraseOverlapIntervals([[1,2],[2,3],[3,4],[1,3]])
         print(result)
         
     }
