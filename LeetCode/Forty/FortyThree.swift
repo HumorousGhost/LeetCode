@@ -121,4 +121,44 @@ class FortyThree {
         }
         return ans
     }
+    
+    // 436. 寻找有区间
+    func findRightInterval(_ intervals: [[Int]]) -> [Int] {
+        
+        // 哈希记录每个区间的原来位置
+        var map = [[Int]: Int]()
+        for (index, value) in intervals.enumerated() {
+            map[value] = index
+        }
+        
+        // 根据第一个值来排序
+        let sortIntervals = intervals.sorted { interval1, interval2 in
+            return interval1[0] < interval2[0]
+        }
+        
+        // 结果集
+        var result = [Int](repeating: -1, count: intervals.count)
+        
+        // 二分法查找比它大的最小值
+        for (index, interval) in intervals.enumerated() {
+            var left = 0, right = sortIntervals.count - 1
+            while left < right {
+                let mid = left + ((right - left) >> 1)
+                if sortIntervals[mid][0] >= interval[1] {
+                    right = mid
+                } else {
+                    left = mid + 1
+                }
+            }
+            
+            if left == sortIntervals.count - 1, sortIntervals[left][0] < interval[1] {
+                result[index] = -1
+            } else {
+                // 找到，去哈希中取位置
+                result[index] = map[sortIntervals[left]]!
+            }
+        }
+        
+        return result
+    }
 }
