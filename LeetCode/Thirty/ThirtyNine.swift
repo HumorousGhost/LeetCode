@@ -39,11 +39,11 @@ class ThirtyNine {
         
         func record(_ x: Int, _ y: Int) {
             // 记录顶点出现的次数，如果一个顶点出现偶数次，则移除
-            let key = key(x, y)
-            if set.contains(key) {
-                set.remove(key)
+            let ke = key(x, y)
+            if set.contains(ke) {
+                set.remove(ke)
             } else {
-                set.insert(key)
+                set.insert(ke)
             }
         }
         
