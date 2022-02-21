@@ -161,4 +161,33 @@ class FortyThree {
         
         return result
     }
+    
+    // 437. 路径总和 III
+    func pathSum(_ root: TreeNode?, _ targetSum: Int) -> Int {
+        
+        guard root != nil else {
+            return 0
+        }
+        
+        func rootSum(_ root: TreeNode?, _ targetSum: Int) -> Int {
+            var ret = 0
+            guard root != nil else {
+                return 0
+            }
+            
+            let val = root!.val
+            if val == targetSum {
+                ret += 1
+            }
+            
+            ret += rootSum(root?.left, targetSum - val)
+            ret += rootSum(root?.right, targetSum - val)
+            return ret
+        }
+        
+        var ret = rootSum(root, targetSum)
+        ret += pathSum(root?.left, targetSum)
+        ret += pathSum(root?.right, targetSum)
+        return ret
+    }
 }
