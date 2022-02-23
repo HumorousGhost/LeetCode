@@ -284,7 +284,6 @@
 				983CB9DF254BB37A007B5639 /* AppDelegate.swift */,
 				983CB9E1254BB37A007B5639 /* ViewController.swift */,
 				9855F10F2758726600F28375 /* Other */,
-				9855F109275871C600F28375 /* Zero */,
 				9855F10A2758720000F28375 /* Eleven */,
 				9855F10C2758721C00F28375 /* Twenty */,
 				9855F10D2758723500F28375 /* Thirty */,
@@ -336,6 +335,7 @@
 		9855F10A2758720000F28375 /* Eleven */ = {
 			isa = PBXGroup;
 			children = (
+				9855F109275871C600F28375 /* Zero */,
 				986A58A126660CBB0053C53B /* Eleven.swift */,
 				98AE2BB3266A04670036EA96 /* Twelve.swift */,
 				981E8AC22671AFF500AA0D6C /* Thirteen.swift */,

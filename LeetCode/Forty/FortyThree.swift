@@ -190,4 +190,58 @@ class FortyThree {
         ret += pathSum(root?.right, targetSum)
         return ret
     }
+    
+    // 438. 找到字符串中所有字母异位词
+    func findAnagrams(_ s: String, _ p: String) -> [Int] {
+        let sLen = s.count, pLen = p.count
+        if sLen < pLen {
+            return []
+        }
+        let a = Character("a").asciiValue!
+        var counts = [Int](repeating: 0, count: 26)
+        let sArr = s.map{$0}, pArr = p.map{$0}
+        for i in 0..<pLen {
+            counts[Int(sArr[i].asciiValue! - a)] += 1
+            counts[Int(pArr[i].asciiValue! - a)] -= 1
+        }
+        
+        var differ = 0
+        for cnt in counts {
+            if cnt != 0 {
+                differ += 1
+            }
+        }
+        
+        var ans = [Int]()
+        if differ == 0 {
+            ans.append(0)
+        }
+        
+        for i in 0..<sLen - pLen {
+            let si = sArr[i].asciiValue!
+            if counts[Int(si - a)] == 1 {
+                // 窗口中字母 s[i] 的数量与字符串 p 中的数量从不同变得相同
+                differ -= 1
+            } else if counts[Int(si - a)] == 0 {
+                // 窗口中字母 s[i] 的数量与字符串 p 中的数量从相同变得不同
+                differ += 1
+            }
+            counts[Int(si - a)] -= 1
+            
+            let siPLen = sArr[i + pLen].asciiValue!
+            if counts[Int(siPLen - a)] == -1 {
+                // 窗口中字母 s[i + pLen] 的数量与字符串 p 中的数量从不同变得相同
+                differ -= 1
+            } else if counts[Int(siPLen - a)] == 0 {
+                // 窗口中字母 s[i + pLen] 的数量与字符串 p 中的数量从相同变得不同
+                differ += 1
+            }
+            counts[Int(siPLen - a)] += 1
+            
+            if differ == 0 {
+                ans.append(i + 1)
+            }
+        }
+        return ans
+    }
 }
