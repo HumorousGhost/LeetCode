@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = FortyThree().findAnagrams("cbaebabacd", "abc")
+        let result = FortyFour().arrangeCoins(6)
         print(result)
         
     }

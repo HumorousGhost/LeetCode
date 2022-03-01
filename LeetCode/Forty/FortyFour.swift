@@ -36,4 +36,18 @@ class FortyFour {
         
         return cur
     }
+    
+    // 441. 排列硬币
+    func arrangeCoins(_ n: Int) -> Int {
+        var sum = 0
+        for i in 0..<n {
+            sum += i + 1
+            if sum == n {
+                return i + 1
+            } else if sum > n {
+                return i
+            }
+        }
+        return 0
+    }
 }
