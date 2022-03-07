@@ -50,4 +50,20 @@ class FortyFour {
         }
         return 0
     }
+    
+    // 442. 数组中重复的数据
+    func findDuplicates(_ nums: [Int]) -> [Int] {
+        var newNums = nums
+        var res = [Int]()
+        for i in 0..<newNums.count {
+            let index = abs(newNums[i]) - 1
+            if newNums[index] < 0 {
+                res.append(index + 1)
+                continue
+                
+            }
+            newNums[index] = -newNums[index]
+        }
+        return res
+    }
 }
