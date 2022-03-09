@@ -66,4 +66,36 @@ class FortyFour {
         }
         return res
     }
+    
+    // 443. 压缩字符串
+    func compress(_ chars: inout [Character]) -> Int {
+        guard chars.count > 1 else {
+            return chars.count
+        }
+        
+        var markIndex = 0
+        var rangeCount = 0
+        
+        for flag in 0..<chars.count {
+            rangeCount += 1
+            if flag == chars.count - 1 || chars[flag] != chars[flag + 1] {
+                // 计算阶段
+                chars[markIndex] = chars[flag]
+                markIndex += 1
+                if rangeCount > 1 {
+                    let rangeString = "\(rangeCount)"
+                    let rangeArray = rangeString.map({$0})
+                    var rangeIndex = 0
+                    while rangeIndex < rangeArray.count {
+                        let rangeChar = rangeArray[rangeIndex]
+                        chars[markIndex] = rangeChar
+                        markIndex += 1
+                        rangeIndex += 1
+                    }
+                }
+                rangeCount = 0
+            }
+        }
+        return markIndex
+    }
 }
