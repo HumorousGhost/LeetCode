@@ -98,4 +98,30 @@ class FortyFour {
         }
         return markIndex
     }
+    
+    // 445. 两数相加 II
+    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        var l1 = l1, l2 = l2
+        var stack1 = [Int](), stack2 = [Int]()
+        while l1 != nil {
+            stack1.append(l1!.val)
+            l1 = l1?.next
+        }
+        while l2 != nil {
+            stack2.append(l2!.val)
+            l2 = l2?.next
+        }
+        var carry = 0
+        var ans: ListNode? = nil
+        while !stack1.isEmpty || !stack2.isEmpty || carry != 0 {
+            let a = stack1.isEmpty ? 0 : stack1.removeLast()
+            let b = stack2.isEmpty ? 0 : stack2.removeLast()
+            var cur = a + b + carry
+            carry = cur / 10
+            cur %= 10
+            let curnode = ListNode.init(cur, ans)
+            ans = curnode
+        }
+        return ans
+    }
 }
