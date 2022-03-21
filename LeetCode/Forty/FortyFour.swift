@@ -124,4 +124,22 @@ class FortyFour {
         }
         return ans
     }
+    
+    // 446. 等差数列划分 II - 子序列
+    func numberOfArithmeticSlices(_ nums: [Int]) -> Int {
+        
+        var ans = 0
+        let n = nums.count
+        var f = [[Int: Int]](repeating: [Int: Int](), count: n)
+        for i in 0..<n {
+            for j in 0..<i {
+                let d = nums[i] - nums[j]
+                let cnt = f[j][d, default: 0]
+                ans += cnt
+                f[i][d, default: 0] += cnt + 1
+            }
+        }
+        
+        return ans
+    }
 }
