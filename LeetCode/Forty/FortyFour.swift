@@ -142,4 +142,22 @@ class FortyFour {
         
         return ans
     }
+    
+    // 447. 回旋镖的数量
+    func numberOfBoomerangs(_ points: [[Int]]) -> Int {
+        
+        var ans = 0
+        for p in points {
+            var cnt = [Int: Int]()
+            for q in points {
+                let dis = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1])
+                cnt[dis, default: 0] += 1
+            }
+            for (_, value) in cnt {
+                ans += value * (value - 1)
+            }
+        }
+        
+        return ans
+    }
 }
