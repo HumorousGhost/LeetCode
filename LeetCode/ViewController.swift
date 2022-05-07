@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         node3.random = node5
         node4.random = node3
         node5.random = node1
-        let result = FortyFour().arrangeCoins(6)
+        let result = FortyFour().findDisappearedNumbers([4,3,2,7,8,2,3,1])
         print(result)
         
     }

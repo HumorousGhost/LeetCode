@@ -160,4 +160,22 @@ class FortyFour {
         
         return ans
     }
+    
+    // 448. 找到所有数组中消失的数字
+    func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
+        
+        var nums = nums
+        for num in nums {
+            let temp = (num - 1) % nums.count
+            nums[temp] += nums.count
+        }
+        
+        var res = [Int]()
+        for i in 0..<nums.count {
+            if nums[i] <= nums.count {
+                res.append(i + 1)
+            }
+        }
+        return res
+    }
 }
